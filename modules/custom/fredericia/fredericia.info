@@ -1,0 +1,15 @@
+name = Fredericia
+description = Fredericia views, content image style
+core = 7.x
+package = Fredercia
+version = 7.x-1.0
+dependencies[] = image
+dependencies[] = os2web_news_page_archive
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[image][] = fredericia_content_image
+features[views_view][] = a_aa_index
+features[views_view][] = fredericia_news_view
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/os2web/modules
