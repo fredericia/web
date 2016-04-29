@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Fredericia feature.
- */
-
-include_once 'fredericia.features.inc';
