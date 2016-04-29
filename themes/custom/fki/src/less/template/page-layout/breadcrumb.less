@@ -15,11 +15,11 @@
 
 @os2-breadcrumb-separator-font-size:	@font-size-small;
 
-@os2-breadcrumb-link-color:			      @text-color-light;
-@os2-breadcrumb-link-hover-color:		  @brand-secondary;
+@os2-breadcrumb-link-color:			      @brand-primary;
+@os2-breadcrumb-link-hover-color:		  @os2-breadcrumb-link-color;
 @os2-breadcrumb-active-color:		  		@os2-breadcrumb-link-color;
 
-@os2-breadcrumb-separator-color:		  @os2-breadcrumb-link-color;
+@os2-breadcrumb-separator-color:		  @brand-quaternary;
 @os2-breadcrumb-separator-spacing:	  5px;
 
 // --------------------------------------------------
@@ -40,13 +40,34 @@
 
 		li {
 			font-size: @os2-breadcrumb-separator-font-size;
-			text-transform: uppercase;
 
 			a {
 				color: @os2-breadcrumb-link-color;
 
 				&:hover {
 					color: @os2-breadcrumb-link-hover-color;
+				}
+			}
+
+			&:first-child {
+
+				a {
+					display: none;
+				}
+
+				&:before {
+					font-family: 'FontAwesome';
+					font-size: @font-size-base;
+					content: @fa-var-home;
+					color: @os2-breadcrumb-separator-color;
+					padding: 0 @os2-breadcrumb-separator-spacing;
+				}
+
+				+ li {
+
+					&:before {
+						display: none;
+					}
 				}
 			}
 
@@ -57,10 +78,10 @@
 			+ li {
 
 				&:before {
+					font-family: 'FontAwesome';
+					content: @fa-var-chevron-right;
 					color: @os2-breadcrumb-separator-color;
 					padding: 0 @os2-breadcrumb-separator-spacing;
-					font-family: 'FontAwesome';
-					content: @fa-var-angle-right;
 				}
 			}
 		}

@@ -15588,22 +15588,34 @@ body.adminimal-menu.admin-menu .outer-wrapper .inner-wrapper {
 }
 .os2-breadcrumb-container .breadcrumb li {
   font-size: 11px;
-  text-transform: uppercase;
 }
 .os2-breadcrumb-container .breadcrumb li a {
-  color: #6c8ba8;
+  color: #00406f;
 }
 .os2-breadcrumb-container .breadcrumb li a:hover {
-  color: #4ec6f8;
+  color: #00406f;
+}
+.os2-breadcrumb-container .breadcrumb li:first-child a {
+  display: none;
+}
+.os2-breadcrumb-container .breadcrumb li:first-child:before {
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  content: "\f015";
+  color: #F24244;
+  padding: 0 5px;
+}
+.os2-breadcrumb-container .breadcrumb li:first-child + li:before {
+  display: none;
 }
 .os2-breadcrumb-container .breadcrumb li.active {
-  color: #6c8ba8;
+  color: #00406f;
 }
 .os2-breadcrumb-container .breadcrumb li + li:before {
-  color: #6c8ba8;
-  padding: 0 5px;
   font-family: 'FontAwesome';
-  content: "\f105";
+  content: "\f054";
+  color: #F24244;
+  padding: 0 5px;
 }
 @media screen {
 }
