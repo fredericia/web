@@ -10,4 +10,4 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[page_manager_pages][] = fredericia_frontpage
 features[variable][] = site_frontpage
-project path = sites/all/modules/features/
+project path = profiles/os2web/modules/
