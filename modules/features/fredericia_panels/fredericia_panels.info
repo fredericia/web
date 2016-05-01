@@ -1,0 +1,11 @@
+name = Panels
+core = 7.x
+package = Fredericia
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_283ff35c-83db-4105-9b8a-0f3c4cb6ef79
+features[page_manager_handlers][] = term_view__panel_context_da3a9973-a938-4d22-a9e0-2eadc5fa10f1
+features[page_manager_handlers][] = term_view__sitestruktur-niveau-1
+project path = sites/fredericia.dk/modules/features
