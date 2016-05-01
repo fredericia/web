@@ -91,7 +91,7 @@ body #admin-menu .dropdown li {
 }
 @media screen and (min-width: 1200px) {
   .navbar.container {
-    max-width: 1200px;
+    max-width: 940px;
   }
 }
 .navbar.container,
@@ -2356,7 +2356,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1224px;
+    width: 964px;
   }
 }
 .container-fluid {
@@ -16008,14 +16008,42 @@ select[multiple].os2-page-header .os2-page-header-search-form #search-block-form
 select[multiple].os2-page-header .os2-page-header-search-form #search-block-form .input-group .input-group-btn .btn {
   height: auto;
 }
-.os2-page-header .os2-page-header-search-form #search-block-form .form-control::-moz-placeholder {
+.os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control {
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+@media screen and (max-width: 767px) {
+  .os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control {
+    font-size: 26px;
+    line-height: 28px;
+  }
+}
+.os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control::-moz-placeholder {
   color: #00406f;
   opacity: 1;
 }
-.os2-page-header .os2-page-header-search-form #search-block-form .form-control:-ms-input-placeholder {
+.os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control:-ms-input-placeholder {
   color: #00406f;
 }
-.os2-page-header .os2-page-header-search-form #search-block-form .form-control::-webkit-input-placeholder {
+.os2-page-header .os2-page-header-search-form #search-block-form .input-group .form-control::-webkit-input-placeholder {
   color: #00406f;
 }
 .os2-page-header .os2-page-header-search-form #search-block-form .input-group .input-group-btn .btn {
@@ -16173,6 +16201,9 @@ body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-
   height: 5px;
   background-color: #F24244;
 }
+body:not(.front) .os2-page-header .os2-page-header-tabbed-menu {
+  padding-bottom: 0;
+}
 body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link {
   padding-bottom: 0;
   border-bottom-right-radius: 0;
@@ -16194,6 +16225,9 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
   .os2-page-header .os2-page-header-search-form #search-block-form {
     max-width: 80%;
   }
+  body .os2-page-header .os2-page-header-tabbed-menu {
+    padding-bottom: 10px;
+  }
 }
 @media screen and (min-width: 768px) {
 }
@@ -16207,10 +16241,16 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
   .os2-page-header .os2-page-header-search-form #search-block-form {
     max-width: 60%;
   }
+  body .os2-page-header .os2-page-header-tabbed-menu {
+    padding-bottom: 20px;
+  }
 }
 @media screen and (min-width: 992px) {
   .os2-page-header {
     padding-top: 35px;
+  }
+  body .os2-page-header .os2-page-header-tabbed-menu {
+    padding-bottom: 30px;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -16218,7 +16258,7 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
     padding: 40px 0;
   }
   .os2-page-header .os2-page-header-search-form #search-block-form {
-    max-width: 40%;
+    max-width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -16228,7 +16268,7 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
     padding: 40px 0;
   }
   .os2-page-header .os2-page-header-search-form #search-block-form {
-    max-width: 40%;
+    max-width: 50%;
   }
 }
 @media print {
