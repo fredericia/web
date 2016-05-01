@@ -78,7 +78,7 @@ function fki_preprocess_page(&$variables) {
   $variables['page_header_search'] = module_invoke('search', 'block_view', 'search');
 
   // Tabbed navigation
-  $variables['tabbed_navigation'] = _bellcom_generate_menu('main-menu', 'sidebar', 1);
+  $variables['tabbed_navigation'] = _bellcom_generate_menu('main-menu', 'tabbed', 1);
 }
 
 /**
@@ -214,4 +214,65 @@ function fki_preprocess_field(&$variables, $hook) {
       }
     }
   }
+}
+
+/*
+ * Implements theme_menu_tree().
+ */
+function fki_menu_tree__tabbed(&$variables) {
+  return $variables['tree'];
+}
+
+/*
+ * Implements theme_menu_link().
+ */
+function fki_menu_link__tabbed(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+
+    // Prevent dropdown functions from being added to management menu so it
+    // does not affect the navbar module.
+    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+      $sub_menu = drupal_render($element['#below']);
+    }
+
+    elseif ((!empty($element['#original_link']['depth']))) {
+
+      // Add our own wrapper.
+      unset($element['#below']['#theme_wrappers']);
+
+      // Submenu classes
+      $sub_menu_attributes['element']['class'] = array();
+      $sub_menu_attributes['element']['class'][] = 'sidebar-navigation-dropdown-menu';
+      if (in_array('active', $element['#attributes']['class']) or in_array('active-trail', $element['#attributes']['class'])) {
+        $sub_menu_attributes['element']['class'][] = 'active';
+      }
+
+      $sub_menu = ' <ul' . drupal_attributes($sub_menu_attributes['element']) . '>' . drupal_render($element['#below']) . '</ul>';
+
+      // Generate as dropdown.
+      $element['#title'] .= ' <span class="sidebar-navigation-dropdown-toggle"></span>';
+      $element['#attributes']['class'][] = 'sidebar-navigation-dropdown';
+      $element['#localized_options']['html'] = TRUE;
+    }
+  }
+  else {
+    $element['#attributes']['class'][] = 'sidebar-navigation-link';
+  }
+
+  // On primary navigation menu, class 'active' is not set on active menu item.
+  // @see https://drupal.org/node/1896674
+  if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
+    $element['#attributes']['class'][] = 'active';
+  }
+
+  // Link title class
+  $convert_characters = array('/', '_', 'æ', 'ø', 'å');
+  $element['#attributes']['class'][] = str_replace('/', '-', $element['#href']);
+
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  return '<div class="col-xs-12 col-sm-4"><div class="os2-page-header-tabbed-menu-link">' . $output . $sub_menu . "</div></div>\n";
 }

@@ -15976,6 +15976,7 @@ body.adminimal-menu.admin-menu .outer-wrapper .inner-wrapper {
 .os2-page-header {
   background: url(../img/page-header.jpg);
   background-size: cover;
+  background-position: center center;
 }
 .os2-page-header .os2-page-header-search-form #search-block-form {
   display: block;
@@ -16102,6 +16103,75 @@ fieldset[disabled] .os2-page-header .os2-page-header-search-form #search-block-f
 .os2-page-header .os2-page-header-search-form #search-block-form .form-actions {
   display: none;
 }
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+}
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+  position: relative;
+  display: block;
+  text-align: center;
+  background-color: #dfe2ec;
+  border-radius: 8px;
+  letter-spacing: -1px;
+  font-weight: 700;
+  padding: 15px 0;
+}
+@media screen and (max-width: 767px) {
+  body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+    font-size: 25px;
+    line-height: 27px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+    font-size: 27px;
+    line-height: 29px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a,
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a:hover {
+  text-decoration: none;
+}
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a:hover {
+  background-color: #fff;
+}
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a.active {
+  background-color: #fff;
+}
+body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a.active:after {
+  position: absolute;
+  top: 88%;
+  left: 39%;
+  right: 39%;
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #F24244;
+}
+body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link {
+  padding-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 @media screen {
 }
 @media screen and (max-width: 767px) {
@@ -16119,7 +16189,7 @@ fieldset[disabled] .os2-page-header .os2-page-header-search-form #search-block-f
     padding: 20px 0;
   }
   .os2-page-header .os2-page-header-search-form #search-block-form {
-    max-width: 80%;
+    max-width: 60%;
   }
 }
 @media screen and (min-width: 992px) {

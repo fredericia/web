@@ -117,7 +117,9 @@
 
                     <!-- Begin - menu -->
                     <div class="row">
-                        <?php print render($tabbed_navigation); ?>
+                        <div class="os2-page-header-tabbed-menu">
+                            <?php print render($tabbed_navigation); ?>
+                        </div>
                     </div>
                     <!-- End - menu -->
 
