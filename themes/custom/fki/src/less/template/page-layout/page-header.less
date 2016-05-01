@@ -13,7 +13,7 @@
 @os2-page-header-background-image: url(../img/page-header.jpg);
 
 // Responsive
-@os2-page-header-xs-max-width: 90%;
+@os2-page-header-xs-max-width: 80%;
 @os2-page-header-sm-max-width: 60%;
 @os2-page-header-md-max-width: 40%;
 @os2-page-header-lg-max-width: @os2-page-header-md-max-width;
@@ -50,6 +50,10 @@
       .input-group .input-group-addon,
       .input-group .input-group-btn .btn {
         .input-lg();
+      }
+
+      .form-control {
+        .placeholder(@brand-primary);
       }
 
       .input-group .input-group-btn .btn {
@@ -179,6 +183,7 @@ body {
 
   // Page header
   .os2-page-header {
+    padding-top: 15px;
 
     .os2-page-header-search-form {
       padding: @os2-page-header-search-form-xs-padding-top-bottom 0;
@@ -202,6 +207,7 @@ body {
 
   // Page header
   .os2-page-header {
+    padding-top: 25px;
 
     .os2-page-header-search-form {
       padding: @os2-page-header-search-form-sm-padding-top-bottom 0;
@@ -217,7 +223,9 @@ body {
 @media @media-query-desktop {
 
   // Page header
-  .os2-page-header {}
+  .os2-page-header {
+    padding-top: 35px;
+  }
 }
 
 // Desktop - only
