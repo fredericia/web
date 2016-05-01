@@ -108,6 +108,33 @@ function fredericia_panels_default_page_manager_handlers() {
     $display->content['new-3e502072-bf7b-4e95-a09f-8999ec9ee694'] = $pane;
     $display->panels['content'][0] = 'new-3e502072-bf7b-4e95-a09f-8999ec9ee694';
     $pane = new stdClass();
+    $pane->pid = 'new-483e6901-e978-4121-b2eb-1021e302eabd';
+    $pane->panel = 'content';
+    $pane->type = 'block';
+    $pane->subtype = 'os2web_related_links-selfservice_links_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Selvbetjening',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'os2-box-quaternary',
+      'template_suggestion' => 'block',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '483e6901-e978-4121-b2eb-1021e302eabd';
+    $display->content['new-483e6901-e978-4121-b2eb-1021e302eabd'] = $pane;
+    $display->panels['content'][1] = 'new-483e6901-e978-4121-b2eb-1021e302eabd';
+    $pane = new stdClass();
     $pane->pid = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
     $pane->panel = 'content';
     $pane->type = 'node_content';
@@ -132,11 +159,11 @@ function fredericia_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
     $display->content['new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857'] = $pane;
-    $display->panels['content'][1] = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
+    $display->panels['content'][2] = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
     $pane = new stdClass();
     $pane->pid = 'new-81282eec-9ae4-46f7-9ed2-4ca9162090a0';
     $pane->panel = 'sidebar';

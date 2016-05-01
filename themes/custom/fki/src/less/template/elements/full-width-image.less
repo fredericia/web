@@ -16,9 +16,10 @@
 
 // Full width image
 .os2-full-width-image {
-    margin-bottom: floor( (@grid-gutter-width / 2) );
+    margin-bottom: @grid-gutter-width;
 
     &,
+    .field-slideshow-slide,
     img {
         border-radius: @border-radius-base;
     }
@@ -29,6 +30,8 @@
         max-width: 100%;
         height: auto;
     }
+
+
 }
 
 // --------------------------------------------------
