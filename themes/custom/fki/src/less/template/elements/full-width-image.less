@@ -16,6 +16,12 @@
 
 // Full width image
 .os2-full-width-image {
+    margin-bottom: floor( (@grid-gutter-width / 2) );
+
+    &,
+    img {
+        border-radius: @border-radius-base;
+    }
 
     // Image
     img {

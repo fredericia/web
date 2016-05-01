@@ -5,6 +5,7 @@
     hide($content['links']);
     hide($content['links_bottom']);
     hide($content['field_tags']);
+    hide($content['field_os2web_base_field_lead_img']);
 
     if (isset($content['field_tags'])) {
       hide($content['field_tags']);
