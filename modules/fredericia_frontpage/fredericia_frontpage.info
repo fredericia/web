@@ -1,6 +1,6 @@
 name = Fredericia Frontpage
 core = 7.x
-package = Fredercia
+package = Fredericia
 version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = page_manager
