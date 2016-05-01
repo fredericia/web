@@ -17,6 +17,13 @@
 // Teaser
 .os2-node-teaser {
 
+    // Date
+    .os2-node-teaser-date {
+        font-size: @font-size-small;
+        font-weight: @font-weight-bold;
+        color: @brand-secondary;
+    }
+
     // Heading
     .os2-node-teaser-heading {
 
@@ -24,24 +31,6 @@
             .heading-h4;
             margin: 0;
         }
-    }
-
-    .os2-node-teaser-profile-image {
-        display: inline-block;
-        width: @os2-profile-image-default-width;
-    }
-
-    .os2-node-teaser-full-name {
-        .heading-h4;
-        font-weight: @headings-font-weight-bold;
-    }
-
-    .os2-node-teaser-treatment-center {
-        color: @brand-quaternary;
-    }
-
-    .os2-node-teaser-diabetes-type {
-        color: @brand-tertiary;
     }
 
     // Body
@@ -95,24 +84,7 @@
 @media @media-query-tablet {
 
     // Teaser
-    .os2-node-teaser {
-
-        .os2-node-teaser-profile-image,
-        .os2-node-teaser-patient {
-            float: left;
-        }
-
-        .os2-node-teaser-profile-image {
-            margin-right: floor( (@grid-gutter-width / 2) );
-        }
-
-        .os2-node-teaser-action {
-
-            + .os2-node-teaser-action {
-                margin-top: 8px;
-            }
-        }
-    }
+    .os2-node-teaser {}
 }
 
 // Tablet - only
