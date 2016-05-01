@@ -103,6 +103,28 @@
             </nav>
             <!-- End - main navigation -->
 
+            <!-- Begin - page header -->
+            <div class="os2-page-header">
+                <div class="container">
+
+                    <!-- Begin - search -->
+                    <div class="row">
+                        <div class="os2-page-header-search-form">
+                            <?php print render($page_header_search); ?>
+                        </div>
+                    </div>
+                    <!-- End - search -->
+
+                    <!-- Begin - menu -->
+                    <div class="row">
+                        <?php print render($tabbed_navigation); ?>
+                    </div>
+                    <!-- End - menu -->
+
+                </div>
+            </div>
+            <!-- End - page header -->
+
             <?php if (!empty($breadcrumb)): ?>
                 <!-- Begin - breadcrumb -->
                 <section class="os2-breadcrumb-container">

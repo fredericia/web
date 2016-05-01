@@ -1,0 +1,213 @@
+// |--------------------------------------------------------------------------
+// | Page header
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .os2-page-header
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@os2-page-header-background-image: url(../img/page-header.jpg);
+
+// Responsive
+@os2-page-header-xs-max-width: 90%;
+@os2-page-header-sm-max-width: 80%;
+@os2-page-header-md-max-width: 40%;
+@os2-page-header-lg-max-width: @os2-page-header-md-max-width;
+
+@os2-page-header-search-form-xs-padding-top-bottom: 10px;
+@os2-page-header-search-form-sm-padding-top-bottom: 20px;
+@os2-page-header-search-form-md-padding-top-bottom: 40px;
+@os2-page-header-search-form-lg-padding-top-bottom: @os2-page-header-search-form-md-padding-top-bottom;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Page header
+.os2-page-header {
+  background: @os2-page-header-background-image;
+  background-size: cover;
+
+  .os2-page-header-search-form {
+
+    #search-block-form {
+      display: block;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: @border-radius-large;
+      padding: 8px;
+      margin: auto; // align center
+
+      .input-group .form-control,
+      .input-group .input-group-addon,
+      .input-group .input-group-btn .btn {
+        .input-lg();
+      }
+
+      .input-group .input-group-btn .btn {
+        .btn-quaternary;
+
+        .icon {
+          color: rgba(255, 255, 255, 1)
+        }
+      }
+
+      // Reset rounded corners
+      .input-group .form-control:first-child,
+      .input-group-addon:first-child,
+      .input-group-btn:first-child > .btn,
+      .input-group-btn:first-child > .btn-group > .btn,
+      .input-group-btn:first-child > .dropdown-toggle,
+      .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+      .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+        .border-right-radius(0);
+      }
+      .input-group-addon:first-child {
+        border-right: 0;
+      }
+      .input-group .form-control:last-child,
+      .input-group-addon:last-child,
+      .input-group-btn:last-child > .btn,
+      .input-group-btn:last-child > .btn-group > .btn,
+      .input-group-btn:last-child > .dropdown-toggle,
+      .input-group-btn:first-child > .btn:not(:first-child),
+      .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+        .border-left-radius(0);
+      }
+      .input-group-addon:last-child {
+        border-left: 0;
+      }
+
+      .form-actions {
+        display: none;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+  // Page header
+  .os2-page-header {
+
+    .os2-page-header-search-form {
+      padding: @os2-page-header-search-form-xs-padding-top-bottom 0;
+
+      #search-block-form {
+        max-width: @os2-page-header-xs-max-width;
+      }
+    }
+  }
+}
+
+// Tablet
+@media @media-query-tablet {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+  // Page header
+  .os2-page-header {
+
+    .os2-page-header-search-form {
+      padding: @os2-page-header-search-form-sm-padding-top-bottom 0;
+
+      #search-block-form {
+        max-width: @os2-page-header-sm-max-width;
+      }
+    }
+  }
+}
+
+// Desktop
+@media @media-query-desktop {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+  // Page header
+  .os2-page-header {
+
+    .os2-page-header-search-form {
+      padding: @os2-page-header-search-form-md-padding-top-bottom 0;
+
+      #search-block-form {
+        max-width: @os2-page-header-md-max-width;
+      }
+    }
+  }
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+  // Page header
+  .os2-page-header {
+
+    .os2-page-header-search-form {
+      padding: @os2-page-header-search-form-lg-padding-top-bottom 0;
+
+      #search-block-form {
+        max-width: @os2-page-header-lg-max-width;
+      }
+    }
+  }
+}
+
+// Print
+@media print {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// Touch
+.touchevents {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Page header
+  .os2-page-header {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Page header mixin
+.os2-mixin-page-header() {}

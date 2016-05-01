@@ -51,6 +51,9 @@ function fki_preprocess_html(&$variables) {
  * Implements theme_preprocess_page().
  */
 function fki_preprocess_page(&$variables) {
+  $current_theme = variable_get('theme_default','none');
+  $primary_navigation_name = variable_get('menu_main_links_source', 'main-menu');
+  $secondary_navigation_name = variable_get('menu_secondary_links_source', 'user-menu');
 
   // Wrap panels layout.
   $variables['wrap_panels_layout'] = FALSE;
@@ -70,6 +73,12 @@ function fki_preprocess_page(&$variables) {
   $variables['tabs_secondary'] = $variables['tabs'];
   unset($variables['tabs_primary']['#secondary']);
   unset($variables['tabs_secondary']['#primary']);
+
+  // Search form
+  $variables['page_header_search'] = module_invoke('search', 'block_view', 'search');
+
+  // Tabbed navigation
+  $variables['tabbed_navigation'] = _bellcom_generate_menu('main-menu', 'sidebar', 1);
 }
 
 /**
@@ -150,6 +159,10 @@ function fki_preprocess_taxonomy_term(&$variables) {
 function fki_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id)  {
+
+    // Search block form
+    case 'search_block_form':
+      break;
 
     // User login
     case 'user_login':
