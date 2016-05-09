@@ -165,6 +165,29 @@ function fredericia_panels_default_page_manager_handlers() {
     $display->content['new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857'] = $pane;
     $display->panels['content'][2] = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
     $pane = new stdClass();
+    $pane->pid = 'new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
+    $pane->panel = 'sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Menu',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
+    $display->content['new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88'] = $pane;
+    $display->panels['sidebar'][0] = 'new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
+    $pane = new stdClass();
     $pane->pid = 'new-81282eec-9ae4-46f7-9ed2-4ca9162090a0';
     $pane->panel = 'sidebar';
     $pane->type = 'block';
@@ -186,11 +209,34 @@ function fredericia_panels_default_page_manager_handlers() {
       'template_suggestion' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '81282eec-9ae4-46f7-9ed2-4ca9162090a0';
     $display->content['new-81282eec-9ae4-46f7-9ed2-4ca9162090a0'] = $pane;
-    $display->panels['sidebar'][0] = 'new-81282eec-9ae4-46f7-9ed2-4ca9162090a0';
+    $display->panels['sidebar'][1] = 'new-81282eec-9ae4-46f7-9ed2-4ca9162090a0';
+    $pane = new stdClass();
+    $pane->pid = 'new-dfcb7571-f0c4-4e15-a16f-c50abb67082a';
+    $pane->panel = 'sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'os2web_contact-os2web_contact';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Kontaktinformation',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'dfcb7571-f0c4-4e15-a16f-c50abb67082a';
+    $display->content['new-dfcb7571-f0c4-4e15-a16f-c50abb67082a'] = $pane;
+    $display->panels['sidebar'][2] = 'new-dfcb7571-f0c4-4e15-a16f-c50abb67082a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
   $handler->conf['display'] = $display;
@@ -569,7 +615,11 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'os2-box-quaternary',
+      'template_suggestion' => 'block',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

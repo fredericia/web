@@ -110,6 +110,7 @@ function fredericia_footer_default_panels_mini() {
 <p>kommunen@fredericia.dk</p>
 <p>&nbsp;</p>
 <p><a href="#">Andre kontaktmuligheder</a></p>
+<p>&nbsp;</p>
 ',
       'format' => 'filtered_html',
       'substitute' => TRUE,
