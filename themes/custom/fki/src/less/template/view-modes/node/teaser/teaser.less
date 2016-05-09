@@ -36,9 +36,33 @@
     // Body
     .os2-node-teaser-body {
 
+        .os2-node-teaser-body-heading {
+            padding: 5px 0;
+
+            .os2-node-teaser-body-heading-title {
+                .heading-h4;
+                margin: 0;
+            }
+        }
+
         + .os2-node-teaser-footer {
             padding-top: 0;
         }
+    }
+}
+
+.os2-section-light {
+
+    .os2-node-teaser {
+        background-color: @body-bg;
+    }
+}
+
+&,
+.os2-section-dark {
+
+    .os2-node-teaser {
+        background-color: #fff;
     }
 }
 
