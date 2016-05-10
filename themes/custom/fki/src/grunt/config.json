@@ -28,7 +28,8 @@
       "src/vendor/fastclick/lib/fastclick.js",
       "src/vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.js",
       "src/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js",
-      "src/js/box.js",
+      "src/js/os2-self-service-toggle.js",
+      "src/js/popover-button.js",
       "src/js/init.js"
     ],
     "jsIe9": [

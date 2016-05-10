@@ -127,6 +127,30 @@ function fki_preprocess_node__full(&$variables) {
 }
 
 /*
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2web_spotbox_box(&$variables) {
+  if ($variables['view_mode'] == 'teaser') {
+    $variables['spotbox_link'] = array();
+
+    // Link
+    if ($field_url = field_get_items('node', $variables['node'], 'field_os2web_spotbox_url')) {
+      $variables['spotbox_link']['url'] = $field_url[0]['value'];
+    }
+    if ($field_text = field_get_items('node', $variables['node'], 'field_os2web_spotbox_text')) {
+      $variables['spotbox_link']['title'] = $field_text[0]['value'];
+    }
+
+    // Image
+    if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {
+      if (!empty($field_image)) {
+        $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-image';
+      }
+    }
+  }
+}
+
+/*
  * Implements template_preprocess_taxonomy_term().
  */
 function fki_preprocess_taxonomy_term(&$variables) {
@@ -150,6 +174,19 @@ function fki_preprocess_taxonomy_term(&$variables) {
   }
   if (function_exists($function_view_mode)) {
     $function_view_mode($variables);
+  }
+}
+
+/*
+ * Implements template_preprocess_taxonomy_term().
+ */
+function fki_preprocess_taxonomy_term__teaser(&$variables) {
+
+  // Structure
+  if ($variables['vocabulary_machine_name'] == 'os2web_base_tax_site_structure') {
+
+    if ($children = taxonomy_get_children($variables['tid'], $variables['vid'])) {
+    }
   }
 }
 

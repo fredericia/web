@@ -3692,14 +3692,72 @@ var bs3Sidebar = (function ($) {
 }());
 
 // |--------------------------------------------------------------------------
-// | Box
+// | OS2 Self Service Toggle
 // |--------------------------------------------------------------------------
 // |
 // | This jQuery script is written by
 // | Morten Nissen
 // |
 
-var box = (function ($) {
+var os2SelfServiceToggle = (function ($) {
+    'use strict';
+    var pub = {};
+
+    /**
+     * Instantiate
+     */
+    pub.init = function (options) {
+        registerEventHandlers();
+        registerBootHandlers();
+    }
+
+    /**
+     * Register event handlers
+     */
+    function registerEventHandlers() {
+
+        // Main
+        $('.os2-self-service-toggle-toggler').on('click touchstart', function (event) {
+            event.preventDefault();
+
+            var $element = $(this);
+
+            // Toggle active class
+            $element
+                .parents('.os2-self-service-toggle')
+                .toggleClass('active');
+        });
+
+        // Body
+        $('.os2-self-service-toggle .selvbetjenings-links > li > a').on('click touchstart', function (event) {
+            event.preventDefault();
+
+            var $element = $(this);
+
+            // Toggle active class
+            $element
+                .parent()
+                .toggleClass('active');
+        });
+    }
+
+    /**
+     * Register boot handlers
+     */
+    function registerBootHandlers() {
+    }
+
+    return pub;
+})(jQuery);
+
+// |--------------------------------------------------------------------------
+// | Popover button
+// |--------------------------------------------------------------------------
+// |
+// | This jQuery script is written by
+// | Morten Nissen
+// |
+var popoverButton = (function ($) {
   'use strict';
   var pub = {};
 
@@ -3708,7 +3766,7 @@ var box = (function ($) {
    */
   pub.init = function (options) {
     registerEventHandlers();
-    registerBootHandlers();
+    registerBootEventHandlers();
   }
 
   /**
@@ -3716,34 +3774,22 @@ var box = (function ($) {
    */
   function registerEventHandlers() {
 
-    $('.os2-box-toggleable').find('.os2-box-heading, .os2-box-heading:before .pane-title, .pane-title:before').on('click touchstart', function (event) {
+    // Toggle sidebar
+    $('.popover-button-toggle').on('click touchstart', function (event) {
+      event.preventDefault();
+
       var $element = $(this);
 
-      toggleable($element, event);
+      $element
+        .parent('.popover-button')
+        .toggleClass('popover-button-open');
     });
   }
 
   /**
-   * Register boot handlers
+   * Register boot event handlers
    */
-  function registerBootHandlers() {
-  }
-
-  /**
-   * Toggleable
-   */
-  function toggleable($element, event) {
-    var $parent = $element.parents('.os2-box-toggleable');
-
-    // Touch
-    if (Modernizr.touchevents && $parent.hasClass('os2-box-toggleable-touch-only')) {
-      $parent.toggleClass('active');
-    }
-
-    // No touch
-    else if ( ! Modernizr.touchevents && $parent.hasClass('os2-box-toggleable-no-touch-only')) {
-      $parent.toggleClass('active');
-    }
+  function registerBootEventHandlers() {
   }
 
   return pub;
@@ -3760,7 +3806,7 @@ var box = (function ($) {
   bs3Sidebar.init();
 
   // Box
-  box.init();
+  os2SelfServiceToggle.init();
 
 })(jQuery);
 

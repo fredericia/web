@@ -9,6 +9,6 @@
   bs3Sidebar.init();
 
   // Box
-  box.init();
+  os2SelfServiceToggle.init();
 
 })(jQuery);
