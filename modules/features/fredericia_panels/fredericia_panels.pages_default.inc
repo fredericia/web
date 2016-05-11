@@ -627,31 +627,6 @@ function fredericia_panels_default_page_manager_handlers() {
     $display->content['new-6264b920-c2d2-43b4-b259-dd80ecd3c3a5'] = $pane;
     $display->panels['center'][0] = 'new-6264b920-c2d2-43b4-b259-dd80ecd3c3a5';
     $pane = new stdClass();
-    $pane->pid = 'new-c15d4088-32fb-43cd-813a-cdfde76865a9';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Selvbetjeningslinks',
-      'title' => '',
-      'body' => 'Dropdown m Selvbetjeningslinks',
-      'format' => 'plain_text',
-      'substitute' => 0,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'c15d4088-32fb-43cd-813a-cdfde76865a9';
-    $display->content['new-c15d4088-32fb-43cd-813a-cdfde76865a9'] = $pane;
-    $display->panels['center'][1] = 'new-c15d4088-32fb-43cd-813a-cdfde76865a9';
-    $pane = new stdClass();
     $pane->pid = 'new-02fefd4a-1110-46a9-8628-153475ed93d8';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
@@ -665,11 +640,11 @@ function fredericia_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '02fefd4a-1110-46a9-8628-153475ed93d8';
     $display->content['new-02fefd4a-1110-46a9-8628-153475ed93d8'] = $pane;
-    $display->panels['center'][2] = 'new-02fefd4a-1110-46a9-8628-153475ed93d8';
+    $display->panels['center'][1] = 'new-02fefd4a-1110-46a9-8628-153475ed93d8';
     $pane = new stdClass();
     $pane->pid = 'new-90ced79a-9c0b-46a5-8028-62a54de8b3ad';
     $pane->panel = 'center';
@@ -695,11 +670,11 @@ function fredericia_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '90ced79a-9c0b-46a5-8028-62a54de8b3ad';
     $display->content['new-90ced79a-9c0b-46a5-8028-62a54de8b3ad'] = $pane;
-    $display->panels['center'][3] = 'new-90ced79a-9c0b-46a5-8028-62a54de8b3ad';
+    $display->panels['center'][2] = 'new-90ced79a-9c0b-46a5-8028-62a54de8b3ad';
     $pane = new stdClass();
     $pane->pid = 'new-dc27c3a6-bdf8-4776-b125-c20d886ef733';
     $pane->panel = 'center';
@@ -727,11 +702,11 @@ function fredericia_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'dc27c3a6-bdf8-4776-b125-c20d886ef733';
     $display->content['new-dc27c3a6-bdf8-4776-b125-c20d886ef733'] = $pane;
-    $display->panels['center'][4] = 'new-dc27c3a6-bdf8-4776-b125-c20d886ef733';
+    $display->panels['center'][3] = 'new-dc27c3a6-bdf8-4776-b125-c20d886ef733';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
