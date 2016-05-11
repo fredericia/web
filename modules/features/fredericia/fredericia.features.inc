@@ -21,20 +21,28 @@ function fredericia_image_default_styles() {
   $styles['fredericia_content_image'] = array(
     'label' => 'fredericia_content_image',
     'effects' => array(
-      1 => array(
+      2 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
-          'width' => 900,
-          'height' => 449,
+          'width' => 620,
+          'height' => 294,
           'anchor' => 'center-center',
           'jcrop_settings' => array(
             'aspect_ratio' => '',
-            'bgcolor' => 'black',
+            'bgcolor' => 'white',
             'bgopacity' => 0.6,
-            'fallback' => 0,
+            'fallback' => 1,
           ),
         ),
         'weight' => 1,
+      ),
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 620,
+          'height' => 294,
+        ),
+        'weight' => 2,
       ),
     ),
   );

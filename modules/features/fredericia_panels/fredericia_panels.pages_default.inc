@@ -126,7 +126,7 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'os2-box-quaternary',
-      'template_suggestion' => 'block',
+      'template_suggestion' => 'self-service-toggle',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -165,13 +165,22 @@ function fredericia_panels_default_page_manager_handlers() {
     $display->content['new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857'] = $pane;
     $display->panels['content'][2] = 'new-cd6daa4f-2f2a-4cbe-88c6-c5746bf01857';
     $pane = new stdClass();
-    $pane->pid = 'new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
+    $pane->pid = 'new-c74dd78b-d620-4ee5-8f44-277d64d000cf';
     $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-1';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'main-menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'menu_name' => 'main-menu',
+      'parent_mlid' => 'main-menu:0',
+      'title_link' => 0,
+      'admin_title' => '',
+      'level' => '1',
+      'follow' => 'child',
+      'depth' => 0,
+      'expanded' => 0,
+      'sort' => 0,
       'override_title' => 1,
       'override_title_text' => 'Menu',
       'override_title_heading' => 'h2',
@@ -184,9 +193,9 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
-    $display->content['new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88'] = $pane;
-    $display->panels['sidebar'][0] = 'new-8e744f5a-07ae-48ce-8ea6-9ca69af11f88';
+    $pane->uuid = 'c74dd78b-d620-4ee5-8f44-277d64d000cf';
+    $display->content['new-c74dd78b-d620-4ee5-8f44-277d64d000cf'] = $pane;
+    $display->panels['sidebar'][0] = 'new-c74dd78b-d620-4ee5-8f44-277d64d000cf';
     $pane = new stdClass();
     $pane->pid = 'new-81282eec-9ae4-46f7-9ed2-4ca9162090a0';
     $pane->panel = 'sidebar';
