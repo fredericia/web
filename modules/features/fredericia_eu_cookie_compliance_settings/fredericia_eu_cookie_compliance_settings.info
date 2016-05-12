@@ -1,0 +1,15 @@
+name = EU cookie compliance settings
+core = 7.x
+package = Fredericia
+dependencies[] = ctools
+dependencies[] = eu_cookie_compliance
+dependencies[] = features
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = administer EU Cookie Compliance popup
+features[user_permission][] = display EU Cookie Compliance popup
+features[variable][] = eu_cookie_compliance_cookie_lifetime
+features[variable][] = eu_cookie_compliance_da
+features[variable][] = eu_cookie_compliance_domain
+project path = sites/all/modules/features/
