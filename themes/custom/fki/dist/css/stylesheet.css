@@ -17613,6 +17613,71 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
 }
 @media print {
 }
+.os2-menu-list ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.os2-menu-list ul li {
+  border-bottom: 1px solid #eeeff4;
+}
+.os2-menu-list ul li a {
+  padding: 12px 0;
+  font-weight: 400;
+}
+.os2-menu-list ul li a:hover {
+  background-color: #e0e3ee;
+  border-left: 5px solid #ea6060;
+}
+.os2-menu-list ul li:last-child {
+  border-bottom: 0;
+}
+.os2-menu-list .os2-box-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media screen {
+}
+@media screen and (max-width: 767px) {
+  .os2-menu-list ul li a {
+    padding: 12px 13px;
+  }
+  .os2-menu-list ul li a:hover {
+    padding-left: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .os2-menu-list ul li a {
+    padding: 12px 17px;
+  }
+  .os2-menu-list ul li a:hover {
+    padding-left: 12px;
+  }
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .os2-menu-list ul li a {
+    padding: 12px 21px;
+  }
+  .os2-menu-list ul li a:hover {
+    padding-left: 16px;
+  }
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
+  .os2-menu-list ul li a {
+    padding: 12px 25px;
+  }
+  .os2-menu-list ul li a:hover {
+    padding-left: 20px;
+  }
+}
+@media print {
+}
 .selvbetjenings-links,
 .related-links {
   padding: 0;

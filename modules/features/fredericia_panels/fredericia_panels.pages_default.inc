@@ -189,7 +189,11 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'os2-menu-list',
+      'template_suggestion' => 'menu_tree',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -215,7 +219,7 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'os2-links-list',
-      'template_suggestion' => '',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 1;
