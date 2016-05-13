@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Fredericia feedback form settings feature.
+ */
+
+include_once 'fredericia_feedback_form.features.inc';

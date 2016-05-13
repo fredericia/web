@@ -25,7 +25,6 @@ var popoverButton = (function ($) {
     // Toggle sidebar
     $('.popover-button-toggle').on('click touchstart', function (event) {
       event.preventDefault();
-
       var $element = $(this);
 
       $element

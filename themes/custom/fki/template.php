@@ -8,16 +8,21 @@ function fki_preprocess_html(&$variables) {
 
   // Add conditional stylesheets
   drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
+    'type' => 'file',
     'group' => CSS_THEME,
   ));
   drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
     'group' => JS_LIBRARY,
   ));
   drupal_add_js($theme_path . '/dist/js/app.js', array(
-    'group' => JS_THEME,
+    'type' => 'file',
+    'scope' => 'footer',
   ));
   drupal_add_js($theme_path . '/dist/js/ie9.js', array(
-    'group' => JS_THEME,
+    'type' => 'file',
+    'scope' => 'footer',
     'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
   ));
 
@@ -73,6 +78,9 @@ function fki_preprocess_page(&$variables) {
   $variables['tabs_secondary'] = $variables['tabs'];
   unset($variables['tabs_primary']['#secondary']);
   unset($variables['tabs_secondary']['#primary']);
+
+  // Feedback
+  $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
 
   // Search form
   $variables['page_header_search'] = module_invoke('search', 'block_view', 'search');

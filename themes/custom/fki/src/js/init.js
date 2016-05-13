@@ -8,7 +8,10 @@
   // Enable BS3 sidebar
   bs3Sidebar.init();
 
-  // Box
+  // Enable popover button
+  popoverButton.init();
+
+  // Self-service toggle
   os2SelfServiceToggle.init();
 
 })(jQuery);

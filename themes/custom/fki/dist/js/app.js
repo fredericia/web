@@ -3777,7 +3777,6 @@ var popoverButton = (function ($) {
     // Toggle sidebar
     $('.popover-button-toggle').on('click touchstart', function (event) {
       event.preventDefault();
-
       var $element = $(this);
 
       $element
@@ -3805,7 +3804,10 @@ var popoverButton = (function ($) {
   // Enable BS3 sidebar
   bs3Sidebar.init();
 
-  // Box
+  // Enable popover button
+  popoverButton.init();
+
+  // Self-service toggle
   os2SelfServiceToggle.init();
 
 })(jQuery);
