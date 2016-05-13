@@ -51,7 +51,7 @@ function fredericia_eu_cookie_compliance_settings_strongarm() {
     'popup_text_hex' => '000000',
     'domains_option' => '1',
     'domains_list' => '',
-    'exclude_paths' => '',
+    'exclude_paths' => 'admin/*',
   );
   $export['eu_cookie_compliance_da'] = $strongarm;
 
