@@ -126,7 +126,7 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'os2-box-quaternary',
-      'template_suggestion' => 'self-service-toggle',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 1;
