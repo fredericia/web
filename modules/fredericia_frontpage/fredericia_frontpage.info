@@ -18,4 +18,4 @@ features[page_manager_pages][] = fredericia_frontpage
 features[variable][] = site_frontpage
 features[views_view][] = fredericia_forntpage_news
 features[views_view][] = fredericia_forntpage_spots
-project path = sites/fredericia.dk/modules
+project path = sites/all/modules/features/
