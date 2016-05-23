@@ -26,6 +26,11 @@ function fki_preprocess_html(&$variables) {
     'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
   ));
 
+  drupal_add_js(drupal_get_path('module', 'os2web_borger_dk') . '/js/os2web_borger_dk.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+  ));
+
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
     '#tag' => 'link',
@@ -321,3 +326,4 @@ function fki_menu_link__tabbed(array $variables) {
 
   return '<div class="col-xs-12 col-sm-4"><div class="os2-page-header-tabbed-menu-link">' . $output . $sub_menu . "</div></div>\n";
 }
+
