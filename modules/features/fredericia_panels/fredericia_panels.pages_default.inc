@@ -64,6 +64,42 @@ function fredericia_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-a5cb6634-29d2-4b62-ae7a-93a737495098';
+    $pane->panel = 'bottom';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_os2web_base_field_spotbox';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'node_reference_node',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'node_reference_view_mode' => 'teaser',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'plain',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a5cb6634-29d2-4b62-ae7a-93a737495098';
+    $display->content['new-a5cb6634-29d2-4b62-ae7a-93a737495098'] = $pane;
+    $display->panels['bottom'][0] = 'new-a5cb6634-29d2-4b62-ae7a-93a737495098';
+    $pane = new stdClass();
     $pane->pid = 'new-3e502072-bf7b-4e95-a09f-8999ec9ee694';
     $pane->panel = 'content';
     $pane->type = 'entity_field';
@@ -277,7 +313,7 @@ function fredericia_panels_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Sitestruktur',
     'no_blocks' => 0,
@@ -549,7 +585,7 @@ function fredericia_panels_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Sitestruktur niveau 1',
     'no_blocks' => 0,
@@ -573,6 +609,14 @@ function fredericia_panels_default_page_manager_handlers() {
           ),
           'context' => 'argument_term_1',
           'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'term_parent',
+          'settings' => array(
+            'vid' => '11',
+          ),
+          'context' => 'argument_term_1',
+          'not' => TRUE,
         ),
       ),
     ),
@@ -707,15 +751,15 @@ function fredericia_panels_default_page_manager_handlers() {
     $display->content['new-02fefd4a-1110-46a9-8628-153475ed93d8'] = $pane;
     $display->panels['light_section_1'][1] = 'new-02fefd4a-1110-46a9-8628-153475ed93d8';
     $pane = new stdClass();
-    $pane->pid = 'new-d130f142-6fba-4593-ac5b-05fb5b049817';
+    $pane->pid = 'new-01de63aa-6493-4271-b91b-759c0457969e';
     $pane->panel = 'light_section_1';
     $pane->type = 'views_panes';
-    $pane->subtype = 'os2web_term_promoted_nodes-panel_pane_1';
+    $pane->subtype = 'os2web_nodelist-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_term_1',
+      'arguments' => array(
+        'field_os2web_base_field_struct_tid' => '%term:tid',
       ),
     );
     $pane->cache = array();
@@ -726,9 +770,9 @@ function fredericia_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'd130f142-6fba-4593-ac5b-05fb5b049817';
-    $display->content['new-d130f142-6fba-4593-ac5b-05fb5b049817'] = $pane;
-    $display->panels['light_section_1'][2] = 'new-d130f142-6fba-4593-ac5b-05fb5b049817';
+    $pane->uuid = '01de63aa-6493-4271-b91b-759c0457969e';
+    $display->content['new-01de63aa-6493-4271-b91b-759c0457969e'] = $pane;
+    $display->panels['light_section_1'][2] = 'new-01de63aa-6493-4271-b91b-759c0457969e';
     $pane = new stdClass();
     $pane->pid = 'new-dc27c3a6-bdf8-4776-b125-c20d886ef733';
     $pane->panel = 'light_section_2';
