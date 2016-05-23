@@ -54,3 +54,4 @@ features[variable][] = owlcarousel_touch_drag_owlcarousel_settings_forside-nyhed
 features[variable][] = owlcarousel_transition_style_owlcarousel_settings_forside-nyheder
 features[views_view][] = fredericia_forside_nyheder
 features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/features
