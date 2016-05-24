@@ -143,6 +143,8 @@ function fki_preprocess_node__full(&$variables) {
  * Implements hook_preprocess_node().
  */
 function fki_preprocess_node__os2web_spotbox_box(&$variables) {
+
+  // Teaser
   if ($variables['view_mode'] == 'teaser') {
     $variables['spotbox_link'] = array();
 
@@ -162,6 +164,7 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
     }
   }
 
+  // Spotbox
   if ($variables['view_mode'] == 'spotbox') {
     $variables['spotbox_link'] = array();
 
@@ -177,7 +180,7 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
     if ($field_link_display = field_get_items('node', $variables['node'], 'field_os2web_spotbox_display')) {
 
       // Show without links
-      if ($field_link_display[0]['value']) {
+      if ($field_link_display[0]['value'] == '0') {
         $variables['spotbox_with_link'] = FALSE;
         $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-without-links';
       }
