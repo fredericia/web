@@ -21,10 +21,10 @@
       </div>
       <!-- End - heading -->
 
-      <?php if (isset($content['field_os2web_base_field_selfserv'])): ?>
+      <?php if (isset($content['field_os2web_base_field_related'])): ?>
         <!-- Begin - links -->
         <div class="os2-taxonomy-term-teaser-body-links">
-          <?php print render($content['field_os2web_base_field_selfserv']); ?>
+          <?php print render($content['field_os2web_base_field_related']); ?>
         </div>
         <!-- End - links -->
       <?php endif; ?>
