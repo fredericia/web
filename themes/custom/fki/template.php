@@ -161,6 +161,26 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
       }
     }
   }
+
+  if ($variables['view_mode'] == 'spotbox') {
+    $variables['spotbox_link'] = array();
+
+    // Display control
+    if ($field_link_display = field_get_items('node', $variables['node'], 'field_os2web_spotbox_display')) {
+
+      // Show without links
+      if ($field_link_display[0]['value']) {
+        $variables['spotbox_with_link'] = FALSE;
+        $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-without-links';
+      }
+
+      // Show with links
+      else {
+        $variables['spotbox_with_link'] = TRUE;
+        $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-links';
+      }
+    }
+  }
 }
 
 /*

@@ -10,18 +10,18 @@
 // Variables
 // --------------------------------------------------
 
-@os2-spotbox-background-color: @body-bg;
-@os2-spotbox-border-radius: @border-radius-base;
+@os2-spotbox-teaser-background-color: @body-bg;
+@os2-spotbox-teaser-border-radius: @border-radius-base;
 
 // With image
-@os2-spotbox-with-image-background-color: @content-bg;
-@os2-spotbox-with-image-heading-color: @brand-primary;
+@os2-spotbox-teaser-with-image-background-color: @content-bg;
+@os2-spotbox-teaser-with-image-heading-color: @brand-primary;
 
 // Responsive
-@os2-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@os2-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@os2-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
-@os2-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-spotbox-teaser-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-spotbox-teaser-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-spotbox-teaser-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-spotbox-teaser-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
 
 // --------------------------------------------------
 // Styling
@@ -29,8 +29,8 @@
 
 // Spotbox
 .os2-spotbox-teaser {
-	background-color: @os2-spotbox-background-color;
-	border-radius: @os2-spotbox-border-radius;
+	background-color: @os2-spotbox-teaser-background-color;
+	border-radius: @os2-spotbox-teaser-border-radius;
 
 	.os2-node-teaser-heading {
 
@@ -56,7 +56,7 @@
 
 	&.os2-spotbox-teaser-variant-with-image {
 		padding: 0;
-		background-color: @os2-spotbox-with-image-background-color;
+		background-color: @os2-spotbox-teaser-with-image-background-color;
 
 		.os2-node-teaser-heading {
 
@@ -65,14 +65,14 @@
 
 				&,
 				a {
-					color: @os2-spotbox-with-image-heading-color;
+					color: @os2-spotbox-teaser-with-image-heading-color;
 				}
 			}
 		}
 
 		.os2-node-teaser-image {
 			display: block;
-			.border-top-radius(@os2-spotbox-border-radius);
+			.border-top-radius(@os2-spotbox-teaser-border-radius);
 			overflow: hidden;
 			padding: 0;
 
@@ -103,7 +103,7 @@
 
 	// Spotbox
 	.os2-spotbox-teaser {
-		margin-bottom: @os2-spotbox-xs-stacked-spacing !important;
+		margin-bottom: @os2-spotbox-teaser-xs-stacked-spacing !important;
 	}
 }
 
@@ -119,7 +119,7 @@
 
 	// Spotbox
 	.os2-spotbox-teaser {
-		margin-bottom: @os2-spotbox-sm-stacked-spacing !important;
+		margin-bottom: @os2-spotbox-teaser-sm-stacked-spacing !important;
 	}
 }
 
@@ -135,7 +135,7 @@
 
 	// Spotbox
 	.os2-spotbox-teaser {
-		margin-bottom: @os2-spotbox-md-stacked-spacing !important;
+		margin-bottom: @os2-spotbox-teaser-md-stacked-spacing !important;
 	}
 }
 
@@ -151,7 +151,7 @@
 
 	// Spotbox
 	.os2-spotbox-teaser {
-		margin-bottom: @os2-spotbox-lg-stacked-spacing !important;
+		margin-bottom: @os2-spotbox-teaser-lg-stacked-spacing !important;
 	}
 }
 
