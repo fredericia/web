@@ -165,6 +165,14 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
   if ($variables['view_mode'] == 'spotbox') {
     $variables['spotbox_link'] = array();
 
+    // Link
+    if ($field_url = field_get_items('node', $variables['node'], 'field_os2web_spotbox_url')) {
+      $variables['spotbox_link']['url'] = $field_url[0]['value'];
+    }
+    if ($field_text = field_get_items('node', $variables['node'], 'field_os2web_spotbox_text')) {
+      $variables['spotbox_link']['title'] = $field_text[0]['value'];
+    }
+
     // Display control
     if ($field_link_display = field_get_items('node', $variables['node'], 'field_os2web_spotbox_display')) {
 
