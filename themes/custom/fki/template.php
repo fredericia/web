@@ -195,6 +195,26 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
 }
 
 /*
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2web_base_news(&$variables) {
+
+  // Spotbox
+  if ($variables['view_mode'] == 'spotbox') {
+
+    // Background image (image only)
+    if ($field_image = field_get_items('node', $variables['node'], 'field_os2web_base_field_lead_img')) {
+
+      // Load the file object
+      $file = file_load($field_image[0]['fid']);
+
+      // Get a web accessible URL for the image
+      $variables['news_background_image'] = file_create_url($file->uri);
+    }
+  }
+}
+
+/*
  * Implements template_preprocess_taxonomy_term().
  */
 function fki_preprocess_taxonomy_term(&$variables) {
