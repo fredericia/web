@@ -21,13 +21,13 @@
       </div>
       <!-- End - heading -->
 
-      <?php if (isset($content['field_os2web_base_field_related'])): ?>
-        <!-- Begin - links -->
-        <div class="os2-taxonomy-term-teaser-body-links">
+      <!-- Begin - links -->
+      <div class="os2-taxonomy-term-teaser-body-links">
+        <?php if (isset($content['field_os2web_base_field_related'])): ?>
           <?php print render($content['field_os2web_base_field_related']); ?>
-        </div>
-        <!-- End - links -->
-      <?php endif; ?>
+        <?php endif; ?>
+      </div>
+      <!-- End - links -->
 
     </div>
   </div>
