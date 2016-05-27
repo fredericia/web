@@ -189,6 +189,16 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
       else {
         $variables['spotbox_with_link'] = TRUE;
         $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-links';
+
+        // Background image (image path only)
+        if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {
+
+          // Load the file object
+          $file = file_load($field_image[0]['fid']);
+
+          // Get a web accessible URL for the image
+          $variables['spotbox_background_image'] = file_create_url($file->uri);
+        }
       }
     }
   }
@@ -202,7 +212,7 @@ function fki_preprocess_node__os2web_base_news(&$variables) {
   // Spotbox
   if ($variables['view_mode'] == 'spotbox') {
 
-    // Background image (image only)
+    // Background image (image path only)
     if ($field_image = field_get_items('node', $variables['node'], 'field_os2web_base_field_lead_img')) {
 
       // Load the file object

@@ -36,7 +36,7 @@ var os2SelfServiceToggle = (function ($) {
         });
 
         // Body
-        $('.os2-self-service-toggle .selvbetjenings-links > li > a').on('click touchstart', function (event) {
+        $('.os2-self-service-toggle .selvbetjenings-links .underterm-links > a').on('click touchstart', function (event) {
             event.preventDefault();
 
             var $element = $(this);
