@@ -183,22 +183,22 @@ function fki_preprocess_node__os2web_spotbox_box(&$variables) {
       if ($field_link_display[0]['value'] == '0') {
         $variables['spotbox_with_link'] = FALSE;
         $variables['classes_array'][] = 'os2-node-spotbox-' . $variables['elements']['#view_mode'] . '-variant-without-links';
+
+        // Background image (image path only)
+        if ($field_image = field_get_items('node', $variables['node'], 'field_os2web_spotbox_big_image')) {
+
+          // Load the file object
+          $background_image = image_style_url('spotbox_spotbox_background', $field_image[0]['uri']);
+
+          // Apply background image as attribute
+          $variables['attributes_array'] = array('style' => 'background-image: url(' . $background_image . ')');
+        }
       }
 
       // Show with links
       else {
         $variables['spotbox_with_link'] = TRUE;
         $variables['classes_array'][] = 'os2-node-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-links';
-
-        // Background image (image path only)
-        if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {
-
-          // Load the file object
-          $file = file_load($field_image[0]['fid']);
-
-          // Get a web accessible URL for the image
-          $variables['spotbox_background_image'] = file_create_url($file->uri);
-        }
 
         // "More" link
         if ($field_url = field_get_items('node', $variables['node'], 'field_os2web_spotbox_url')) {

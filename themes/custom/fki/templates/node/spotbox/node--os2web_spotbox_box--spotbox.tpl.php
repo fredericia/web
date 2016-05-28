@@ -3,14 +3,6 @@
   <!-- Begin - spotbox -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-node-spotbox-spotbox os2-equal-height-element"<?php print $attributes; ?>>
 
-    <?php if (isset($content['field_os2web_spotbox_big_image']) && $spotbox_with_link == FALSE): ?>
-      <!-- Begin - image -->
-      <div class="os2-node-spotbox-image">
-        <?php print render($content['field_os2web_spotbox_big_image']); ?>
-      </div>
-      <!-- End - image -->
-    <?php endif; ?>
-
     <?php if ($title): ?>
     <!-- Begin - heading -->
     <div class="os2-node-spotbox-heading">
@@ -24,11 +16,15 @@
     <?php endif; ?>
 
     <?php if (isset($content['field_os2web_base_field_ext_link']) && $spotbox_with_link == TRUE): ?>
-      <!-- Begin - links -->
-      <div class="os2-node-spotbox-links">
-        <?php print render($content['field_os2web_base_field_ext_link']); ?>
+      <div class="os2-node-spotbox-body">
+
+        <!-- Begin - links -->
+        <div class="os2-node-spotbox-links">
+          <?php print render($content['field_os2web_base_field_ext_link']); ?>
+        </div>
+        <!-- End - links -->
+
       </div>
-      <!-- End - links -->
     <?php endif; ?>
 
   </article>
