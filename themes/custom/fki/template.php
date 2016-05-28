@@ -57,6 +57,10 @@ function fki_preprocess_html(&$variables) {
   drupal_add_library('system', 'ui');
 }
 
+function fki_js_alter(&$javascript) {
+  unset($javascript['profiles/os2web/modules/custom/os2web_borger_dk/js/os2web_borger_dk.js']);
+}
+
 /*
  * Implements theme_preprocess_page().
  */
