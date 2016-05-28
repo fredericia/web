@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--os2web_spotbox_box--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-spotbox-teaser"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-spotbox-teaser os2-equal-height-element"<?php print $attributes; ?>>
 
     <?php if (isset($content['field_os2web_spotbox_big_image'])): ?>
       <!-- Begin - image -->

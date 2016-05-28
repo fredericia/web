@@ -3,34 +3,34 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .os2-spotbox-spotbox
+// | - .os2-node-spotbox-spotbox
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-@os2-spotbox-spotbox-background-color: @body-bg;
-@os2-spotbox-spotbox-border-radius: @border-radius-base;
+@os2-node-spotbox-spotbox-background-color: @body-bg;
+@os2-node-spotbox-spotbox-border-radius: @border-radius-base;
 
 // With image
-@os2-spotbox-spotbox-with-image-background-color: @content-bg;
-@os2-spotbox-spotbox-with-image-heading-color: @brand-primary;
+@os2-node-spotbox-spotbox-with-image-background-color: @content-bg;
+@os2-node-spotbox-spotbox-with-image-heading-color: @brand-primary;
 
 // Responsive
-@os2-spotbox-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@os2-spotbox-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@os2-spotbox-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
-@os2-spotbox-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-node-spotbox-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-node-spotbox-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-node-spotbox-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-node-spotbox-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Spotbox
-.os2-spotbox-spotbox {
-	background-color: @os2-spotbox-spotbox-background-color;
-	border-radius: @os2-spotbox-spotbox-border-radius;
+.os2-node-spotbox-spotbox {
+	background-color: @os2-node-spotbox-spotbox-background-color;
+	border-radius: @os2-node-spotbox-spotbox-border-radius;
 
 	.os2-node-spotbox-heading {
 
@@ -52,11 +52,11 @@
 // --------------------------------------------------
 
 // Without links
-.os2-spotbox-spotbox {
+.os2-node-spotbox-spotbox {
 
-	&.os2-spotbox-spotbox-variant-without-links {
+	&.os2-node-spotbox-spotbox-variant-without-links {
 		padding: 0;
-		background-color: @os2-spotbox-spotbox-with-image-background-color;
+		background-color: @os2-node-spotbox-spotbox-with-image-background-color;
 
 		.os2-node-spotbox-heading {
 
@@ -65,14 +65,14 @@
 
 				&,
 				a {
-					color: @os2-spotbox-spotbox-with-image-heading-color;
+					color: @os2-node-spotbox-spotbox-with-image-heading-color;
 				}
 			}
 		}
 
 		.os2-node-spotbox-image {
 			display: block;
-			.border-top-radius(@os2-spotbox-spotbox-border-radius);
+			.border-top-radius(@os2-node-spotbox-spotbox-border-radius);
 			overflow: hidden;
 			padding: 0;
 
@@ -88,11 +88,9 @@
 }
 
 // With links
-.os2-spotbox-spotbox {
+.os2-node-spotbox-spotbox {
 
-	&.os2-spotbox-spotbox-variant-with-links {
-		padding: 0;
-		background-color: @os2-spotbox-spotbox-with-image-background-color;
+	&.os2-node-spotbox-spotbox-variant-with-links {
 
 		.os2-node-spotbox-heading {
 
@@ -101,24 +99,32 @@
 
 				&,
 				a {
-					color: @os2-spotbox-spotbox-with-image-heading-color;
+					color: @os2-node-spotbox-spotbox-with-image-heading-color;
 				}
-			}
-		}
-
-		.os2-node-spotbox-image {
-			display: block;
-			.border-top-radius(@os2-spotbox-spotbox-border-radius);
-			overflow: hidden;
-			padding: 0;
-
-			img {
-				width: 100%;
 			}
 		}
 
 		.os2-node-spotbox-body {
 			display: none;
+		}
+
+		.os2-node-spotbox-links {
+
+			.field-item {
+				display: inline-block;
+
+				a {
+					background-color: @state-primary-bg;
+					color: @state-primary-text;
+					padding: 2px 6px;
+					text-decoration: none;
+					border-radius: @border-radius-base;
+				}
+
+				+ .field-item {
+					margin-left: 5px;
+				}
+			}
 		}
 	}
 }
@@ -131,15 +137,15 @@
 @media @media-query-mobile {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
 	// Spotbox
-	.os2-spotbox-spotbox {
-		margin-bottom: @os2-spotbox-spotbox-xs-stacked-spacing !important;
+	.os2-node-spotbox-spotbox {
+		margin-bottom: @os2-node-spotbox-spotbox-xs-stacked-spacing !important;
 	}
 }
 
@@ -147,15 +153,15 @@
 @media @media-query-tablet {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
 	// Spotbox
-	.os2-spotbox-spotbox {
-		margin-bottom: @os2-spotbox-spotbox-sm-stacked-spacing !important;
+	.os2-node-spotbox-spotbox {
+		margin-bottom: @os2-node-spotbox-spotbox-sm-stacked-spacing !important;
 	}
 }
 
@@ -163,15 +169,15 @@
 @media @media-query-desktop {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
 	// Spotbox
-	.os2-spotbox-spotbox {
-		margin-bottom: @os2-spotbox-spotbox-md-stacked-spacing !important;
+	.os2-node-spotbox-spotbox {
+		margin-bottom: @os2-node-spotbox-spotbox-md-stacked-spacing !important;
 	}
 }
 
@@ -179,15 +185,15 @@
 @media @media-query-large-desktop {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
 	// Spotbox
-	.os2-spotbox-spotbox {
-		margin-bottom: @os2-spotbox-spotbox-lg-stacked-spacing !important;
+	.os2-node-spotbox-spotbox {
+		margin-bottom: @os2-node-spotbox-spotbox-lg-stacked-spacing !important;
 	}
 }
 
@@ -195,21 +201,21 @@
 @media print {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // Touch
 .touchevents {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // No touch
 .no-touchevents {
 
 	// Spotbox
-	.os2-spotbox-spotbox {}
+	.os2-node-spotbox-spotbox {}
 }
 
 // --------------------------------------------------

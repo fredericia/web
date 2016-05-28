@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'spotbox'): ?>
   <!-- node--os2web_base_news--spotbox.tpl.php -->
   <!-- Begin - spotbox -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-node-spotbox-news"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-node-spotbox-news os2-equal-height-element"<?php print $attributes; ?>>
     <div class="table">
       <div class="table-row">
 

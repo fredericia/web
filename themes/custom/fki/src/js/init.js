@@ -12,6 +12,9 @@
   popoverButton.init();
 
   // Self-service toggle
+  equalHeight.init();
+
+  // Self-service toggle
   os2SelfServiceToggle.init();
 
 })(jQuery);

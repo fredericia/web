@@ -29,6 +29,7 @@
       "src/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js",
       "src/js/os2-self-service-toggle.js",
       "src/js/popover-button.js",
+      "src/js/equal-height.js",
       "src/js/init.js"
     ],
     "jsIe9": [
