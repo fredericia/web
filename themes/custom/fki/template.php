@@ -88,7 +88,7 @@ function fki_preprocess_page(&$variables) {
   $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
 
   // Search form
-  $variables['page_header_search'] = module_invoke('search_api_page', 'block_view', '1');
+  $variables['page_header_search'] = module_invoke('search_api_page', 'block_view', '2');
 
   // Tabbed navigation
   $variables['tabbed_navigation'] = _bellcom_generate_menu('main-menu', 'tabbed', 1);
