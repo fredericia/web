@@ -15581,6 +15581,53 @@ body.adminimal-menu.admin-menu .outer-wrapper .sidebar,
 body.adminimal-menu.admin-menu .outer-wrapper .inner-wrapper {
   top: 29px;
 }
+.os2-node-full ul,
+.os2-node-teaser ul,
+.os2-node-includeable ul,
+.os2-node-list ul,
+.os2-node-spotbox ul,
+.os2-node-full ol,
+.os2-node-teaser ol,
+.os2-node-includeable ol,
+.os2-node-list ol,
+.os2-node-spotbox ol {
+  list-style: none;
+}
+.os2-node-full ul:not(.menu) li:before,
+.os2-node-teaser ul:not(.menu) li:before,
+.os2-node-includeable ul:not(.menu) li:before,
+.os2-node-list ul:not(.menu) li:before,
+.os2-node-spotbox ul:not(.menu) li:before,
+.os2-node-full ol:not(.menu) li:before,
+.os2-node-teaser ol:not(.menu) li:before,
+.os2-node-includeable ol:not(.menu) li:before,
+.os2-node-list ol:not(.menu) li:before,
+.os2-node-spotbox ol:not(.menu) li:before {
+  font-family: FontAwesome;
+  font-size: 18px;
+  line-height: 25px;
+  content: "\f054";
+  margin: 0 5px 0 -15px;
+  color: #F24244;
+}
+@media screen {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media print {
+}
 .os2-breadcrumb-container {
   background-color: #fff;
   padding: 10px;
@@ -19356,20 +19403,23 @@ fieldset[disabled] .popover-button .popover-button-content .form-submit.focus {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.os2-accordion .os2-accordion-body ul {
+.os2-accordion .os2-accordion-body ul,
+.os2-accordion .os2-accordion-body ol {
   list-style: none;
   margin-bottom: 15px;
 }
-.os2-accordion .os2-accordion-body ul li a {
-  font-weight: 700;
-}
-.os2-accordion .os2-accordion-body ul li:before {
+.os2-accordion .os2-accordion-body ul:not(.menu) li:before,
+.os2-accordion .os2-accordion-body ol:not(.menu) li:before {
   font-family: FontAwesome;
   font-size: 18px;
   line-height: 25px;
   content: "\f054";
   margin: 0 5px 0 -15px;
   color: #F24244;
+}
+.os2-accordion .os2-accordion-body ul li a,
+.os2-accordion .os2-accordion-body ol li a {
+  font-weight: 700;
 }
 .os2-accordion .os2-accordion-body p {
   margin-bottom: 15px;
