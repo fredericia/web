@@ -294,6 +294,12 @@ function fki_form_alter(&$form, &$form_state, $form_id) {
     case 'search_block_form':
       break;
 
+    // Search API block form
+    case 'search_api_page_search_form_soegning':
+      $form['submit_2']['#value'] = '';
+
+      break;
+
     // User login
     case 'user_login':
       break;

@@ -20,24 +20,106 @@
 
 	&,
 	&:hover,
-	&:focus,
-	&:active {
+	&:focus
+	&.focus,
+	&:active,
+	&.active,
+	&.disabled,
+	&[disabled] {
 		outline: none;
+		border-width: @btn-border-width;
 	}
 }
 
 // Color
+.btn-primary-faceless {
+	.button-variant(@btn-primary-faceless-color; transparent; @btn-secondary-border);
+}
 .btn-secondary {
 	.button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+.btn-secondary-faceless {
+	.button-variant(@btn-secondary-faceless-color; transparent; @btn-secondary-border);
 }
 .btn-tertiary {
 	.button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
 }
+.btn-tertiary-faceless {
+	.button-variant(@btn-tertiary-faceless-color; transparent; @btn-tertiary-border);
+}
 .btn-quaternary {
 	.button-variant(@btn-quaternary-color; @btn-quaternary-bg; @btn-quaternary-border);
 }
+.btn-quaternary-faceless {
+	.button-variant(@btn-quaternary-faceless-color; transparent; @btn-quaternary-border);
+}
 .btn-quinary {
 	.button-variant(@btn-quinary-color; @btn-quinary-bg; @btn-quinary-border);
+}
+.btn-quinary-faceless {
+	.button-variant(@btn-quinary-faceless-color; transparent; @btn-quinary-border);
+}
+.btn-light {
+	.button-variant(@btn-light-color; @btn-light-bg; @btn-light-border);
+}
+.btn-light-faceless {
+	.button-variant(@btn-light-faceless-color; transparent; @btn-light-border);
+}
+.btn-dark {
+	.button-variant(@btn-dark-color; @btn-dark-bg; @btn-dark-border);
+}
+.btn-dark-faceless {
+	.button-variant(@btn-dark-faceless-color; transparent; @btn-dark-border);
+}
+
+// Color states (inside chosen state)
+.btn-state-default {
+	.button-variant(@btn-state-default-color; @btn-state-default-bg; @btn-state-default-border);
+}
+.btn-state-default-faceless {
+	.button-variant(@btn-state-default-faceless-color; transparent; @btn-state-default-border);
+}
+.btn-state-primary {
+	.button-variant(@btn-state-primary-color; @btn-state-primary-bg; @btn-state-primary-border);
+}
+.btn-state-primary-faceless {
+	.button-variant(@btn-state-primary-faceless-color; transparent; @btn-state-primary-border);
+}
+.btn-state-secondary {
+	.button-variant(@btn-state-secondary-color; @btn-state-secondary-bg; @btn-state-secondary-border);
+}
+.btn-state-secondary-faceless {
+	.button-variant(@btn-state-secondary-faceless-color; transparent; @btn-state-secondary-border);
+}
+.btn-state-tertiary {
+	.button-variant(@btn-state-tertiary-color; @btn-state-tertiary-bg; @btn-state-tertiary-border);
+}
+.btn-state-tertiary-faceless {
+	.button-variant(@btn-state-tertiary-faceless-color; transparent; @btn-state-tertiary-border);
+}
+.btn-state-quaternary {
+	.button-variant(@btn-state-quaternary-color; @btn-state-quaternary-bg; @btn-state-quaternary-border);
+}
+.btn-state-quaternary-faceless {
+	.button-variant(@btn-state-quaternary-faceless-color; transparent; @btn-state-quaternary-border);
+}
+.btn-state-quinary {
+	.button-variant(@btn-state-quinary-color; @btn-state-quinary-bg; @btn-state-quinary-border);
+}
+.btn-state-quinary-faceless {
+	.button-variant(@btn-state-quinary-faceless-color; transparent; @btn-state-quinary-border);
+}
+.btn-state-light {
+	.button-variant(@btn-state-light-color; @btn-state-light-bg; @btn-state-light-border);
+}
+.btn-state-light-faceless {
+	.button-variant(@btn-state-light-faceless-color; transparent; @btn-state-light-border);
+}
+.btn-state-dark {
+	.button-variant(@btn-state-dark-color; @btn-state-dark-bg; @btn-state-dark-border);
+}
+.btn-state-dark-faceless {
+	.button-variant(@btn-state-dark-faceless-color; transparent; @btn-state-dark-border);
 }
 
 // 3D
@@ -72,15 +154,8 @@
 	&.active,
 	&.disabled,
 	&[disabled] {
-		color: @text-color;
-		background-color: transparent;
+		background-color: transparent !important;
 		.box-shadow(none);
-
-		&:before,
-		&:after,
-		.icon {
-			color: @text-color;
-		}
 	}
 }
 
@@ -139,4 +214,9 @@
 			display: none;
 		}
 	}
+}
+
+// Button rounded
+.btn-rounded {
+	border-radius: 45px;
 }

@@ -15,6 +15,8 @@
 @brand-tertiary:   #89bd2a;
 @brand-quaternary: #F24244;
 @brand-quinary: 	 #ea6060;
+@brand-light: 	 #f1f0ec;
+@brand-dark: 	 @gray-base;
 
 // Social
 @social-link-color-facebook:    #3b5998;
@@ -42,6 +44,12 @@
 @state-quinary-text:   #fff;
 @state-quinary-bg:     @brand-quinary;
 
+@state-light-text:   @headings-color;
+@state-light-bg:     @brand-light;
+
+@state-dark-text:   #fff;
+@state-dark-bg:     @brand-dark;
+
 // Content
 @content-bg:           #fff;
 @content-border-color: #e9ecef;
@@ -51,21 +59,79 @@
 @text-color-light: 	#6c8ba8;
 
 // Button
+@btn-border-width: 1px;
+
+@btn-primary-faceless-color:  @btn-primary-color;
+
 @btn-secondary-color:   #fff;
+@btn-secondary-faceless-color:  #fff;
 @btn-secondary-bg:      @brand-secondary;
 @btn-secondary-border:  darken(@btn-secondary-bg, 5%);
 
 @btn-tertiary-color:    #fff;
+@btn-tertiary-faceless-color: #fff;
 @btn-tertiary-bg:       @brand-tertiary;
 @btn-tertiary-border:   darken(@btn-tertiary-bg, 5%);
 
 @btn-quaternary-color:    #fff;
+@btn-quaternary-faceless-color: #fff;
 @btn-quaternary-bg:       @brand-quaternary;
 @btn-quaternary-border:   darken(@btn-quaternary-bg, 5%);
 
 @btn-quinary-color:    #fff;
+@btn-quinary-faceless-color:    #fff;
 @btn-quinary-bg:       @brand-quinary;
 @btn-quinary-border:   darken(@btn-quinary-bg, 5%);
+
+@btn-light-color:             #fff;
+@btn-light-faceless-color:    #fff;
+@btn-light-bg:                @brand-light;
+@btn-light-border:            darken(@btn-light-bg, 5%);
+
+@btn-dark-color:             #fff;
+@btn-dark-faceless-color:    #fff;
+@btn-dark-bg:                @brand-dark;
+@btn-dark-border:            darken(@btn-dark-bg, 5%);
+
+@btn-state-default-faceless-color:    @text-color;
+@btn-state-default-color:             @text-color;
+@btn-state-default-bg:                transparent;
+@btn-state-default-border:            @brand-primary;
+
+@btn-state-primary-faceless-color:    #fff;
+@btn-state-primary-color:             @state-dark-text;
+@btn-state-primary-bg:                @state-dark-bg;
+@btn-state-primary-border:            darken(@btn-state-primary-bg, 5%);
+
+@btn-state-secondary-faceless-color:    #fff;
+@btn-state-secondary-color:             @text-color;
+@btn-state-secondary-bg:                #fff;
+@btn-state-secondary-border:            #fff;
+
+@btn-state-tertiary-faceless-color:    #fff;
+@btn-state-tertiary-color:             @text-color;
+@btn-state-tertiary-bg:                #fff;
+@btn-state-tertiary-border:            #fff;
+
+@btn-state-quaternary-faceless-color:    #fff;
+@btn-state-quaternary-color:             @text-color;
+@btn-state-quaternary-bg:                #fff;
+@btn-state-quaternary-border:            #fff;
+
+@btn-state-quinary-faceless-color:    #fff;
+@btn-state-quinary-color:             @text-color;
+@btn-state-quinary-bg:                #fff;
+@btn-state-quinary-border:            #fff;
+
+@btn-state-light-faceless-color:    #fff;
+@btn-state-light-color:             @state-primary-text;
+@btn-state-light-bg:                @state-primary-bg;
+@btn-state-light-border:            @btn-state-light-bg;
+
+@btn-state-dark-faceless-color:    #fff;
+@btn-state-dark-color:             #fff;
+@btn-state-dark-bg:                @brand-primary;
+@btn-state-dark-border:            @brand-primary;
 
 // Paths
 @path-image: 	"../img/";

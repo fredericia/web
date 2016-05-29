@@ -129,6 +129,7 @@
 
 			.sidebar-left {
 				width: (@bs3-sidebar-left-hidden-width + @bs3-sidebar-scrollbar-width);
+				.translate3d((0 - (@bs3-sidebar-left-hidden-width + @bs3-sidebar-scrollbar-width)), 0, 0);
 			}
 
 			.inner-wrapper {
@@ -152,6 +153,10 @@
 
 					&.sidebar-left-content-shrink-@{view-mode},
 					&.sidebar-left-content-push-@{view-mode} {
+
+						.sidebar-left {
+							.translate3d(0, 0, 0);
+						}
 
 						.inner-wrapper {
 							.translate3d(@bs3-sidebar-left-hidden-width, 0, 0);
@@ -179,6 +184,10 @@
 
 					&.sidebar-left-content-shrink-@{view-mode},
 					&.sidebar-left-content-push-@{view-mode} {
+
+						.sidebar-left {
+							left: 0;
+						}
 
 						.inner-wrapper {
 							left: @bs3-sidebar-left-hidden-width;

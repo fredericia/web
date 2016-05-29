@@ -8,7 +8,7 @@
     <div class="os2-node-spotbox-heading">
       <h3 class="os2-node-spotbox-heading-title">
       <?php if (isset($spotbox_link['url'])): ?>
-        <a href="<?php print $spotbox_link['url']; ?>" title="<?php print $spotbox_link['title']; ?>" target="_new"><?php print $spotbox_link['title']; ?></a>
+        <a href="<?php print $spotbox_link['url']; ?>" title="<?php print $spotbox_link['title']; ?>"><?php print $spotbox_link['title']; ?></a>
       <?php endif; ?>
       </h3>
     </div>

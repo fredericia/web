@@ -2,16 +2,19 @@
 // | Page layout
 // |--------------------------------------------------------------------------
 // |
-// | Makes it a breeze to alter text layouts via HTML on the website.
-// | - .footer-attached
-// | - .outer-wrapper
-// | - .inner-wrapper
+// | This file contains styles for the following:
+// | - .page-layout
 // |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
+// Page layout
 html,
 body,
 .outer-wrapper {
@@ -37,38 +40,121 @@ body {
   .inner-wrapper {
     min-height: 100%;
     overflow: hidden;
-    background-color: @body-bg;
   }
 }
 
-.footer-attached,
-.footer-below {
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
 
-  .footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
+// Mobile
+@media @media-query-mobile {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Print
+@media print {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Touch
+.touchevents {
+
+  // Page layout
+  .page-layout {}
+}
+
+// No touch
+.no-touchevents {
+
+  .footer-attached,
+  .footer-below {
+
+    .footer {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .footer-attached {
+
+    .footer {
+      position: absolute;
+    }
+  }
+
+  .footer-below {
+
+    .content {
+      z-index: 50;
+    }
+
+    .footer {
+      position: fixed;
+      z-index: 0;
+    }
   }
 }
 
-.footer-attached {
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
 
-  .footer {
-    position: absolute;
-  }
-}
-
-.footer-below {
-
-  .content {
-    z-index: 50;
-    background-color: @body-bg;
-  }
-
-  .footer {
-    position: fixed;
-    z-index: 0;
-  }
-}
+// Page layout mixin
+.page-layout-mixin() {}
