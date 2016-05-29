@@ -15906,6 +15906,10 @@ body.adminimal-menu.admin-menu .outer-wrapper .inner-wrapper {
   .footer .region .row:first-child {
     margin-bottom: 50px;
   }
+  .footer .footer-content {
+    background: url('../img/footer-watermark.png') no-repeat;
+    background-position: bottom right 30px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .footer .footer-content {

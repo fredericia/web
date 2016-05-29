@@ -195,8 +195,8 @@
         <!-- Begin - footer -->
         <?php if (!empty($page['footer'])): ?>
             <footer class="footer">
-                <div class="footer-content">
-                    <div class="container">
+                <div class="container">
+                    <div class="footer-content">
                         <div class="row">
 
                             <div class="col-xs-12">
