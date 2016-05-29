@@ -57,6 +57,35 @@
     display: none;
     background-color: @os2-accordion-body-background-color;
     .border-bottom-radius(@os2-accordion-heading-border-radius);
+
+    ul {
+      list-style: none;
+      margin-bottom: 15px;
+
+      li {
+
+        a {
+          font-weight: @font-weight-bold;
+        }
+
+        &:before {
+          font-family: FontAwesome;
+          font-size: 18px;
+          .line-height(18px);
+          content: @fa-var-chevron-right;
+          margin: 0 5px 0 -15px;
+          color: @os2-accordion-heading-title-icon-color;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &.active {
