@@ -16308,6 +16308,21 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
 }
 @media print {
 }
+.field-collection-container {
+  margin: 0;
+  border: 0;
+}
+.field-collection-container .field-items .field-item {
+  margin-bottom: 10px;
+}
+.field-collection-container .field-collection-view {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.field-collection-container .field-collection-view .field-collection-view-links {
+  display: none;
+}
 .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
   letter-spacing: -1px;
   margin: 8px 0;
@@ -19392,6 +19407,7 @@ fieldset[disabled] .popover-button .popover-button-content .form-submit.focus {
   }
 }
 .os2-accordion .os2-accordion-heading .os2-accordion-heading-title:before {
+  float: left;
   font-family: FontAwesome;
   content: "\f067";
   color: #F24244;
