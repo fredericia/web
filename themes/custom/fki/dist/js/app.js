@@ -2520,18 +2520,18 @@ var bs3Designer = (function ($) {
      */
     function registerEventHandlers() {
 
-        $(window).resize(function () {
-            footerAttached();
-            footerBelow();
-        });
+        if ( ! Modernizr.touchevents) {
 
-        $(window).on('load', function () {
-
-            if ( ! Modernizr.touchevents) {
+            $(window).on('load', function () {
                 footerAttached();
                 footerBelow();
-            }
-        });
+            });
+
+            $(window).on('resize', function () {
+                footerAttached();
+                footerBelow();
+            });
+        }
 
         $('.btn-loader').on('click touchstart', function () {
             var $element = $(this);
