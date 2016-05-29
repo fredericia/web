@@ -17,4 +17,7 @@
   // Self-service toggle
   os2SelfServiceToggle.init();
 
+  // Accordion
+  os2Accordion.init();
+
 })(jQuery);
