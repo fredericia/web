@@ -5,7 +5,7 @@
 
   <?php if ($content['content'] or $content['sidebar']): ?>
     <!-- Begin - dark section no. 1 -->
-    <div class="os2-section os2-section-dark">
+    <div class="os2-section os2-section-dark os2-watermark os2-watermark-light">
       <div class="container">
         <div class="row">
 

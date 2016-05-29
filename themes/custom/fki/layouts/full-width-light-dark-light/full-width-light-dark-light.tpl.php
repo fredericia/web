@@ -5,7 +5,7 @@
 
   <?php if ($content['light_section_1']): ?>
     <!-- Begin - light section no. 1 -->
-    <div class="os2-section os2-section-light">
+    <div class="os2-section os2-section-light os2-watermark os2-watermark-dark">
       <div class="container">
         <div class="row">
 

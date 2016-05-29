@@ -16332,6 +16332,16 @@ body:not(.front) .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-
 .field-collection-container .field-collection-view .field-collection-view-links {
   display: none;
 }
+.os2-watermark {
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.os2-watermark.os2-watermark-light {
+  background-image: url('../img/watermark-light.png');
+}
+.os2-watermark.os2-watermark-dark {
+  background-image: url('../img/watermark-dark.png');
+}
 .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
   letter-spacing: -1px;
   margin: 8px 0;
