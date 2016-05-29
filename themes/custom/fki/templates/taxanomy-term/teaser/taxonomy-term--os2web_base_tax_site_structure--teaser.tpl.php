@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- taxonomy-term--os2web_base_tax_site_structure--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> os2-taxonomy-term-teaser os2-taxonomy-term-teaser-structure">
+  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> os2-taxonomy-term-teaser os2-taxonomy-term-teaser-structure os2-equal-height-element">
 
     <div class="os2-taxonomy-term-teaser-body">
 
