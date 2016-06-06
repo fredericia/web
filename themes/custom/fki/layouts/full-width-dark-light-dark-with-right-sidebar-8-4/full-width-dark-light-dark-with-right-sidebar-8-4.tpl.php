@@ -3,6 +3,20 @@
     echo "id=\"$css_id\"";
 } ?>>
 
+  <?php if ($content['light_section_0']): ?>
+    <!-- Begin - light section no. 0 -->
+    <div class="os2-section os2-section-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <?php echo $content['light_section_0']; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End - light section no. 0 -->
+  <?php endif; ?>
+
   <?php if ($content['content'] or $content['sidebar']): ?>
     <!-- Begin - dark section no. 1 -->
     <div class="os2-section os2-section-dark os2-watermark os2-watermark-light">
