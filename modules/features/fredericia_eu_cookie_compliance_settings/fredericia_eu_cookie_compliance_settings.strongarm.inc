@@ -22,7 +22,7 @@ function fredericia_eu_cookie_compliance_settings_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'eu_cookie_compliance_da';
   $strongarm->value = array(
-    'popup_enabled' => 1,
+    'popup_enabled' => 0,
     'popup_clicking_confirmation' => 1,
     'popup_position' => 1,
     'popup_agree_button_message' => 'Luk',

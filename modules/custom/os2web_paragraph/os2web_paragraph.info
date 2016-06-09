@@ -31,5 +31,4 @@ features[field_instance][] = field_collection_item-field_os2web_paragraphs-field
 features[field_instance][] = field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_text
 features[field_instance][] = field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_title
 features[variable][] = field_bundle_settings_field_collection_item__field_os2web_paragraphs
-mtime = 1464778683
 project path = profiles/os2web/modules

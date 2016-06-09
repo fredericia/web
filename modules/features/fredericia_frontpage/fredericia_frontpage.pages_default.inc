@@ -79,7 +79,7 @@ function fredericia_frontpage_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'os2-equal-height-wrapper',
       'template_suggestion' => 'plain',
     );
     $pane->extras = array();
@@ -102,7 +102,7 @@ function fredericia_frontpage_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'os2-equal-height-wrapper',
       'template_suggestion' => 'plain',
     );
     $pane->extras = array();

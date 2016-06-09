@@ -21,7 +21,7 @@ function fredericia_image_default_styles() {
   $styles['fredericia_content_image'] = array(
     'label' => 'fredericia_content_image',
     'effects' => array(
-      2 => array(
+      5 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
           'width' => 620,
@@ -36,7 +36,7 @@ function fredericia_image_default_styles() {
         ),
         'weight' => 1,
       ),
-      3 => array(
+      6 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 620,

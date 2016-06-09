@@ -342,7 +342,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['separator'] = '';
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Content: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -443,7 +443,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['created_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'month';
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Content: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -533,7 +533,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Content: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -806,7 +806,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Content: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -951,7 +951,9 @@ function fredericia_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['css_class'] = 'row';
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'Se flere nyheder';
+  $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -959,8 +961,17 @@ function fredericia_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-4';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div><a class="btn btn-default" title="Se nyheder publiceret under %1" href="/nyheder/%1">Se flere %1 nyheder</a></div>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -980,6 +991,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -1043,9 +1055,10 @@ function fredericia_views_default_views() {
       'label' => 'Indhold: Har taksonomiterm ID (med dybde)',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['os2web_term_news'] = array(
     t('Master'),
-    t('more'),
+    t('Se flere nyheder'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -1058,9 +1071,11 @@ function fredericia_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('<div><a class="btn btn-default" title="Se nyheder publiceret under %1" href="/nyheder/%1">Se flere %1 nyheder</a></div>'),
     t('Alle'),
     t('Forfrem til (field_os2web_base_field_promote)'),
     t('News'),
+    t('more'),
     t('View panes'),
   );
   $export['os2web_term_news'] = $view;
@@ -1086,6 +1101,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'col-xs-6 col-sm-4 col-md-3';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Field: Unikke relaterede links */
   $handler->display->display_options['fields']['field_os2web_base_field_related']['id'] = 'field_os2web_base_field_related';
@@ -1098,6 +1114,10 @@ function fredericia_views_default_views() {
     'node_reference_view_mode' => 'teaser',
   );
   $handler->display->display_options['fields']['field_os2web_base_field_related']['delta_offset'] = '0';
+  /* Field: Field: Spotboxe */
+  $handler->display->display_options['fields']['field_os2web_base_field_spotbox']['id'] = 'field_os2web_base_field_spotbox';
+  $handler->display->display_options['fields']['field_os2web_base_field_spotbox']['table'] = 'field_data_field_os2web_base_field_spotbox';
+  $handler->display->display_options['fields']['field_os2web_base_field_spotbox']['field'] = 'field_os2web_base_field_spotbox';
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
@@ -1109,8 +1129,20 @@ function fredericia_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Term promoted nodes */
+  $handler = $view->new_display('panel_pane', 'Term promoted nodes', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Unikke relaterede links */
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['id'] = 'field_os2web_base_field_related';
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['table'] = 'field_data_field_os2web_base_field_related';
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['field'] = 'field_os2web_base_field_related';
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['type'] = 'node_reference_node';
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['settings'] = array(
+    'node_reference_view_mode' => 'teaser',
+  );
+  $handler->display->display_options['fields']['field_os2web_base_field_related']['delta_offset'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'context',
@@ -1136,8 +1168,9 @@ function fredericia_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Spotboxe'),
     t('Alle'),
-    t('Content pane'),
+    t('Term promoted nodes'),
     t('View panes'),
   );
   $export['os2web_term_promoted_nodes'] = $view;
@@ -1193,6 +1226,8 @@ function fredericia_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'col-xs-6 col-sm-3';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';

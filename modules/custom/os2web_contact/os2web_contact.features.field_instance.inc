@@ -10,7 +10,8 @@
 function os2web_contact_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-os2web_contact_contact-field_os2web_contact_field_dept'
+  // Exported field_instance:
+  // 'node-os2web_contact_contact-field_os2web_contact_field_dept'.
   $field_instances['node-os2web_contact_contact-field_os2web_contact_field_dept'] = array(
     'bundle' => 'os2web_contact_contact',
     'default_value' => NULL,
@@ -22,7 +23,7 @@ function os2web_contact_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 23,
+        'weight' => 0,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -105,7 +106,8 @@ function os2web_contact_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_contact_contact-field_os2web_contact_field_info'
+  // Exported field_instance:
+  // 'node-os2web_contact_contact-field_os2web_contact_field_info'.
   $field_instances['node-os2web_contact_contact-field_os2web_contact_field_info'] = array(
     'bundle' => 'os2web_contact_contact',
     'default_value' => array(
@@ -122,7 +124,7 @@ function os2web_contact_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 1,
       ),
       'related_block' => array(
         'label' => 'above',
