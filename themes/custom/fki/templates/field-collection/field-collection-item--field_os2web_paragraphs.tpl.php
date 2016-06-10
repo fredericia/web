@@ -13,13 +13,27 @@
       <!-- End - heading -->
     <?php endif; ?>
 
-    <?php if (isset($content['field_os2web_paragraph_text'])): ?>
       <!-- Begin - body -->
       <div class="os2-accordion-body">
-        <?php print render($content['field_os2web_paragraph_text']); ?>
+
+        <?php if (isset($content['field_os2web_paragraph_text'])): ?>
+          <!-- Begin - text -->
+          <div class="os2-accordion-body-text">
+            <?php print render($content['field_os2web_paragraph_text']); ?>
+          </div>
+          <!-- End - text -->
+        <?php endif; ?>
+
+        <?php if (isset($content['field_os2web_paragraph_ref'])): ?>
+          <!-- Begin - paragraph reference -->
+          <div class="os2-accordion-paragraph-reference">
+            <?php print render($content['field_os2web_paragraph_ref']); ?>
+          </div>
+          <!-- End - paragraph reference -->
+        <?php endif; ?>
+
       </div>
       <!-- End - body -->
-    <?php endif; ?>
 
   </div>
   <!-- End - - accordion -->
