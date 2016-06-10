@@ -13,5 +13,5 @@
 
   </div>
   <!-- End - includeable -->
-<?php xdebug_break(); ?>
+
 <?php endif; ?>
