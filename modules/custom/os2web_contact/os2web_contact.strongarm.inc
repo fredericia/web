@@ -17,10 +17,10 @@ function os2web_contact_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'spotbox' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -38,6 +38,15 @@ function os2web_contact_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'includeable' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -105,6 +114,13 @@ function os2web_contact_strongarm() {
   $strongarm->name = 'node_submitted_os2web_contact_contact';
   $strongarm->value = 0;
   $export['node_submitted_os2web_contact_contact'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_os2web_contact_contact_pattern';
+  $strongarm->value = 'noindex/[node:title]';
+  $export['pathauto_node_os2web_contact_contact_pattern'] = $strongarm;
 
   return $export;
 }

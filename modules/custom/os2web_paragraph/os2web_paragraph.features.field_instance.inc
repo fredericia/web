@@ -10,7 +10,8 @@
 function os2web_paragraph_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_ref'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_ref'.
   $field_instances['field_collection_item-field_os2web_paragraph-field_os2web_paragraph_ref'] = array(
     'bundle' => 'field_os2web_paragraph',
     'default_value' => NULL,
@@ -45,7 +46,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_text'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_text'.
   $field_instances['field_collection_item-field_os2web_paragraph-field_os2web_paragraph_text'] = array(
     'bundle' => 'field_os2web_paragraph',
     'default_value' => NULL,
@@ -102,7 +104,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraph-field_os2web_paragraph_title'.
   $field_instances['field_collection_item-field_os2web_paragraph-field_os2web_paragraph_title'] = array(
     'bundle' => 'field_os2web_paragraph',
     'default_value' => NULL,
@@ -159,7 +162,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_image'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_base_field_image'] = array(
     'bundle' => 'field_os2web_paragraphs',
     'deleted' => 0,
@@ -236,7 +240,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_media'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_media'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_base_field_media'] = array(
     'bundle' => 'field_os2web_paragraphs',
     'deleted' => 0,
@@ -293,7 +298,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_ref'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_ref'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_ref'] = array(
     'bundle' => 'field_os2web_paragraphs',
     'default_value' => NULL,
@@ -330,7 +336,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_text'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_text'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_text'] = array(
     'bundle' => 'field_os2web_paragraphs',
     'default_value' => NULL,
@@ -407,7 +414,8 @@ function os2web_paragraph_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_title'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_title'] = array(
     'bundle' => 'field_os2web_paragraphs',
     'default_value' => NULL,

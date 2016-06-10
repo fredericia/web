@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function os2web_news_page_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function os2web_news_page_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_dates|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_dates|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -71,7 +71,7 @@ function os2web_news_page_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_os2web_base_group_hidden|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_group_hidden|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -91,7 +91,7 @@ function os2web_news_page_field_group_info() {
       'label' => 'Billede',
     ),
   );
-  $export['group_os2web_base_group_image|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_group_image|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -123,7 +123,7 @@ function os2web_news_page_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_os2web_base_group_settings|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_group_settings|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -154,7 +154,7 @@ function os2web_news_page_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_os2web_base_group_taxono|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_group_taxono|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -186,7 +186,7 @@ function os2web_news_page_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_os2web_base_group_text|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_group_text|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -217,7 +217,7 @@ function os2web_news_page_field_group_info() {
       ),
     ),
   );
-  $export['group_os2web_base_news_tabs|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_base_news_tabs|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -246,7 +246,7 @@ function os2web_news_page_field_group_info() {
       ),
     ),
   );
-  $export['group_os2web_news_group_media|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_os2web_news_group_media|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -274,7 +274,7 @@ function os2web_news_page_field_group_info() {
       ),
     ),
   );
-  $export['group_relationer|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_relationer|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -301,7 +301,20 @@ function os2web_news_page_field_group_info() {
       ),
     ),
   );
-  $export['group_spotbokse|node|os2web_base_news|form'] = $field_group;
+  $field_groups['group_spotbokse|node|os2web_base_news|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Billede');
+  t('Datoer');
+  t('Emneord');
+  t('Indstillinger');
+  t('Media og filer');
+  t('News');
+  t('Relationer');
+  t('Skjult');
+  t('Spotbokse');
+  t('Tekst');
+
+  return $field_groups;
 }

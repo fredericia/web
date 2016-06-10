@@ -13,14 +13,19 @@ function fredericia_eu_cookie_compliance_settings_user_default_permissions() {
   // Exported permission: 'administer EU Cookie Compliance popup'.
   $permissions['administer EU Cookie Compliance popup'] = array(
     'name' => 'administer EU Cookie Compliance popup',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'Webmaster' => 'Webmaster',
+    ),
     'module' => 'eu_cookie_compliance',
   );
 
   // Exported permission: 'display EU Cookie Compliance popup'.
   $permissions['display EU Cookie Compliance popup'] = array(
     'name' => 'display EU Cookie Compliance popup',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+    ),
     'module' => 'eu_cookie_compliance',
   );
 

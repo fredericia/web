@@ -144,6 +144,9 @@ function fki_node_view_alter(&$build) {
  * Implements hook_preprocess_node().
  */
 function fki_preprocess_node__full(&$variables) {
+  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes
+  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+
 }
 
 /*

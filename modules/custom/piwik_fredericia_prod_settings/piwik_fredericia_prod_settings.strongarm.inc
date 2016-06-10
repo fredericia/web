@@ -24,12 +24,5 @@ function piwik_fredericia_prod_settings_strongarm() {
   $strongarm->value = 'http://piwik.fredericia.bellcom.dk/';
   $export['piwik_url_http'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'piwik_url_https';
-  $strongarm->value = 'https://piwik.fredericia.bellcom.dk/';
-  $export['piwik_url_https'] = $strongarm;
-
   return $export;
 }
