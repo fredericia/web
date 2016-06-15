@@ -65,6 +65,13 @@ function fki_js_alter(&$javascript) {
 }
 
 /*
+ * Implements hook_css_alter().
+ */
+function fki_css_alter(&$css) {
+  unset($css[drupal_get_path('module', 'feedback') . '/feedback.css']);
+}
+
+/*
  * Implements theme_preprocess_page().
  */
 function fki_preprocess_page(&$variables) {
@@ -90,9 +97,6 @@ function fki_preprocess_page(&$variables) {
   $variables['tabs_secondary'] = $variables['tabs'];
   unset($variables['tabs_primary']['#secondary']);
   unset($variables['tabs_secondary']['#primary']);
-
-  // Feedback
-  $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
 
   // Search form
   $variables['page_header_search'] = module_invoke('search_api_page', 'block_view', '2');
