@@ -22,7 +22,7 @@ var os2Accordion = (function ($) {
      */
     function registerEventHandlers() {
 
-        $('.os2-accordion .os2-accordion-heading').on('click touchstart', function(event) {
+        $('.os2-accordion .os2-accordion-heading').on('click', function(event) {
             var $toggleButton = $(this);
 
             $toggleButton.parent('.os2-accordion').toggleClass('active');
