@@ -86,11 +86,11 @@
                             <!-- End - content -->
 
                             <!-- Begin - content -->
-                            <?php if (isset($main_navigation_primary)): ?>
+                            <?php if (isset($main_navigation_secondary)): ?>
                                 <div class="col-md-8 main-navigation-right">
 
                                     <!-- Begin - navigation -->
-                                    <?php print render($main_navigation_primary); ?>
+                                    <?php print render($main_navigation_secondary); ?>
                                     <!-- End - navigation -->
 
                                 </div>

@@ -98,7 +98,7 @@ function fki_preprocess_page(&$variables) {
   $variables['page_header_search'] = module_invoke('search_api_page', 'block_view', '2');
 
   // Tabbed navigation
-  $variables['tabbed_navigation'] = _bellcom_generate_menu('main-menu', 'tabbed', 1);
+  $variables['tabbed_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'tabbed', 1);
 }
 
 /**
