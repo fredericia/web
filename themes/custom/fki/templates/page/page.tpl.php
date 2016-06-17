@@ -170,7 +170,9 @@
             </div>
 
             <a id="main-content"></a>
-
+            <div class="message">
+              <?php print $messages; ?>
+            </div>
             <?php if (panels_get_current_page_display()): ?>
                 <?php if ($wrap_panels_layout): ?>
                     <div class="container">
