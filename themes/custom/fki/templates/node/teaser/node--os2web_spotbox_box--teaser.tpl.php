@@ -6,8 +6,11 @@
     <?php if (isset($content['field_os2web_spotbox_big_image'])): ?>
       <!-- Begin - image -->
       <div class="os2-node-teaser-image">
-        <?php print render($content['field_os2web_spotbox_big_image']); ?>
+        <?php if (isset($spotbox_link['url'])): ?><a href="<?php print $spotbox_link['url']; ?>" title="<?php print $spotbox_link['title']; ?>" target="_new"><?php endif; ?>
+          <?php print render($content['field_os2web_spotbox_big_image']); ?>
+        <?php if (isset($spotbox_link['url'])): ?></a><?php endif; ?>
       </div>
+
       <!-- End - image -->
     <?php endif; ?>
 
