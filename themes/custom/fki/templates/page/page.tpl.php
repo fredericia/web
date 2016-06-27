@@ -26,12 +26,6 @@
                 <!-- End - navigation -->
             <?php endif; ?>
 
-            <?php if (isset($sidebar_secondary)): ?>
-                <!-- Begin - navigation -->
-                <?php print render($sidebar_secondary); ?>
-                <!-- End - navigation -->
-            <?php endif; ?>
-
         </div>
         <!-- End - inner wrapper -->
 
