@@ -93,7 +93,7 @@ function fki_preprocess_page(&$variables) {
   }
 
   // Navigation
-  $variables['sidebar_tertiary'] = _bellcom_generate_menu('main-menu', 'sidebar');
+  $variables['sidebar_tertiary'] = _bellcom_generate_menu('main-menu', 'sidebar', 2);
 
   // Tabs.
   $variables['tabs_primary'] = $variables['tabs'];
