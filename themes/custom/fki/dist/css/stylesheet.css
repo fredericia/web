@@ -17456,7 +17456,11 @@ body.adminimal-menu.admin-menu .outer-wrapper .inner-wrapper {
   .footer .footer-content {
     padding: 30px 0;
   }
+  .footer .footer-hotline {
+    padding: 30px 0;
+  }
   .footer .footer-hotline p {
+    font-size: 20px;
     display: block;
     text-align: center;
     padding: 5px 15px;
