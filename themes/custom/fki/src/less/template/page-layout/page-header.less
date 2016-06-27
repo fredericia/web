@@ -13,12 +13,12 @@
 @os2-page-header-background-image: url(../img/page-header.jpg);
 
 // Responsive
-@os2-page-header-xs-max-width: 80%;
+@os2-page-header-xs-max-width: 100%;
 @os2-page-header-sm-max-width: 60%;
 @os2-page-header-md-max-width: 50%;
 @os2-page-header-lg-max-width: @os2-page-header-md-max-width;
 
-@os2-page-header-search-form-xs-padding-top-bottom: 10px;
+@os2-page-header-search-form-xs-padding-top-bottom: 30px;
 @os2-page-header-search-form-sm-padding-top-bottom: 20px;
 @os2-page-header-search-form-md-padding-top-bottom: 40px;
 @os2-page-header-search-form-lg-padding-top-bottom: @os2-page-header-search-form-md-padding-top-bottom;
@@ -176,8 +176,30 @@ body {
 
       .os2-page-header-tabbed-menu {
         padding-bottom: 10px;
+
+        .os2-page-header-tabbed-menu-link {
+
+          a {
+            padding: 10px 0;
+
+            &.active,
+            &.active-trail {
+
+              &:after {
+                left: 30%;
+                right: 30%;
+                height: 4px;
+              }
+            }
+          }
+        }
       }
     }
+  }
+
+  .col-xs-small-gutter {
+    padding-left: floor( (@grid-gutter-width / 5) );
+    padding-right: floor( (@grid-gutter-width / 5) );
   }
 }
 
