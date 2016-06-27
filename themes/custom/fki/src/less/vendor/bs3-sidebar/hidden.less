@@ -185,10 +185,6 @@
 					&.sidebar-left-content-shrink-@{view-mode},
 					&.sidebar-left-content-push-@{view-mode} {
 
-						.sidebar-left {
-							left: 0;
-						}
-
 						.inner-wrapper {
 							left: @bs3-sidebar-left-hidden-width;
 						}
@@ -212,7 +208,6 @@
 	.sidebar-left-enabled-@{view-mode} {
 
 		&.sidebar-left-hidden-@{view-mode} {
-
 			.sidebar-mixin-navigation-wide(@view-mode);
 		}
 	}
@@ -224,7 +219,6 @@
 	.sidebar-left-enabled-@{view-mode} {
 
 		&.sidebar-left-hidden-@{view-mode} {
-
 			.sidebar-mixin-logo-image-wide();
 		}
 	}

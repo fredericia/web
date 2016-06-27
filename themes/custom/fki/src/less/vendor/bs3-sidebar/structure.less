@@ -158,15 +158,34 @@
 	.sidebar-left-enabled-@{view-mode} {
 
 		.inner-wrapper {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
 			overflow-x: hidden;
 			overflow-y: auto;
 			min-height: inherit;
 			.box-shadow(@bs3-sidebar-box-shadow);
+		}
+	}
+
+	.csstransforms3d {
+
+		.sidebar-left-enabled-@{view-mode} {
+
+			.inner-wrapper {
+				.translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	.no-csstransforms3d {
+
+		.sidebar-left-enabled-@{view-mode} {
+
+			.inner-wrapper {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
 		}
 	}
 }
