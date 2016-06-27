@@ -92,6 +92,9 @@ function fki_preprocess_page(&$variables) {
     $variables['wrap_panels_layout'] = TRUE;
   }
 
+  // Navigation
+  $variables['sidebar_tertiary'] = _bellcom_generate_menu('main-menu', 'sidebar');
+
   // Tabs.
   $variables['tabs_primary'] = $variables['tabs'];
   $variables['tabs_secondary'] = $variables['tabs'];
