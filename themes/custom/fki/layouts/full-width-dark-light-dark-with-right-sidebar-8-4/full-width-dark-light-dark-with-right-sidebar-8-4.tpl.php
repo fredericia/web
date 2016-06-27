@@ -25,17 +25,17 @@
 
           <?php if ($content['sidebar']): ?>
 
+            <!-- Begin - content -->
+            <div class="col-sm-8">
+              <?php echo $content['content']; ?>
+            </div>
+            <!-- End - content -->
+
             <!-- Begin - sidebar -->
-            <div class="col-sm-4 col-sm-push-8 hidden-print">
+            <div class="col-sm-4 hidden-print">
                 <?php echo $content['sidebar']; ?>
             </div>
             <!-- End - sidebar -->
-
-            <!-- Begin - content -->
-            <div class="col-sm-8 col-sm-pull-4">
-                <?php echo $content['content']; ?>
-            </div>
-            <!-- End - content -->
 
           <?php else: ?>
 
