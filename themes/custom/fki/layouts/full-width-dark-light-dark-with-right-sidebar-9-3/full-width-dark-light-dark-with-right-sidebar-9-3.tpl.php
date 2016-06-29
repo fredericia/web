@@ -11,17 +11,17 @@
 
           <?php if ($content['sidebar']): ?>
 
+            <!-- Begin - content -->
+            <div class="col-sm-9">
+              <?php echo $content['content']; ?>
+            </div>
+            <!-- End - content -->
+
             <!-- Begin - sidebar -->
-            <div class="col-sm-3 col-sm-push-9 hidden-print">
+            <div class="col-sm-3 hidden-print">
                 <?php echo $content['sidebar']; ?>
             </div>
             <!-- End - sidebar -->
-
-            <!-- Begin - content -->
-            <div class="col-sm-9 col-sm-pull-3">
-                <?php echo $content['content']; ?>
-            </div>
-            <!-- End - content -->
 
           <?php else: ?>
 

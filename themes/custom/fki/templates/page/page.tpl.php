@@ -20,15 +20,9 @@
             </div>
             <!-- End - logo -->
 
-            <?php if (isset($sidebar_secondary)): ?>
+            <?php if (isset($sidebar_tertiary)): ?>
                 <!-- Begin - navigation -->
-                <?php print render($sidebar_secondary); ?>
-                <!-- End - navigation -->
-            <?php endif; ?>
-
-            <?php if (isset($sidebar_primary)): ?>
-                <!-- Begin - navigation -->
-                <?php print render($sidebar_primary); ?>
+                <?php print render($sidebar_tertiary); ?>
                 <!-- End - navigation -->
             <?php endif; ?>
 

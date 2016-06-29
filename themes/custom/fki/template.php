@@ -92,6 +92,9 @@ function fki_preprocess_page(&$variables) {
     $variables['wrap_panels_layout'] = TRUE;
   }
 
+  // Navigation
+  $variables['sidebar_tertiary'] = _bellcom_generate_menu('main-menu', 'sidebar', 2);
+
   // Tabs.
   $variables['tabs_primary'] = $variables['tabs'];
   $variables['tabs_secondary'] = $variables['tabs'];
@@ -418,6 +421,6 @@ function fki_menu_link__tabbed(array $variables) {
 
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 
-  return '<div class="col-xs-12 col-sm-4"><div class="os2-page-header-tabbed-menu-link">' . $output . $sub_menu . "</div></div>\n";
+  return '<div class="col-xs-4 col-xs-small-gutter"><div class="os2-page-header-tabbed-menu-link">' . $output . $sub_menu . "</div></div>\n";
 }
 
