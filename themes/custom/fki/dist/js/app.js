@@ -4745,7 +4745,7 @@ var newsIsotoper = (function ($) {
         button = $(this).attr('id');
         check_button(button);
         var filterValue = $( this ).attr('data-filter');
-        jQuery.get("/aktulet_news/ajax/view/fredericia_news_view"+filterValue+'/'+20, function(data){
+        jQuery.get("/aktulet_news/ajax/view/fredericia_news_view/"+filterValue+'/'+20, function(data){
           $('#news-content-isotoper').html(data);
           load_content();
         });
