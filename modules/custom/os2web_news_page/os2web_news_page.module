@@ -81,28 +81,28 @@ function os2web_news_page_permission() {
 }
 
 function os2web_news_page_menu() {
-  $items['aktulet_news/ajax/view/%/%/%'] = array(
+  $items['aktulet_news/ajax/view/%/%'] = array(
     'page callback' => 'os2web_news_page_ajax_view',
     'access arguments' => array('access content'),
-    'page arguments' => array(3, 4, 5),
+    'page arguments' => array(3, 4),
   );
   return $items;
 }
 
-function os2web_news_page_ajax_view_print($view_name, $term_id, $item = 20) {
-  $output = os2web_news_page_ajax_view($view_name, $term_id, 20);
+function os2web_news_page_ajax_view_print($term_id, $item = 20) {
+  $output = os2web_news_page_ajax_view($term_id, 20);
   print $output;
 }
 
-function os2web_news_page_ajax_view($view_name, $term_id, $item = 5) {
+function os2web_news_page_ajax_view($term_id, $item = 5) {
   $output = '
       <div class="row ' . $term_id. '">';
 
-  $view = views_get_view($view_name);
+  $view = views_get_view('fredericia_news_view');
   if (isset($view)) {
 
     $view->set_display('block');
-    //$view->set_arguments(array('Nyheder', $term_id));
+    $view->set_arguments(array('Nyheder', $term_id));
     if ($item) {
       $view->set_items_per_page($item);
     }
@@ -135,9 +135,8 @@ function os2web_news_page_block_view($delta = '') {
 
     case 'news_view_block_with_filter':
       $block['subject'] = t('');
-      $output = '<div class="news-content" id="news-content-isotoper">
-        <div class="row">';
-      $block['content'] = $output . os2web_news_page_ajax_view('fredericia_news_view', 'all', 10) . '</div></div>';
+      $output = '<div class="news-content" id="news-content-isotoper">';
+      $block['content'] = $output . os2web_news_page_ajax_view('all', 10) . '</div>';
       break;
 
   }
