@@ -34,6 +34,7 @@
       "src/js/isotope.pkgd.min.js",
       "src/js/masonry.pkgd.min.js",
       "src/js/fredericia_news_isotoper.js",
+      "src/js/equal-height.js",
       "src/js/accordion.js",
       "src/js/init.js"
     ],
