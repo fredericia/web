@@ -57,6 +57,14 @@
               <!-- End - body -->
             <?php endif; ?>
 
+            <?php if (isset($content['field_os2web_borger_dk_header'])): ?>
+              <!-- Begin - body -->
+              <div class="os2-node-teaser-body-content">
+                <?php print render($content['field_os2web_borger_dk_header']); ?>
+              </div>
+              <!-- End - body -->
+            <?php endif; ?>
+
           </div>
           <!-- End - body -->
 
