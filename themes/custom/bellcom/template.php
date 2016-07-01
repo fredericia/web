@@ -61,6 +61,13 @@ function bellcom_preprocess_page(&$variables) {
  * Implements template_preprocess_node().
  */
 function bellcom_preprocess_node(&$variables) {
+  $current_theme = variable_get('theme_default','none');
+
+  // Paths
+  $variables['path_js']   = base_path() . drupal_get_path('theme', $current_theme) . '/dist/js';
+  $variables['path_img']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/img';
+  $variables['path_css']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/css';
+  $variables['path_font'] = base_path() . drupal_get_path('theme', $current_theme) . '/dist/font';
 
   // Add node--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];

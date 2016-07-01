@@ -106,6 +106,23 @@ function fki_preprocess_page(&$variables) {
 
   // Tabbed navigation
   $variables['tabbed_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'tabbed', 1);
+
+  // Find node of type "beredskabsmeddelelse"
+  $tids = array(5226);
+
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'os2web_base_news')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_os2web_news_page_type', 'tid', $tids)
+    ->range(0, 1)
+    ->execute();
+
+  $nids = array_keys($result['node']);
+
+  if ($node = node_load($nids[0])) {
+    $variables['emergency_grant'] = node_view($node, 'includeable');
+  }
 }
 
 /**

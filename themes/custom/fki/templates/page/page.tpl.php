@@ -35,6 +35,14 @@
     <!-- Begin - inner wrapper -->
     <div class="inner-wrapper" role="document">
 
+        <?php if (isset($emergency_grant)): ?>
+            <!-- Begin - emergency grant -->
+            <div class="os2-emergency-grant">
+                <?php print render($emergency_grant); ?>
+            </div>
+            <!-- End - emergency grant -->
+        <?php endif; ?>
+
         <!-- Begin - simple navigation -->
         <nav class="simple-navigation">
 
