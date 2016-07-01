@@ -1,5 +1,5 @@
 <?php if ($view_mode == 'teaser'): ?>
-  <!-- node--os2web_base_contentpage--teaser.tpl.php -->
+  <!-- node--os2web_borger_dk_article--teaser.tpl.php -->
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-equal-height-element"<?php print $attributes; ?>>
 
