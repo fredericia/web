@@ -5,7 +5,6 @@
 
     <!-- Begin - heading -->
       <h1 class="os2-node-full-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
-    </div>
     <!-- End - heading -->
 
     <!-- Begin - body -->
