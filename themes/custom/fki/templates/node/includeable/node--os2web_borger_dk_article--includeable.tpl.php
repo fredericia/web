@@ -4,7 +4,7 @@
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> "<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
-      <h1 class="os2-node-full-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
+      <h1 class="os2-node-full-heading-title"><a href="<?php print $node_url; ?>"><?php print $node->title; ?></a></h1>
     <!-- End - heading -->
 
     <!-- Begin - body -->
