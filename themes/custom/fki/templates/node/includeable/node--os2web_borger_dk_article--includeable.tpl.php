@@ -1,11 +1,10 @@
-<?php if ($view_mode == 'teaser'): ?>
+<?php if ($view_mode == 'includeable'): ?>
   <!-- node--os2web_borger_dk_article--includeable.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-equal-height-element"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> "<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
-    <div class="os2-node-includeable-heading">
-      <h3 class="os2-node-includeable-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h1 class="os2-node-full-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
     </div>
     <!-- End - heading -->
 
