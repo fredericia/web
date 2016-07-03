@@ -7266,6 +7266,8 @@ button.close {
 .os2-tabs-container .tabs--secondary:after,
 .os2-box .os2-box-body:before,
 .os2-box .os2-box-body:after,
+#sliding-popup .popup-content:before,
+#sliding-popup .popup-content:after,
 .popover-button:before,
 .popover-button:after {
   content: " ";
@@ -7293,6 +7295,7 @@ button.close {
 .os2-tabs-container .tabs--primary:after,
 .os2-tabs-container .tabs--secondary:after,
 .os2-box .os2-box-body:after,
+#sliding-popup .popup-content:after,
 .popover-button:after {
   clear: both;
 }
@@ -19371,6 +19374,1099 @@ body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-
   .os2-self-service-toggle {
     max-width: 55%;
   }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media print {
+}
+#sliding-popup .popup-content {
+  padding: 30px 0;
+}
+#sliding-popup.sliding-popup-bottom {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.96);
+}
+#sliding-popup .popup-content {
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+@media (min-width: 768px) {
+  #sliding-popup .popup-content {
+    width: 744px;
+  }
+}
+@media (min-width: 992px) {
+  #sliding-popup .popup-content {
+    width: 964px;
+  }
+}
+@media (min-width: 1200px) {
+  #sliding-popup .popup-content {
+    width: 964px;
+  }
+}
+#sliding-popup .popup-content > .navbar-header,
+#sliding-popup .popup-content > .navbar-collapse {
+  margin-right: -12px;
+  margin-left: -12px;
+}
+@media (min-width: 768px) {
+  #sliding-popup .popup-content > .navbar-header,
+  #sliding-popup .popup-content > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+#sliding-popup .popup-content #popup-text,
+#sliding-popup .popup-content #popup-buttons {
+  display: block;
+}
+#sliding-popup .popup-content #popup-text h1,
+#sliding-popup .popup-content #popup-text h2,
+#sliding-popup .popup-content #popup-text h3,
+#sliding-popup .popup-content #popup-text h4,
+#sliding-popup .popup-content #popup-text h5,
+#sliding-popup .popup-content #popup-text h6 {
+  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #F24244 !important;
+}
+#sliding-popup .popup-content #popup-text,
+#sliding-popup .popup-content #popup-text p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #43698f !important;
+}
+#sliding-popup .popup-content #popup-buttons button,
+#sliding-popup .popup-content #popup-buttons .agree-button,
+#sliding-popup .popup-content #popup-buttons .find-more-button,
+#sliding-popup .popup-content #popup-buttons button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+#sliding-popup .popup-content #popup-buttons button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons button:hover:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active:focus,
+#sliding-popup .popup-content #popup-buttons button:focus:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active:focus,
+#sliding-popup .popup-content #popup-buttons button:active:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active:focus,
+#sliding-popup .popup-content #popup-buttons button.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active:focus,
+#sliding-popup .popup-content #popup-buttons button:hover.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active:focus,
+#sliding-popup .popup-content #popup-buttons button:focus.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active:focus,
+#sliding-popup .popup-content #popup-buttons button:active.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active:focus,
+#sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active.focus,
+#sliding-popup .popup-content #popup-buttons button.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active.focus,
+#sliding-popup .popup-content #popup-buttons button:hover.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active.focus,
+#sliding-popup .popup-content #popup-buttons button:active.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#sliding-popup .popup-content #popup-buttons button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons button:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:hover,
+#sliding-popup .popup-content #popup-buttons button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus {
+  color: #333;
+  text-decoration: none;
+}
+#sliding-popup .popup-content #popup-buttons button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active,
+#sliding-popup .popup-content #popup-buttons button:hover:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active,
+#sliding-popup .popup-content #popup-buttons button:focus:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active,
+#sliding-popup .popup-content #popup-buttons button:active:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active,
+#sliding-popup .popup-content #popup-buttons button.active,
+#sliding-popup .popup-content #popup-buttons .agree-button.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active,
+#sliding-popup .popup-content #popup-buttons button:hover.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active,
+#sliding-popup .popup-content #popup-buttons button:focus.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active,
+#sliding-popup .popup-content #popup-buttons button:active.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active {
+  outline: 0;
+  background-image: none;
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#sliding-popup .popup-content #popup-buttons button.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button.disabled,
+#sliding-popup .popup-content #popup-buttons button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons button:active.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled,
+#sliding-popup .popup-content #popup-buttons button[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button[disabled],
+#sliding-popup .popup-content #popup-buttons button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons button:active[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:active[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:active[disabled],
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons button,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons button:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons button:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons button:active,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:active,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a#sliding-popup .popup-content #popup-buttons button.disabled,
+a#sliding-popup .popup-content #popup-buttons .agree-button.disabled,
+a#sliding-popup .popup-content #popup-buttons .find-more-button.disabled,
+a#sliding-popup .popup-content #popup-buttons button:hover.disabled,
+a#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled,
+a#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled,
+a#sliding-popup .popup-content #popup-buttons button:focus.disabled,
+a#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled,
+a#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled,
+a#sliding-popup .popup-content #popup-buttons button:active.disabled,
+a#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled,
+a#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons button,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .agree-button,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .find-more-button,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons button:hover,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons button:focus,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons button:active,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .agree-button:active,
+fieldset[disabled] a#sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  pointer-events: none;
+}
+#sliding-popup .popup-content #popup-buttons button,
+#sliding-popup .popup-content #popup-buttons .agree-button,
+#sliding-popup .popup-content #popup-buttons .find-more-button,
+#sliding-popup .popup-content #popup-buttons button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active,
+#sliding-popup .popup-content #popup-buttons button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons button:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:hover,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active,
+#sliding-popup .popup-content #popup-buttons button:hover:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active,
+#sliding-popup .popup-content #popup-buttons button:focus:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active,
+#sliding-popup .popup-content #popup-buttons button:active:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active,
+#sliding-popup .popup-content #popup-buttons button.active,
+#sliding-popup .popup-content #popup-buttons .agree-button.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active,
+#sliding-popup .popup-content #popup-buttons button:hover.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active,
+#sliding-popup .popup-content #popup-buttons button:focus.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active,
+#sliding-popup .popup-content #popup-buttons button:active.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active,
+#sliding-popup .popup-content #popup-buttons button.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button.disabled,
+#sliding-popup .popup-content #popup-buttons button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled,
+#sliding-popup .popup-content #popup-buttons button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled,
+#sliding-popup .popup-content #popup-buttons button:active.disabled,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled,
+#sliding-popup .popup-content #popup-buttons button[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button[disabled],
+#sliding-popup .popup-content #popup-buttons button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover[disabled],
+#sliding-popup .popup-content #popup-buttons button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus[disabled],
+#sliding-popup .popup-content #popup-buttons button:active[disabled],
+#sliding-popup .popup-content #popup-buttons .agree-button:active[disabled],
+#sliding-popup .popup-content #popup-buttons .find-more-button:active[disabled] {
+  outline: none;
+  border-width: 1px;
+}
+#sliding-popup .popup-content #popup-buttons button:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:before,
+#sliding-popup .popup-content #popup-buttons button:hover:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:before,
+#sliding-popup .popup-content #popup-buttons button:focus:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:before,
+#sliding-popup .popup-content #popup-buttons button:active:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:before,
+#sliding-popup .popup-content #popup-buttons button:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:after,
+#sliding-popup .popup-content #popup-buttons button:hover:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:after,
+#sliding-popup .popup-content #popup-buttons button:focus:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:after,
+#sliding-popup .popup-content #popup-buttons button:active:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:after,
+#sliding-popup .popup-content #popup-buttons button .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button .icon,
+#sliding-popup .popup-content #popup-buttons button:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover .icon,
+#sliding-popup .popup-content #popup-buttons button:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus .icon,
+#sliding-popup .popup-content #popup-buttons button:active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active .icon {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+}
+#sliding-popup .popup-content #popup-buttons button:before + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:before + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:before + .icon,
+#sliding-popup .popup-content #popup-buttons button:hover:before + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:before + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:before + .icon,
+#sliding-popup .popup-content #popup-buttons button:focus:before + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:before + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:before + .icon,
+#sliding-popup .popup-content #popup-buttons button:active:before + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:before + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:before + .icon,
+#sliding-popup .popup-content #popup-buttons button:after + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:after + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:after + .icon,
+#sliding-popup .popup-content #popup-buttons button:hover:after + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:after + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:after + .icon,
+#sliding-popup .popup-content #popup-buttons button:focus:after + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:after + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:after + .icon,
+#sliding-popup .popup-content #popup-buttons button:active:after + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:after + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:after + .icon,
+#sliding-popup .popup-content #popup-buttons button .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button .icon + .icon,
+#sliding-popup .popup-content #popup-buttons button:hover .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover .icon + .icon,
+#sliding-popup .popup-content #popup-buttons button:focus .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus .icon + .icon,
+#sliding-popup .popup-content #popup-buttons button:active .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active .icon + .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active .icon + .icon {
+  margin-left: 5px;
+}
+#sliding-popup .popup-content #popup-buttons button.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:active,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:active,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:active,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:active,
+#sliding-popup .popup-content #popup-buttons button.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default.active,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default.active,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default.active,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default.active,
+#sliding-popup .popup-content #popup-buttons button.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:focus,
+#sliding-popup .popup-content #popup-buttons button.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default.focus,
+#sliding-popup .popup-content #popup-buttons button.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:hover {
+  color: #fff;
+  background-color: #4ec6f8;
+  border-color: #35bef7;
+}
+#sliding-popup .popup-content #popup-buttons button.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:active .icon,
+#sliding-popup .popup-content #popup-buttons button.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default.active .icon,
+#sliding-popup .popup-content #popup-buttons button.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:focus .icon,
+#sliding-popup .popup-content #popup-buttons button.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default.focus .icon,
+#sliding-popup .popup-content #popup-buttons button.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons button:hover.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons button:focus.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons button:active.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.btn-default:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.btn-default:hover .icon {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
+}
+#sliding-popup .popup-content #popup-buttons .agree-button,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active {
+  color: #fff;
+  background-color: #F24244;
+  border-color: #f02a2c;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.focus {
+  color: #fff;
+  background-color: #ef1215;
+  border-color: #910a0c;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:hover {
+  color: #fff;
+  background-color: #ef1215;
+  border-color: #cf0e10;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active,
+#sliding-popup .popup-content #popup-buttons .agree-button.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:active {
+  color: #fff;
+  background-color: #ef1215;
+  border-color: #cf0e10;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button.active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:active.focus {
+  color: #fff;
+  background-color: #cf0e10;
+  border-color: #910a0c;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:active,
+#sliding-popup .popup-content #popup-buttons .agree-button.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.active,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .agree-button:active {
+  background-image: none;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button:active[disabled]:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:hover:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:focus:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .agree-button.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active[disabled]:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:hover:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:focus:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .agree-button.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .agree-button[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .agree-button:active[disabled].focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:hover.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:focus.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .agree-button:active.focus {
+  background-color: #F24244;
+  border-color: #f02a2c;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button .badge,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover .badge,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus .badge,
+#sliding-popup .popup-content #popup-buttons .agree-button:active .badge {
+  color: #F24244;
+  background-color: #fff;
+}
+#sliding-popup .popup-content #popup-buttons .agree-button:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:before,
+#sliding-popup .popup-content #popup-buttons .agree-button:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus:after,
+#sliding-popup .popup-content #popup-buttons .agree-button:active:after,
+#sliding-popup .popup-content #popup-buttons .agree-button .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:hover .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:focus .icon,
+#sliding-popup .popup-content #popup-buttons .agree-button:active .icon {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  color: #fff;
+  background-color: #00406f;
+  border-color: #003156;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus {
+  color: #fff;
+  background-color: #00233c;
+  border-color: #000000;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:hover {
+  color: #fff;
+  background-color: #00233c;
+  border-color: #000e18;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  color: #fff;
+  background-color: #00233c;
+  border-color: #000e18;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:active.focus {
+  color: #fff;
+  background-color: #000e18;
+  border-color: #000000;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:active,
+#sliding-popup .popup-content #popup-buttons .find-more-button.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.active,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.active,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+.open > .dropdown-toggle#sliding-popup .popup-content #popup-buttons .find-more-button:active {
+  background-image: none;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus[disabled]:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active[disabled]:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:hover:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:focus:hover,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:active:hover,
+#sliding-popup .popup-content #popup-buttons .find-more-button.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus[disabled]:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active[disabled]:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:hover:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:focus:focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:active:focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active.disabled.focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus[disabled].focus,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active[disabled].focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:hover.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:focus.focus,
+fieldset[disabled] #sliding-popup .popup-content #popup-buttons .find-more-button:active.focus {
+  background-color: #00406f;
+  border-color: #003156;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button .badge,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover .badge,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus .badge,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active .badge {
+  color: #00406f;
+  background-color: #fff;
+}
+#sliding-popup .popup-content #popup-buttons .find-more-button:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:before,
+#sliding-popup .popup-content #popup-buttons .find-more-button:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active:after,
+#sliding-popup .popup-content #popup-buttons .find-more-button .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:hover .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:focus .icon,
+#sliding-popup .popup-content #popup-buttons .find-more-button:active .icon {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
+}
+#sliding-popup {
+  z-index: 0;
+}
+#sliding-popup .popup-content #popup-text {
+  max-width: none;
+  float: none;
+}
+#sliding-popup .popup-content #popup-buttons {
+  max-width: none;
+}
+#sliding-popup .popup-content #popup-buttons button,
+#sliding-popup .popup-content #popup-buttons .agree-button,
+#sliding-popup .popup-content #popup-buttons .find-more-button {
+  text-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+@media screen {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) {
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
 }
