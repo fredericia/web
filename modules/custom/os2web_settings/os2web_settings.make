@@ -40,13 +40,6 @@ projects[customfilter][patch][] = "http://drupal.org/files/customfilter-1034556.
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
-projects[media][subdir] = "contrib"
-projects[media][version] = "2.0-unstable7"
-projects[media][patch][] = "http://drupal.org/files/media-media_browser-preview_javascript_incompatibility-1743040.patch"
-
-projects[media_youtube][subdir] = "contrib"
-projects[media_youtube][version] = "2.0-rc3"
-
 projects[print][subdir] = "contrib"
 projects[print][version] = "1.2"
 

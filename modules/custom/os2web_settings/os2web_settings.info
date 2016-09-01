@@ -10,25 +10,16 @@ dependencies[] = customfilter
 dependencies[] = features
 dependencies[] = filter
 dependencies[] = locale
-dependencies[] = media
-dependencies[] = media_internet
-dependencies[] = media_youtube
 dependencies[] = node
 dependencies[] = os2web_base
 dependencies[] = os2web_cpr_filter
 dependencies[] = pathauto
-dependencies[] = print
 dependencies[] = rules
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = workbench
-<<<<<<< HEAD
 dependencies[] = workbench_media
-<<<<<<< HEAD
 features[user_permission][] = access workbench
->>>>>>> develop
-datestamp = 1338117520
->>>>>>> develop
 features[variable][] = cache_lifetime
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
