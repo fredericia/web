@@ -1,5 +1,5 @@
 <?php if ($view_mode == 'teaser'): ?>
-  <!-- node--os2web_base_contentpage--teaser.tpl.php -->
+  <!-- node--os2web_ofir_job--teaser.tpl.php -->
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-equal-height-element clearfix"<?php print $attributes; ?>>
 
