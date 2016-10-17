@@ -383,6 +383,17 @@ function fki_preprocess_field(&$variables, $hook) {
 /*
  * Implements theme_menu_tree().
  */
+function fki_menu_tree(&$variables) {
+  if($variables['theme_hook_original'] != 'menu_tree') {
+    return $variables['tree'];
+  }
+
+  return '<ul class="menu nav">' . $variables['tree'] . '</ul>';
+}
+
+/*
+ * Implements theme_menu_tree().
+ */
 function fki_menu_tree__tabbed(&$variables) {
   return $variables['tree'];
 }
