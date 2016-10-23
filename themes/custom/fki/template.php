@@ -271,6 +271,30 @@ function fki_preprocess_node__os2web_base_news(&$variables) {
 }
 
 /*
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2web_cp_service_cp_document(&$variables) {
+
+  // List
+  if ($variables['view_mode'] == 'list') {
+
+    // File ID
+    if ($field_file_id = field_get_items('node', $variables['node'], 'field_os2web_cp_service_file_id')) {
+
+      // Get a web accessible URL for the image
+      $variables['document_url'] = $field_file_id[0]['value'];
+    }
+
+    // File type
+    if ($field_file_type = field_get_items('node', $variables['node'], 'field_os2web_cp_service_filetype')) {
+
+      // Get a web accessible URL for the image
+      $variables['document_type'] = strtolower($field_file_type[0]['value']);
+    }
+  }
+}
+
+/*
  * Implements template_preprocess_taxonomy_term().
  */
 function fki_preprocess_taxonomy_term(&$variables) {
