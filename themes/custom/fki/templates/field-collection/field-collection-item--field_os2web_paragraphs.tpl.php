@@ -32,6 +32,22 @@
           <!-- End - paragraph reference -->
         <?php endif; ?>
 
+        <?php if (isset($content['field_os2web_base_case_ref'])): ?>
+          <!-- Begin - case reference -->
+          <div class="os2-accordion-case-reference">
+            <?php print render($content['field_os2web_base_case_ref']); ?>
+          </div>
+          <!-- End - case reference -->
+        <?php endif; ?>
+
+        <?php if (isset($content['field_os2web_base_doc_ref'])): ?>
+          <!-- Begin - document reference -->
+          <div class="os2-accordion-document-reference">
+            <?php print render($content['field_os2web_base_doc_ref']); ?>
+          </div>
+          <!-- End - document reference -->
+        <?php endif; ?>
+
       </div>
       <!-- End - body -->
 
