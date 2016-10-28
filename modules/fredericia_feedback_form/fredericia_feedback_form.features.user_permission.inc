@@ -32,6 +32,7 @@ function fredericia_feedback_form_user_default_permissions() {
   $permissions['view feedback messages'] = array(
     'name' => 'view feedback messages',
     'roles' => array(
+      'Kommunikation' => 'Kommunikation',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'feedback',

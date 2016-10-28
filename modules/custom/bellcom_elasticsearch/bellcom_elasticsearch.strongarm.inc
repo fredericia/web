@@ -14,7 +14,13 @@ function bellcom_elasticsearch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'bellcom_elasticsearch_synonyms';
-  $strongarm->value = 'myself, mig';
+  $strongarm->value = 'test, tset
+borger,borgere,borgerne,indbyggere,indbygger
+daginstitution,børnehave,børnehaver,børne haver,vuggestue,vuggestuer,daginstitutioner
+plejehjem,plejecentre,plejecenter
+Misbrugscenter,Alkohol- og Stofbehandlingen,misbrugsbehandling,misbrug
+sygesikringsbevis,sundhedskort,sygesikring
+døgnpleje,døgnplejen';
   $export['bellcom_elasticsearch_synonyms'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -28,7 +34,7 @@ function bellcom_elasticsearch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'bellcom_elasticsearch_synonyms_cluser';
-  $strongarm->value = 'elasticsearch_cluster';
+  $strongarm->value = 'fredericia_public';
   $export['bellcom_elasticsearch_synonyms_cluser'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -42,7 +48,7 @@ function bellcom_elasticsearch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'bellcom_elasticsearch_synonyms_index';
-  $strongarm->value = 'test_intranet_search';
+  $strongarm->value = 'web_search';
   $export['bellcom_elasticsearch_synonyms_index'] = $strongarm;
 
   return $export;

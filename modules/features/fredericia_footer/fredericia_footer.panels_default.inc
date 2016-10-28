@@ -52,28 +52,16 @@ function fredericia_footer_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Åbningstider på Rådhuset og Jobcentret',
-      'body' => '<table border="0" cellpadding="0" cellspacing="0">
-	<tbody>
-		<tr>
-			<td>
-				Mandag - onsdag</td>
-			<td>
-				kl. 10.00 - 14.00</td>
-		</tr>
-		<tr>
-			<td>
-				Torsdag</td>
-			<td>
-				kl. 10.00 - 17.00</td>
-		</tr>
-		<tr>
-			<td>
-				Fredag</td>
-			<td>
-				kl. 10.00 - 14.00</td>
-		</tr>
-	</tbody>
-</table>
+      'body' => '<p>Mandag - onsdag kl. 10.00 - 14.00<br />
+Torsdag kl. 10.00 - 17.00<br />
+Fredag kl. 10.00 - 14.00</p>
+
+<p>&nbsp;</p>
+
+<p><a href="node/1385">Faste lukkedage (helligdage)</a></p>
+
+<p>&nbsp;</p>
+
 <p>&nbsp;</p>
 ',
       'format' => 'full_html',
@@ -105,11 +93,19 @@ function fredericia_footer_default_panels_mini() {
       'admin_title' => '',
       'title' => 'Fredericia Kommune',
       'body' => '<p>Gothersgade 20</p>
+
 <p>7000 Fredericia</p>
+
 <p>Tlf.: 7210 7000</p>
+
 <p>kommunen@fredericia.dk</p>
+
 <p>&nbsp;</p>
-<p><a href="#">Andre kontaktmuligheder</a></p>
+
+<p><a href="/node/1199">Send sikker post</a></p>
+
+<p><a href="/node/1201">Om hjemmesiden</a></p>
+
 <p>&nbsp;</p>
 ',
       'format' => 'filtered_html',
@@ -140,7 +136,7 @@ function fredericia_footer_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p>Hotline tlf. 70 20 40 21</p>
+      'body' => '<p>Tlf. 7210 7000</p>
 ',
       'format' => 'filtered_html',
       'substitute' => TRUE,
