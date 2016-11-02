@@ -64,7 +64,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -143,7 +143,7 @@ function os2web_news_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 62,
+      'weight' => 68,
     ),
   );
 
@@ -348,7 +348,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 60,
+      'weight' => 66,
     ),
   );
 
@@ -428,7 +428,7 @@ function os2web_news_page_field_default_field_instances() {
   $field_instances['node-os2web_base_news-field_os2web_base_field_lead_img'] = array(
     'bundle' => 'os2web_base_news',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Det er muligt at tilføje flere billeder. De vil vises i rotation. Hvis billedet ikke passer til formatet vil det blive beskåret automatisk. Det er muligt at ændre beskæringen efterfølgende.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -504,15 +504,19 @@ function os2web_news_page_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'os2web_base_style_image',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_lead_img',
-    'label' => 'Primære billede',
-    'required' => 1,
+    'label' => 'Billede',
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'alt_field_required' => 1,
@@ -521,14 +525,10 @@ function os2web_news_page_field_default_field_instances() {
         'styles' => array(
           'fredericia_content_image' => 'fredericia_content_image',
           'os2web_spotbox_image' => 0,
-          'svendborg_spotbox' => 0,
         ),
       ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'focus' => 0,
-      'focus_lock_ratio' => 0,
-      'focus_min_size' => '',
       'max_filesize' => '10 MB',
       'max_resolution' => '',
       'min_resolution' => '900x419',
@@ -542,11 +542,8 @@ function os2web_news_page_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
-          'ustream' => 'ustream',
-          'youtube' => 0,
         ),
         'allowed_types' => array(
-          'application' => 0,
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
@@ -557,11 +554,8 @@ function os2web_news_page_field_default_field_instances() {
           'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 'media_internet',
           'upload' => 'upload',
-          'youtube' => 0,
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 45,
@@ -675,7 +669,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -820,7 +814,7 @@ function os2web_news_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 58,
+      'weight' => 64,
     ),
   );
 
@@ -872,7 +866,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -950,7 +944,7 @@ function os2web_news_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 55,
+      'weight' => 67,
     ),
   );
 
@@ -996,7 +990,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -1085,7 +1079,7 @@ function os2web_news_page_field_default_field_instances() {
           'trim_length' => 150,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -1266,7 +1260,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 61,
+      'weight' => 69,
     ),
   );
 
@@ -1327,7 +1321,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 59,
+      'weight' => 65,
     ),
   );
 
@@ -1555,8 +1549,106 @@ For et møde er det tidspunktet hvor mødet starter.',
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-os2web_news_page_newstypes-field_os2web_base_field_contact'.
+  $field_instances['taxonomy_term-os2web_news_page_newstypes-field_os2web_base_field_contact'] = array(
+    'bundle' => 'os2web_news_page_newstypes',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2web_base_field_contact',
+    'label' => 'Kontaktblok',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-os2web_news_page_newstypes-field_os2web_base_field_spotbox'.
+  $field_instances['taxonomy_term-os2web_news_page_newstypes-field_os2web_base_field_spotbox'] = array(
+    'bundle' => 'os2web_news_page_newstypes',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2web_base_field_spotbox',
+    'label' => 'Spotboxe',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 44,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Billede');
+  t('Det er muligt at tilføje flere billeder. De vil vises i rotation. Hvis billedet ikke passer til formatet vil det blive beskåret automatisk. Det er muligt at ændre beskæringen efterfølgende.');
   t('Egenavne / stednavne');
   t('Forfrem til');
   t('Indhold');
@@ -1566,7 +1658,6 @@ For et møde er det tidspunktet hvor mødet starter.',
   t('Organistation');
   t('Politik');
   t('Portalkategori');
-  t('Primære billede');
   t('Resume (maks 2 linier!)');
   t('Skjul automatisk relaterede links');
   t('Skjul højre sidebar');

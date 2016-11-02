@@ -221,7 +221,7 @@ function os2web_spotbox_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => 'content',
+          'image_link' => '',
           'image_style' => 'os2web_spotbox_image',
         ),
         'type' => 'image',

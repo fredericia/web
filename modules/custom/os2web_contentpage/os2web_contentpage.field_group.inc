@@ -57,6 +57,7 @@ function os2web_contentpage_field_group_info() {
       3 => 'field_os2web_base_hide_contact',
       4 => 'field_os2web_base_hide_sidebar',
       5 => 'field_os2web_base_field_struct',
+      6 => 'field_os2web_base_field_promote',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -81,17 +82,16 @@ function os2web_contentpage_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Indholdsside',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'group_afsnit',
       1 => 'group_os2web_base_group_3',
       2 => 'group_os2web_base_group_esdh',
       3 => 'group_os2web_base_group_extras',
       4 => 'group_os2web_base_group_general',
-      5 => 'group_os2web_base_group_hidden',
-      6 => 'group_os2web_base_group_images',
-      7 => 'group_relationer',
-      8 => 'group_spotbokse',
+      5 => 'group_os2web_base_group_images',
+      6 => 'group_relationer',
+      7 => 'group_spotbokse',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -115,7 +115,11 @@ function os2web_contentpage_field_group_info() {
   $field_group->data = array(
     'label' => 'Sager og dokumenter',
     'weight' => '9',
-    'children' => array(),
+    'children' => array(
+      0 => 'field_os2web_base_field_case',
+      1 => 'field_os2web_base_field_doc',
+      2 => 'field_os2web_base_field_casesort',
+    ),
     'format_type' => 'htab',
     'format_settings' => array(
       'label' => 'Sager og dokumenter',
@@ -196,19 +200,30 @@ function os2web_contentpage_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2web_base_contentpage';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_os2web_base_group_content';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '12',
-    'children' => array(),
-    'format_type' => 'fieldset',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_piwik_stats',
+      1 => 'field_piwik_stats_maaned',
+      2 => 'field_piwik_stats_aar',
+      3 => 'field_piwik_stats_uge',
+    ),
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Skjult',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => 'hidden',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_os2web_base_group_hidden|node|os2web_base_contentpage|form'] = $field_group;
@@ -223,21 +238,21 @@ function os2web_contentpage_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
-    'label' => 'Billeder og filer',
+    'label' => 'Media',
     'weight' => '5',
     'children' => array(
       0 => 'field_os2web_base_field_image',
-      1 => 'field_os2web_base_field_media',
-      2 => 'field_os2web_base_field_video',
+      1 => 'field_os2web_base_field_video',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Media',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_os2web_base_group_images|node|os2web_base_contentpage|form'] = $field_group;
@@ -305,10 +320,10 @@ function os2web_contentpage_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Afsnit');
-  t('Billeder og filer');
   t('Emneord');
   t('Indholdsside');
   t('Indstillinger');
+  t('Media');
   t('Relationer');
   t('Sager og dokumenter');
   t('Skjult');

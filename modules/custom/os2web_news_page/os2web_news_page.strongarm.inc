@@ -48,7 +48,20 @@ function os2web_news_page_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '0',
+        ),
+      ),
       'display' => array(),
     ),
   );

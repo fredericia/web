@@ -23,9 +23,9 @@ function os2web_news_page_field_group_info() {
     'label' => 'Datoer',
     'weight' => '2',
     'children' => array(
-      0 => 'field_os2web_news_page_archive',
-      1 => 'field_os2web_news_date_end',
-      2 => 'field_os2web_news_date_start',
+      0 => 'field_os2web_news_date_end',
+      1 => 'field_os2web_news_date_start',
+      2 => 'field_os2web_news_page_archive',
       3 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
@@ -109,8 +109,9 @@ function os2web_news_page_field_group_info() {
       0 => 'field_os2web_base_field_contact',
       1 => 'field_os2web_base_field_hidlinks',
       2 => 'field_os2web_base_field_promote',
-      3 => 'field_os2web_base_hide_sidebar',
+      3 => 'field_os2web_base_field_spotbox',
       4 => 'field_os2web_base_hide_contact',
+      5 => 'field_os2web_base_hide_sidebar',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -169,10 +170,10 @@ function os2web_news_page_field_group_info() {
     'label' => 'Tekst',
     'weight' => '1',
     'children' => array(
-      0 => 'field_os2web_news_page_type',
-      1 => 'body',
-      2 => 'field_os2web_base_field_struct',
-      3 => 'field_os2web_base_field_summary',
+      0 => 'body',
+      1 => 'field_os2web_base_field_struct',
+      2 => 'field_os2web_base_field_summary',
+      3 => 'field_os2web_news_page_type',
       4 => 'title',
     ),
     'format_type' => 'htab',
@@ -207,7 +208,6 @@ function os2web_news_page_field_group_info() {
       3 => 'group_os2web_base_group_text',
       4 => 'group_os2web_news_group_media',
       5 => 'group_relationer',
-      6 => 'group_spotbokse',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -229,21 +229,22 @@ function os2web_news_page_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_os2web_base_news_tabs';
   $field_group->data = array(
-    'label' => 'Media og filer',
+    'label' => 'Media',
     'weight' => '3',
     'children' => array(
       0 => 'field_os2web_base_field_lead_img',
-      1 => 'field_os2web_base_field_media',
-      2 => 'field_os2web_base_field_video',
+      1 => 'field_os2web_base_field_video',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Media',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-os2web-news-group-media field-group-fieldset',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-os2web-news-group-media field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $field_groups['group_os2web_news_group_media|node|os2web_base_news|form'] = $field_group;
@@ -309,7 +310,7 @@ function os2web_news_page_field_group_info() {
   t('Datoer');
   t('Emneord');
   t('Indstillinger');
-  t('Media og filer');
+  t('Media');
   t('News');
   t('Relationer');
   t('Skjult');
