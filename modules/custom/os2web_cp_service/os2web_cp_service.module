@@ -206,14 +206,14 @@ function os2web_cp_service_theme($existing, $type, $theme, $path) {
  */
 function os2web_cp_service_handler() {
   if (!os2web_esdh_provider_has_api('cp')) {
-    drupal_access_denied();
+  #  drupal_access_denied();
   }
-
+  # skifter
   $ip_string = variable_get('os2web_cp_service_cp_access_ip', '');
   $valid_ips = array_map('trim', explode(',', $ip_string));
-  if (!in_array(ip_address(), $valid_ips)) {
-    drupal_access_denied();
-  }
+  #if (!in_array(ip_address(), $valid_ips)) {
+  #  drupal_access_denied();
+  #}
 
   $data = os2web_esdh_provider_invoke('cp', 'handle_request');
   return $data;
@@ -241,11 +241,19 @@ function os2web_gf_service_handler($file_id) {
     if (!empty($username) && !empty($password)) {
       // CURL for transfer:
       $ch = curl_init($url . '?FileID=' . $file_id . '&FileFormat=Available');
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);     
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_USERPWD, "{$username}:{$password}");
       curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
       $data = curl_exec($ch);
       $header = curl_getinfo($ch);
+
+      if(curl_error($ch)) { 
+        error_log('curl error' . curl_error($ch));
+      }
+      # Skifter debug
+      #error_log('header log: ' . print_r($header,true));
       curl_close($ch);
       if ($header['http_code'] === 200) {
         // Load the title to use it as the filename, and for conditions.
