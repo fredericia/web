@@ -52,15 +52,21 @@
 			&:first-child {
 
 				a {
-					display: none;
-				}
+					font-size: 0;
 
-				&:before {
-					font-family: 'FontAwesome';
-					font-size: @font-size-base;
-					content: @fa-var-home;
-					color: @os2-breadcrumb-separator-color;
-					padding: 0 @os2-breadcrumb-separator-spacing;
+					.icon {
+
+						&:before {
+							display: inline-block;
+							font-family: FontAwesome;
+							font-size: @font-size-base;
+							content: @fa-var-home;
+							color: @os2-breadcrumb-separator-color;
+							padding: 0 @os2-breadcrumb-separator-spacing;
+						}
+					}
+
+					&:extend(.clearfix all);
 				}
 
 				+ li {

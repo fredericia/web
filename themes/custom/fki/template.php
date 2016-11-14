@@ -476,3 +476,9 @@ function fki_menu_link__tabbed(array $variables) {
   return '<div class="col-xs-4 col-xs-small-gutter"><div class="os2-page-header-tabbed-menu-link">' . $output . $sub_menu . "</div></div>\n";
 }
 
+/*
+ * Implements hook_preprocess_breadcrumb().
+ */
+function fki_preprocess_breadcrumb(&$variables) {
+  $variables['breadcrumb'][0] = l('<span class="icon"></span>', '<front>', array('html' => true));
+}
