@@ -3738,9 +3738,19 @@ var popoverButton = (function ($) {
    */
   function registerEventHandlers() {
 
+    // Click outside popover
+    $(document).on("click", function () {
+
+      $('.popover-button-toggle')
+          .parent('.popover-button')
+          .removeClass('popover-button-open');
+    });
+
     // Toggle sidebar
     $('.popover-button-toggle').on('click touchstart', function (event) {
       event.preventDefault();
+      event.stopPropagation();
+
       var $element = $(this);
 
       $element
