@@ -28,8 +28,24 @@ var popoverButton = (function ($) {
       var $element = $(this);
 
       $element
-        .parent('.popover-button')
-        .toggleClass('popover-button-open');
+          .parent('.popover-button')
+          .toggleClass('popover-button-open');
+
+      // Remove inputs from tabindex
+      $element
+          .parent('.popover-button')
+          .find('input')
+          .prop('tabIndex', -1);
+
+      $element
+          .parent('.popover-button')
+          .find('textarea')
+          .prop('tabIndex', -1);
+
+      $element
+          .parent('.popover-button')
+          .find('button')
+          .prop('tabIndex', -1);
     });
   }
 
