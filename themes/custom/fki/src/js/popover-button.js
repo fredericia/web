@@ -25,15 +25,17 @@ var popoverButton = (function ($) {
     // Click outside popover
     $(document).on("click", function () {
 
-      $('.popover-button-toggle')
-          .parent('.popover-button')
+      $('.popover-button')
           .removeClass('popover-button-open');
     });
 
-    // Toggle sidebar
-    $('.popover-button-toggle').on('click touchstart', function (event) {
-      event.preventDefault();
+    $('.popover-button').on('click', function(event) {
       event.stopPropagation();
+    });
+
+    // Toggle sidebar
+    $('.popover-button-toggle').on('click', function (event) {
+      event.preventDefault();
 
       var $element = $(this);
 
