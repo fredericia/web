@@ -8,17 +8,17 @@
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - meetings full node -->
-  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full os2-accordion"<?php print $attributes; ?>>
 
-    <div class="os2-node-full-heading">
+    <div class="os2-node-full-heading os2-accordion-heading">
       <?php print render($title_prefix); ?>
-      <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title"><?php print $title; ?></h3>
+      <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title os2-accordion-heading-title"><?php print $title; ?></h3>
       <?php print render($title_suffix); ?>
     </div>
 
     <?php if (isset($content)): ?>
       <!-- Begin - body -->
-      <div class="os2-node-full-body">
+      <div class="os2-node-full-body os2-accordion-body">
         <?php print render($content); ?>
       </div>
       <!-- End - body -->
@@ -28,3 +28,9 @@
   <!-- End - meetings full node -->
 
 <?php endif; ?>
+
+
+
+
+<div class="">
+        <div class="">
