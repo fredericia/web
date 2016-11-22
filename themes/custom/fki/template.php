@@ -5,26 +5,26 @@
  */
 function fki_preprocess_html(&$variables) {
   $theme_path = path_to_theme();
-
-  // Add conditional stylesheets
-  drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
-    'type' => 'file',
-    'group' => CSS_THEME,
-  ));
-  drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
-    'type' => 'file',
-    'scope' => 'footer',
-    'group' => JS_LIBRARY,
-  ));
-  drupal_add_js($theme_path . '/dist/js/app.js', array(
-    'type' => 'file',
-    'scope' => 'footer',
-  ));
-  drupal_add_js($theme_path . '/dist/js/ie9.js', array(
-    'type' => 'file',
-    'scope' => 'footer',
-    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
-  ));
+//
+//  // Add conditional stylesheets
+//  drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
+//    'type' => 'file',
+//    'group' => CSS_THEME,
+//  ));
+//  drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
+//    'type' => 'file',
+//    'scope' => 'footer',
+//    'group' => JS_LIBRARY,
+//  ));
+//  drupal_add_js($theme_path . '/dist/js/app.js', array(
+//    'type' => 'file',
+//    'scope' => 'footer',
+//  ));
+//  drupal_add_js($theme_path . '/dist/js/ie9.js', array(
+//    'type' => 'file',
+//    'scope' => 'footer',
+//    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
+//  ));
 
   drupal_add_js(drupal_get_path('module', 'os2web_borger_dk') . '/js/os2web_borger_dk.js', array(
     'type' => 'file',
@@ -118,10 +118,12 @@ function fki_preprocess_page(&$variables) {
     ->range(0, 1)
     ->execute();
 
-  $nids = array_keys($result['node']);
+  if (!empty($result['node'])) {
+    $nids = array_keys($result['node']);
 
-  if ($node = node_load($nids[0])) {
-    $variables['emergency_grant'] = node_view($node, 'includeable');
+    if ($node = node_load($nids[0])) {
+      $variables['emergency_grant'] = node_view($node, 'includeable');
+    }
   }
 }
 
@@ -169,8 +171,7 @@ function fki_node_view_alter(&$build) {
  */
 function fki_preprocess_node__full(&$variables) {
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes
-  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
-
+  $variables['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
 }
 
 /*
