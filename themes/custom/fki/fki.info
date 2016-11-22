@@ -28,7 +28,7 @@ stylesheets[all][] = 'dist/css/stylesheet.css'
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] = 'dist/js/modernizr.js'
-scripts[] = 'dist/js/core.js'
+scripts[] = 'dist/js/app.js'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Plugins
