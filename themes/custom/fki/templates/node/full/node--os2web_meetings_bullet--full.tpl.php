@@ -8,7 +8,7 @@
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - meetings full node -->
-  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full os2-accordion"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full os2-accordion entity-field-collection-item"<?php print $attributes; ?>>
 
     <div class="os2-node-full-heading os2-accordion-heading">
       <?php print render($title_prefix); ?>
