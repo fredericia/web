@@ -28,9 +28,3 @@
   <!-- End - meetings full node -->
 
 <?php endif; ?>
-
-
-
-
-<div class="">
-        <div class="">
