@@ -15,12 +15,12 @@
       <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title os2-accordion-heading-title">
         <?php print $title; ?>
         
-       <?php if ($content['field_os2web_meetings_bul_closed'][UND][0]['value'] == '1') : 
-      print t('(Lukket)'); 
-    endif;
-    ?>
+       <?php if ($content['field_os2web_meetings_bul_closed']['und'][0]['value'] == '1') : 
+        print t('(Lukket)'); 
+        endif;
+        ?>
         
-            </h3>
+      </h3>
       <?php print render($title_suffix); ?>
     </div>
 
