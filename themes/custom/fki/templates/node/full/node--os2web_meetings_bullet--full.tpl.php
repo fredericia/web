@@ -5,6 +5,7 @@
     hide($content['links']);
     hide($content['links_bottom']);
     hide($content['field_tags']);
+    hide($content['field_os2web_meetings_bul_closed']);
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - meetings full node -->
