@@ -15,7 +15,7 @@
       <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title os2-accordion-heading-title">
         <?php print $title; ?>
         
-       <?php if ($content['field_os2web_meetings_bul_closed'][LANGUAGE_NONE][0]['value'] == 0) : 
+       <?php if ($content['field_os2web_meetings_bul_closed'][LANGUAGE_NONE][0]['value'] == '1') : 
       print t('(Lukket)'); 
     endif;
     ?>
