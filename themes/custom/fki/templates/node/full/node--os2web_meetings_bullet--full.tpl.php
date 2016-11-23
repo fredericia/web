@@ -12,7 +12,12 @@
 
     <div class="os2-node-full-heading os2-accordion-heading">
       <?php print render($title_prefix); ?>
-      <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title os2-accordion-heading-title"><?php print $title; ?></h3>
+      <h3<?php print $title_attributes; ?> class="os2-node-full-heading-title os2-accordion-heading-title">
+        <?php print $title; ?>
+        <?php if ($field_os2web_meetings_bul_closed[0]['value']) : ?>
+          (Lukket)
+        <?php endif; ?>
+      </h3>
       <?php print render($title_suffix); ?>
     </div>
 
