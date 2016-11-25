@@ -64,17 +64,19 @@
  * @ingroup themeable
  */
 ?>
-<li class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<li class="<?php print $classes; ?> os2-box"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
-  <h3 class="title"<?php print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"><?php print $title; ?></a>
-  </h3>
+  <div class="os2-box-heading">
+    <h3 class="title os2-box-heading-title"<?php print $title_attributes; ?>>
+      <a href="<?php print $url; ?>"><?php print $title; ?></a>
+    </h3>
+  </div>
   <?php print render($title_suffix); ?>
-  <div class="search-snippet-info">
+  <div class="search-snippet-info os2-box-body">
     <?php if ($snippet): ?>
       <div class="search-snippet"<?php print $content_attributes; ?>>
-          <p class="indhold"><?php print $snippet; ?></p>
-          <p class="url"><a href="<?php print $url; ?>"><?php print $url; ?></a></p>
+          <p class="search-snippet-content"><?php print $snippet; ?></p>
+          <p class="search-snippet-url"><a href="<?php print $url; ?>"><?php print $url; ?></a></p>
     <?php endif; ?>
   </div>
 </li>
