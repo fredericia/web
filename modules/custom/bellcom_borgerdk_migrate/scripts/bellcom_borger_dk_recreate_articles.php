@@ -28,7 +28,7 @@ if (isset($result['node'])) {
   $nids = array_keys($result['node']);
   $old_articles = entity_load('node', $nids);
   foreach ($old_articles as $old_article) {
-    if ($old_article->nid == 2300) {
+//    if ($old_article->nid == 2300) {
       print('==========================' . PHP_EOL);
       print('Copying ' . $old_article->title . ' [nid: ' . $old_article->nid . ']' . PHP_EOL);
 
@@ -149,7 +149,7 @@ if (isset($result['node'])) {
 
       print('New borger.dk article: ' . $node->title . ' [nid: ' . $node->nid . ']' . PHP_EOL);
     }
-  }
+//  }
 }
 
 print('==========================' . PHP_EOL);
