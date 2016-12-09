@@ -387,7 +387,7 @@ function os2web_cp_service_create_case(array $data) {
   // in the vocabulary. Otherwise the node will be unpublished.
   $approved_vocabulary = taxonomy_vocabulary_machine_name_load('os2web_cp_service_tax_approved_rules');
   $approved_rules = taxonomy_get_tree($approved_vocabulary->vid);
-  $approved = FALSE;
+  $approved = TRUE;
   foreach ($data['rules'] as $trigger_rule) {
     foreach ($approved_rules as $approved_rule) {
       if ($approved_rule->name === $trigger_rule['tag']) {
