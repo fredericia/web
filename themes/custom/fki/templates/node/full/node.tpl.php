@@ -11,9 +11,17 @@
       hide($content['field_tags']);
     }
 
-    if (isset($content['field_os2web_base_field_image'])) {
-      hide($content['field_os2web_base_field_image']);
-    }
+  if (isset($content['field_os2web_base_field_image'])) {
+    hide($content['field_os2web_base_field_image']);
+  }
+
+  if (isset($content['field_os2web_base_case_ref'])) {
+    hide($content['field_os2web_base_case_ref']);
+  }
+
+  if (isset($content['field_os2web_base_doc_ref'])) {
+    hide($content['field_os2web_base_doc_ref']);
+  }
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
@@ -45,6 +53,26 @@
       <!-- Begin - body -->
       <div class="os2-node-full-body">
         <?php print render($content); ?>
+
+        <?php if (isset($content['field_os2web_base_case_ref']) OR isset($content['field_os2web_base_doc_ref'])): ?>
+            <p style="padding: 0; margin: 0; margin-top: 25px;"><strong><?php print t('Bilag'); ?></strong></p>
+        <?php endif; ?>
+
+        <?php if (isset($content['field_os2web_base_case_ref'])): ?>
+            <!-- Begin - case reference -->
+            <div class="os2-node-full-case-reference">
+              <?php print render($content['field_os2web_base_case_ref']); ?>
+            </div>
+            <!-- End - case reference -->
+        <?php endif; ?>
+
+        <?php if (isset($content['field_os2web_base_doc_ref'])): ?>
+            <!-- Begin - document reference -->
+            <div class="os2-node-full-document-reference">
+              <?php print render($content['field_os2web_base_doc_ref']); ?>
+            </div>
+            <!-- End - document reference -->
+        <?php endif; ?>
       </div>
       <!-- End - body -->
     <?php endif; ?>
