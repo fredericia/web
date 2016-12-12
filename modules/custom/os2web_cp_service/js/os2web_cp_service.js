@@ -6,7 +6,7 @@
 (function ($) {
 	$(document).ready(function() {
 		// Convert all nonalphanumeric chars to /.
-		$('#views-exposed-form-os2web-cp-service-cp-case-search-panel-pane-1').live('submit',function(e) {
+		$('#views-exposed-form-os2web-cp-service-cp-case-search-panel-pane-1').on('submit',function(e) {
 			// Prevent double submissions.
 			var $form = $(this);
 
