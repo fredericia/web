@@ -54,7 +54,7 @@
       <div class="os2-node-full-body">
         <?php print render($content); ?>
 
-        <?php if (isset($content['field_os2web_base_case_ref']) OR isset($content['field_os2web_base_doc_ref'])): ?>
+        <?php if ($display_case OR isset($content['field_os2web_base_doc_ref'])): ?>
             <p style="padding: 0; margin: 0; margin-top: 25px;"><strong><?php print t('Bilag'); ?></strong></p>
         <?php endif; ?>
 

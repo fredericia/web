@@ -172,6 +172,18 @@ function fki_node_view_alter(&$build) {
 function fki_preprocess_node__full(&$variables) {
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes
   $variables['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+  $variables['display_case'] = false;
+
+  // Should case be displayed?
+  if ($case_target = field_get_items('node', $variables['node'], 'field_os2web_base_case_ref')) {
+
+    if ($node_case = node_load($case_target[0]['target_id'])) {
+
+      if (!empty($node_case->field_os2web_cp_service_doc_ref)) {
+        $variables['display_case'] = true;
+      }
+    }
+  }
 }
 
 /*
@@ -292,6 +304,19 @@ function fki_preprocess_node__os2web_cp_service_cp_document(&$variables) {
       // Get a web accessible URL for the image
       $variables['document_type'] = strtolower($field_file_type[0]['value']);
     }
+  }
+}
+
+/*
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2web_base_contentpage(&$variables) {
+
+  // File ID
+  if ($field_file_id = field_get_items('node', $variables['node'], 'field_os2web_cp_service_file_id')) {
+
+    // Get a web accessible URL for the image
+    $variables['document_url'] = $field_file_id[0]['value'];
   }
 }
 
