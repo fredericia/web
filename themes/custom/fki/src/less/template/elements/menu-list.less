@@ -21,7 +21,7 @@
 // Menu list
 .os2-menu-list {
 
-	ul {
+	ul:not(.facetapi-facetapi-links) {
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -38,6 +38,31 @@
 					background-color: #e0e3ee;
 					border-left: 5px solid @brand-quinary;
 				}
+			}
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	ul.facetapi-facetapi-links {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			border-bottom: 1px solid @os2-menu-list-border-color;
+
+			a {
+				display: inline-block;
+				padding: @os2-menu-list-top-bottom-spacing 0;
+				font-weight: @font-weight;
+				border-left: 5px solid @brand-quinary;
+			}
+
+			&:hover {
+				background-color: #e0e3ee;
 			}
 
 			&:last-child {
