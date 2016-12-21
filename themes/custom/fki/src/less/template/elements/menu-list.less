@@ -55,10 +55,14 @@
 			border-bottom: 1px solid @os2-menu-list-border-color;
 
 			a {
-				display: inline-block;
+				display: block;
 				padding: @os2-menu-list-top-bottom-spacing 0;
 				font-weight: @font-weight;
 				border-left: 5px solid @brand-quinary;
+
+				&.facetapi-active {
+					display: inline-block;
+				}
 			}
 
 			&:hover {
