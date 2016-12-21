@@ -258,35 +258,38 @@
 	// Menu list
 	.os2-menu-list {
 
-		&:not(.facetapi-facetapi-links) {
+		ul {
 
-			li {
+			&:not(.facetapi-facetapi-links) {
 
-				a {
-					padding: @os2-menu-list-top-bottom-spacing @content-lg-left-right-spacing;
+				li {
 
-					&:hover {
-						padding-left: floor( (@content-lg-left-right-spacing - @os2-menu-list-link-hover-marquer-width) );
+					a {
+						padding: @os2-menu-list-top-bottom-spacing @content-lg-left-right-spacing;
+
+						&:hover {
+							padding-left: floor( (@content-lg-left-right-spacing - @os2-menu-list-link-hover-marquer-width) );
+						}
 					}
 				}
 			}
-		}
 
-		&.facetapi-facetapi-links {
+			&.facetapi-facetapi-links {
 
-			li {
-
-				a {
-					padding: @os2-menu-list-top-bottom-spacing @content-lg-left-right-spacing;
-				}
-
-				&:hover {
+				li {
 
 					a {
+						padding: @os2-menu-list-top-bottom-spacing @content-lg-left-right-spacing;
+					}
 
-						&,
-						&:hover {
-							padding-left: floor( (@content-lg-left-right-spacing - @os2-menu-list-link-hover-marquer-width - 5px) );
+					&:hover {
+
+						a {
+
+							&,
+							&:hover {
+								padding-left: floor( (@content-lg-left-right-spacing - @os2-menu-list-link-hover-marquer-width - 5px) );
+							}
 						}
 					}
 				}
