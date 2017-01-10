@@ -47,7 +47,7 @@
 		    $(submitLink).fadeOut(function(){
 			$(lockedFields).prop('disabled', true);
 			$.ajax({
-			    url: "/kle/" + tid + "/update/" + weight + "/" + from + "/" + until,
+			    url: Drupal.settings.basePath + "kle/" + tid + "/update/" + weight + "/" + from + "/" + until,
 			}).done(function() {
 			    $(submitted).fadeIn(function(){
 				$(submitted).fadeOut(function(){
@@ -101,7 +101,7 @@
 
 		    $(submitLink).fadeOut(function(){
 			$.ajax({
-			    url: "/phrase/" + id + "/update",
+			    url: Drupal.settings.basePath + "phrase/" + id + "/update",
 			    data: { phrase: phraseVal, exclusive: exclusiveVal, nid: nidVal, from: fromVal, until: untilVal, weight: weightVal }
 			}).done(function() {
 			    $(submitted).fadeIn(function(){

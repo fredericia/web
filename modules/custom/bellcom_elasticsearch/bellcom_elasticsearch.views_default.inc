@@ -12,10 +12,10 @@ function bellcom_elasticsearch_views_default_views() {
 
   $view = new view();
   $view->name = 'bellcom_elasticsearch_kle_terms';
-  $view->description = 'displays settings for KLE elasticsearch ingegration';
+  $view->description = 'displays settings for elasticsearch ingegration';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Bellcom elasticsearch KLE terms';
+  $view->human_name = 'Bellcom elasticsearch terms';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -90,6 +90,11 @@ function bellcom_elasticsearch_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['label'] = 'Vocabulary';
   /* Field: weight */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -102,13 +107,6 @@ return bellcom_elasticsearch_kle_settings_page_weight_form($row->tid);
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'os2web_taxonomies_tax_kle' => 'os2web_taxonomies_tax_kle',
-  );
   /* Filter criterion: Taxonomy term: Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
@@ -131,26 +129,13 @@ return bellcom_elasticsearch_kle_settings_page_weight_form($row->tid);
     7 => 0,
     3 => 0,
   );
-  $translatables['bellcom_elasticsearch_kle_terms'] = array(
-    t('Master'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('.'),
-    t(','),
-    t('Name'),
-    t('Change weight'),
-  );
+  /* Filter criterion: bellcom_elasticsearch_terms_term_removed */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['ui_name'] = 'bellcom_elasticsearch_terms_term_removed';
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'return bellcom_elasticsearch_terms_term_removed($row->machine_name);';
   $export['bellcom_elasticsearch_kle_terms'] = $view;
 
   return $export;
