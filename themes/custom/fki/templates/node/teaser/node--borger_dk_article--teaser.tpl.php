@@ -12,10 +12,15 @@
     <!-- Begin - body -->
     <div class="os2-node-teaser-body">
 
-      <?php if (isset($content['field_borger_dk_pre_text'])): ?>
+      <?php if (isset($content['field_borger_dk_article_ref'])): ?>
         <!-- Begin - intro -->
         <div class="os2-node-teaser-body-content">
-          <?php print render($content['field_borger_dk_pre_text']); ?>
+          <?php
+            $article = borgerdk_article_load($node->field_borger_dk_article_ref['und'][0]['borgerdk_article_entity_id']);
+            if ($article) {
+              print ($article->header);
+            }
+          ?>
         </div>
         <!-- End - intro -->
       <?php endif; ?>
