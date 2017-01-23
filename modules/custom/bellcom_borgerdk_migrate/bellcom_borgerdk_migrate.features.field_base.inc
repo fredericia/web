@@ -25,6 +25,25 @@ function bellcom_borgerdk_migrate_field_default_field_bases() {
     'type' => 'borgerdk_article_field',
   );
 
+  // Exported field_base: 'field_borger_dk_header'.
+  $field_bases['field_borger_dk_header'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_borger_dk_header',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_borger_dk_image'.
   $field_bases['field_borger_dk_image'] = array(
     'active' => 1,

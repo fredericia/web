@@ -76,6 +76,99 @@ function bellcom_borgerdk_migrate_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-borger_dk_article-field_borger_dk_header'.
+  $field_instances['node-borger_dk_article-field_borger_dk_header'] = array(
+    'bundle' => 'borger_dk_article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Lad dette felt være tomt for at bruge værdien fra importeret borger.dk artiklen',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 18,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_borger_dk_header',
+    'label' => 'Header',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blokindhold' => 0,
+          'email' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blokindhold' => array(
+              'weight' => -7,
+            ),
+            'email' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-borger_dk_article-field_borger_dk_image'.
   $field_instances['node-borger_dk_article-field_borger_dk_image'] = array(
     'bundle' => 'borger_dk_article',
@@ -333,7 +426,7 @@ function bellcom_borgerdk_migrate_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -427,7 +520,7 @@ function bellcom_borgerdk_migrate_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1013,9 +1106,11 @@ function bellcom_borgerdk_migrate_field_default_field_instances() {
   t('Borger.dk article ref');
   t('Borger.dk_image');
   t('Forfrem til');
+  t('Header');
   t('Intro / Resume (maks 2 linier!)');
   t('KL Emneord');
   t('Kontaktblok');
+  t('Lad dette felt være tomt for at bruge værdien fra importeret borger.dk artiklen');
   t('Portalkategori');
   t('Post-text');
   t('Skjul højre sidebar');

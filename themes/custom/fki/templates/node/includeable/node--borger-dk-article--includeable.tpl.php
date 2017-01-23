@@ -19,7 +19,7 @@
       <?php endif; ?>
 
       <?php
-      print render($content['field_borger_dk_article_ref']);
+        print render($content['field_borger_dk_article_ref']);
       ?>
 
 

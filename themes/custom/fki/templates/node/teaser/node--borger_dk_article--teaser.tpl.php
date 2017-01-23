@@ -16,9 +16,13 @@
         <!-- Begin - intro -->
         <div class="os2-node-teaser-body-content">
           <?php
-            $article = borgerdk_article_load($node->field_borger_dk_article_ref['und'][0]['borgerdk_article_entity_id']);
-            if ($article) {
-              print ($article->header);
+            if (trim(strip_tags($node->field_borger_dk_header['und'][0]['value']))) {
+              print $node->field_borger_dk_header['und'][0]['value'];
+            } else {
+              $article = borgerdk_article_load($node->field_borger_dk_article_ref['und'][0]['borgerdk_article_entity_id']);
+              if ($article) {
+                print ($article->header);
+              }
             }
           ?>
         </div>
