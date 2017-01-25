@@ -5,26 +5,26 @@
  */
 function fki_preprocess_html(&$variables) {
   $theme_path = path_to_theme();
-//
-//  // Add conditional stylesheets
-//  drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
-//    'type' => 'file',
-//    'group' => CSS_THEME,
-//  ));
-//  drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
-//    'type' => 'file',
-//    'scope' => 'footer',
-//    'group' => JS_LIBRARY,
-//  ));
-//  drupal_add_js($theme_path . '/dist/js/app.js', array(
-//    'type' => 'file',
-//    'scope' => 'footer',
-//  ));
-//  drupal_add_js($theme_path . '/dist/js/ie9.js', array(
-//    'type' => 'file',
-//    'scope' => 'footer',
-//    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
-//  ));
+
+  // Add conditional stylesheets
+  drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
+    'type' => 'file',
+    'group' => CSS_THEME,
+  ));
+  drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'group' => JS_LIBRARY,
+  ));
+  drupal_add_js($theme_path . '/dist/js/app.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+  ));
+  drupal_add_js($theme_path . '/dist/js/ie9.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
+  ));
 
   drupal_add_js(drupal_get_path('module', 'os2web_borger_dk') . '/js/os2web_borger_dk.js', array(
     'type' => 'file',

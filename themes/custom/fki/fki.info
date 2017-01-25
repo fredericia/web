@@ -21,14 +21,14 @@ regions[footer]                 = 'Footer'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = 'dist/css/stylesheet.css'
+;stylesheets[all][] = 'dist/css/stylesheet.css'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = 'dist/js/modernizr.js'
-scripts[] = 'dist/js/app.js'
+;scripts[] = 'dist/js/modernizr.js'
+;scripts[] = 'dist/js/app.js'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Plugins

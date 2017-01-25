@@ -15,57 +15,58 @@ var popoverButton = (function ($) {
   pub.init = function (options) {
     registerEventHandlers();
     registerBootEventHandlers();
-  }
+  };
 
   /**
    * Register event handlers
    */
   function registerEventHandlers() {
 
+    var $popoverButton = $('.popover-button');
+    console.log($popoverButton);
+
+      console.log('CLICK 2');
     // Click outside popover
-    $(document).on("click", function () {
+    // $(document).on("click", function () {
+    //
+    //   $('.popover-button')
+    //     .removeClass('popover-button-open');
+    // });
 
-      $('.popover-button')
-          .removeClass('popover-button-open');
-    });
-
-    $('.popover-button').on('click', function(event) {
-      event.stopPropagation();
+    $popoverButton.on('click', function(event) {
+      // event.stopPropagation();
+      //   console.log('CLICK 1');
     });
 
     // Toggle sidebar
-    $('.popover-button-toggle').on('click', function (event) {
+    $('.popover-button-toggle').on('click', function(event) {
+      console.log('CLICK 2');
       event.preventDefault();
 
       var $element = $(this);
 
       $element
-          .parent('.popover-button')
-          .toggleClass('popover-button-open');
-
-      // Remove inputs from tabindex
-      $element
-          .parent('.popover-button')
-          .find('input')
-          .prop('tabIndex', -1);
-
-      $element
-          .parent('.popover-button')
-          .find('textarea')
-          .prop('tabIndex', -1);
-
-      $element
-          .parent('.popover-button')
-          .find('button')
-          .prop('tabIndex', -1);
+        .parent('.popover-button')
+        .toggleClass('popover-button-open');
     });
+
+      $popoverButton
+        .find('input')
+        .prop('tabIndex', -1);
+
+      $popoverButton.find('textarea')
+        .prop('tabIndex', -1);
+
+      $popoverButton
+        .find('button')
+        .prop('tabIndex', -1);
+
   }
 
   /**
    * Register boot event handlers
    */
-  function registerBootEventHandlers() {
-  }
+  function registerBootEventHandlers() {}
 
   return pub;
 })(jQuery);
