@@ -48,6 +48,7 @@ function fki_preprocess_html(&$variables) {
 
   // Body classes
   $variables['classes_array'][] = 'simple-navigation-enabled-xs';
+  $variables['classes_array'][] = 'simple-navigation-enabled-sm';
   $variables['classes_array'][] = 'simple-navigation-sticky';
 
   $variables['classes_array'][] = 'main-navigation-enabled-md';
