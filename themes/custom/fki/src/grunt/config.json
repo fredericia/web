@@ -30,6 +30,7 @@
       "src/js/equal-height.js",
       "src/vendor/bs3-designer/js/bs3-designer.js",
       "src/vendor/bs3-sidebar/js/bs3-sidebar.js",
+      "src/js/bs3-designer.js",
       "src/js/os2-self-service-toggle.js",
       "src/js/accordion.js",
       "src/js/popover-button.js",
