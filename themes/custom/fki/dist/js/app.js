@@ -4694,15 +4694,15 @@ var bs3Designer = (function ($) {
      */
     function registerEventHandlers() {
 
-        $(window).on('load', function () {
-            footerAttached();
-        });
-
-        $(window).on('resize', function () {
-            footerAttached();
-        });
-
         if ( ! Modernizr.touchevents) {
+
+            $(window).on('load', function () {
+                footerAttached();
+            });
+
+            $(window).on('resize', function () {
+                footerAttached();
+            });
 
             $(window).on('load', function () {
                 footerBelow();
