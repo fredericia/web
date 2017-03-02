@@ -1,1 +1,0 @@
-# bellcom_elasticsearch
