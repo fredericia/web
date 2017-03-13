@@ -18512,6 +18512,9 @@ body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-
     background-color: #fff;
     font-size: 40px;
   }
+  .front .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-link a:hover {
+    background-color: #dfe2ec;
+  }
   .front .view-fredericia-forntpage-spots .os2-node-spotbox-spotbox {
     margin-bottom: 0 !important;
   }
