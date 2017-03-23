@@ -242,14 +242,14 @@ function os2web_gf_service_handler($file_id) {
       // CURL for transfer:
       $ch = curl_init($url . '?FileID=' . $file_id . '&FileFormat=Available');
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);     
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_USERPWD, "{$username}:{$password}");
       curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
       $data = curl_exec($ch);
       $header = curl_getinfo($ch);
 
-      if(curl_error($ch)) { 
+      if(curl_error($ch)) {
         error_log('curl error' . curl_error($ch));
       }
       # Skifter debug
@@ -687,7 +687,10 @@ function os2web_cp_service_create_document(array $data) {
   $node->sticky = 0;
   $node->language = LANGUAGE_NONE;
   node_object_prepare($node);
-
+  if (empty($data['fields']['Dokumenttitel']) && empty($data['fields']['Officiel titel'])) {
+    watchdog('os2web_cp_service', 'Skip document SAGSID: %sagsid, Empty title. SAGSID: %sagsid', array('%sagsid' => $data['fields']['SagsID']));
+    return FALSE;
+  }
   $node->title = (string) !empty($data['fields']['Dokumenttitel'])?$data['fields']['Dokumenttitel'] : $data['fields']['Officiel titel'];
 
   // Has all fields of a node type "document".
