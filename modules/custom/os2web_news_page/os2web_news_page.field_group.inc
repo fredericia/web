@@ -43,7 +43,7 @@ function os2web_news_page_field_group_info() {
   $field_groups['group_dates|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_os2web_base_group_hidden|node|os2web_base_news|form';
   $field_group->group_name = 'group_os2web_base_group_hidden';
@@ -74,7 +74,7 @@ function os2web_news_page_field_group_info() {
   $field_groups['group_os2web_base_group_hidden|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_os2web_base_group_image|node|os2web_base_news|form';
   $field_group->group_name = 'group_os2web_base_group_image';
@@ -109,9 +109,9 @@ function os2web_news_page_field_group_info() {
       0 => 'field_os2web_base_field_contact',
       1 => 'field_os2web_base_field_hidlinks',
       2 => 'field_os2web_base_field_promote',
-      3 => 'field_os2web_base_field_spotbox',
-      4 => 'field_os2web_base_hide_contact',
-      5 => 'field_os2web_base_hide_sidebar',
+      3 => 'field_os2web_base_hide_contact',
+      4 => 'field_os2web_base_hide_sidebar',
+      5 => 'field_os2web_base_emergency_link',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -285,7 +285,7 @@ function os2web_news_page_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2web_base_news';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_os2web_base_news_tabs';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Spotbokse',
     'weight' => '5',

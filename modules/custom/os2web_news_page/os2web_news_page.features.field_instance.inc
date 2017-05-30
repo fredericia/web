@@ -34,7 +34,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'list' => array(
         'label' => 'above',
@@ -89,6 +89,92 @@ function os2web_news_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2web_base_news-field_os2web_base_emergency_link'.
+  $field_instances['node-os2web_base_news-field_os2web_base_emergency_link'] = array(
+    'bundle' => 'os2web_base_news',
+    'default_value' => array(
+      0 => array(
+        'title' => 'Akuthjælp og beredskab',
+        'url' => 'node/1102',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Bruges kun til beredskabsmeddelelser',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_emergency_link',
+    'label' => 'Beredskabslink',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 63,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2web_base_news-field_os2web_base_field_contact'.
   $field_instances['node-os2web_base_news-field_os2web_base_field_contact'] = array(
     'bundle' => 'os2web_base_news',
@@ -100,13 +186,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'list' => array(
         'label' => 'above',
@@ -143,7 +229,7 @@ function os2web_news_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 68,
+      'weight' => 62,
     ),
   );
 
@@ -159,13 +245,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'list' => array(
         'label' => 'above',
@@ -224,13 +310,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'list' => array(
         'label' => 'above',
@@ -307,13 +393,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'list' => array(
         'label' => 'above',
@@ -348,7 +434,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 66,
+      'weight' => 60,
     ),
   );
 
@@ -364,13 +450,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'list' => array(
         'label' => 'above',
@@ -428,7 +514,7 @@ function os2web_news_page_field_default_field_instances() {
   $field_instances['node-os2web_base_news-field_os2web_base_field_lead_img'] = array(
     'bundle' => 'os2web_base_news',
     'deleted' => 0,
-    'description' => 'Det er muligt at tilføje flere billeder. De vil vises i rotation. Hvis billedet ikke passer til formatet vil det blive beskåret automatisk. Det er muligt at ændre beskæringen efterfølgende.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -472,7 +558,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'list' => array(
         'label' => 'above',
@@ -515,7 +601,7 @@ function os2web_news_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_lead_img',
-    'label' => 'Billede',
+    'label' => 'Primære billede',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -574,13 +660,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'list' => array(
         'label' => 'above',
@@ -639,13 +725,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'list' => array(
         'label' => 'above',
@@ -704,13 +790,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'list' => array(
         'label' => 'above',
@@ -769,13 +855,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'list' => array(
         'label' => 'above',
@@ -814,7 +900,7 @@ function os2web_news_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 64,
+      'weight' => 58,
     ),
   );
 
@@ -830,13 +916,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'list' => array(
         'label' => 'above',
@@ -901,13 +987,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'list' => array(
         'label' => 'above',
@@ -944,7 +1030,7 @@ function os2web_news_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 67,
+      'weight' => 55,
     ),
   );
 
@@ -960,13 +1046,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'list' => array(
         'label' => 'above',
@@ -1037,10 +1123,11 @@ function os2web_news_page_field_default_field_instances() {
         'weight' => 2,
       ),
       'includeable' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_plain',
+        'weight' => 1,
       ),
       'list' => array(
         'label' => 'above',
@@ -1123,7 +1210,7 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'list' => array(
         'label' => 'above',
@@ -1219,13 +1306,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'list' => array(
         'label' => 'above',
@@ -1260,7 +1347,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 69,
+      'weight' => 61,
     ),
   );
 
@@ -1280,13 +1367,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'list' => array(
         'label' => 'above',
@@ -1321,7 +1408,7 @@ function os2web_news_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 65,
+      'weight' => 59,
     ),
   );
 
@@ -1343,13 +1430,13 @@ function os2web_news_page_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'list' => array(
         'label' => 'above',
@@ -1412,13 +1499,13 @@ For et møde er det tidspunktet hvor mødet starter.',
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'list' => array(
         'label' => 'above',
@@ -1482,13 +1569,13 @@ For et møde er det tidspunktet hvor mødet starter.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'list' => array(
         'label' => 'above',
@@ -1647,8 +1734,8 @@ For et møde er det tidspunktet hvor mødet starter.',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Billede');
-  t('Det er muligt at tilføje flere billeder. De vil vises i rotation. Hvis billedet ikke passer til formatet vil det blive beskåret automatisk. Det er muligt at ændre beskæringen efterfølgende.');
+  t('Beredskabslink');
+  t('Bruges kun til beredskabsmeddelelser');
   t('Egenavne / stednavne');
   t('Forfrem til');
   t('Indhold');
@@ -1658,6 +1745,7 @@ For et møde er det tidspunktet hvor mødet starter.',
   t('Organistation');
   t('Politik');
   t('Portalkategori');
+  t('Primære billede');
   t('Resume (maks 2 linier!)');
   t('Skjul automatisk relaterede links');
   t('Skjul højre sidebar');
