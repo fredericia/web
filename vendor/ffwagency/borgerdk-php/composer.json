@@ -1,0 +1,28 @@
+{
+    "name": "ffwagency/borgerdk-php",
+    "description": "Borger.dk Article Export Service PHP SDK (unofficially)",
+    "homepage": "https://github.com/ffwagency/borgerdk-php",
+    "keywords": [
+        "php", "ffwagency", "borgerdk", "borger.dk"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jens Beltofte",
+            "email": "jens.beltofte@ffwagency.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/dom-crawler": "~2.8",
+        "symfony/css-selector": "~2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BorgerDk\\ArticleService\\": "src/BorgerDk/ArticleService"
+        }
+    }
+}

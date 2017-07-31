@@ -94,7 +94,7 @@ function os2web_news_page_field_default_field_instances() {
     'bundle' => 'os2web_base_news',
     'default_value' => array(
       0 => array(
-        'title' => 'Akuthjælp og beredskab',
+        'title' => 'Læs mere - klik her',
         'url' => 'node/1102',
       ),
     ),

@@ -5,7 +5,7 @@
 
     <!-- Begin - link -->
     <div class="os2-node-list-document-reference-link">
-      <a href="/os2web/service/gf/v1/<?php print $document_url; ?>"><?php print $title; ?></a> <span class="os2-node-list-document-type">(pdf)</span>
+      <a href="/os2web/service/gf/v1/<?php print $document_url; ?>" target="_blank"><?php print $title; ?></a> <span class="os2-node-list-document-type">(pdf)</span>
     </div>
     <!-- End - heading -->
 

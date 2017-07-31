@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit
+bootstrap="vendor/autoload.php"
+colors="true"
+backupGlobals="false"
+convertErrorsToExceptions="true"
+convertNoticesToExceptions="true"
+convertWarningsToExceptions="true"
+>
+<php>
+  <env name="MUNICIPALITY_COUNT" value="98"/>
+  <env name="MUNICIPALITY_CODE" value="157"/>
+  <env name="ARTICLE_ID1" value="150"/>
+  <env name="ARTICLE_ID2" value="152"/>
+  <env name="ARTICLE_URL" value="https://www.borger.dk/Sider/Adressebeskyttelse.aspx"/>
+  <env name="ARTICLE_URL_ID" value="643"/>
+</php>
+
+<testsuites>
+  <testsuite name="BorgerDk Article Export Service PHP SDK Unit Test Suite">
+    <directory suffix="Test.php">tests/BorgerDk/ArticleService/UnitTests</directory>
+  </testsuite>
+</testsuites>
+</phpunit>

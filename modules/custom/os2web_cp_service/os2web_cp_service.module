@@ -254,7 +254,7 @@ function os2web_gf_service_handler($file_id) {
       }
       # Skifter debug
       #error_log('header log: ' . print_r($header,true));
-      curl_close($ch);
+      curl_close($ch);     
       if ($header['http_code'] === 200) {
         // Load the title to use it as the filename, and for conditions.
         $query = new EntityFieldQuery();
@@ -271,7 +271,11 @@ function os2web_gf_service_handler($file_id) {
         if ($node) {
           $case_id = $node->field_os2web_cp_service_case_id[LANGUAGE_NONE][0]['value'];
         }
+
+	error_log($case_exceptions);
+
         if (!in_array($header['content_type'], $disallowed_mimes) || ($case_id && in_array($case_id, $case_exceptions))) {
+ 	  error_log('CP document 1');
           drupal_add_http_header('Content-Type', $header['content_type']);
           drupal_add_http_header('Content-Length', $header['download_content_length']);
           drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
@@ -297,7 +301,7 @@ function os2web_gf_service_handler($file_id) {
           drupal_exit();
         }
         else {
-
+	  error_log('CP document 2');
           // Show a polite message if the file isnt allowed for download.
           // If the message isnt set in config, deliver a access denied page.
           if ($error_message = variable_get('os2web_cp_service_access_denied_message')) {
@@ -363,16 +367,20 @@ function os2web_cp_service_alter_configuration($key, $value) {
  */
 function os2web_cp_service_create_case(array $data) {
   watchdog('os2web_cp_service', 'Preparing to create cp case', array());
+  os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Create CP case start');
   // Prepare data.
   $data = array_replace_recursive(os2web_cp_service_default_case(), $data);
 
   $query = new EntityFieldQuery();
   $result = $query
       ->entityCondition('entity_type', 'node')
-      ->propertyCondition('type', 'os2web_cp_service_cp_case')
+      ->entityCondition('bundle', 'os2web_cp_service_cp_case')
       ->fieldCondition('field_os2web_cp_service_sysid', 'value', $data['fields']['SystemID'], '=')
       ->execute();
   $nids = (isset($result['node']))?array_keys($result['node']) : NULL;
+  if(count($nids) > 0) {
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Multiple cases with same id found' . count($nids));
+  }
   $node = new stdClass();
   if (count($nids) > 1) {
     if (is_array($nids)) {
@@ -387,7 +395,7 @@ function os2web_cp_service_create_case(array $data) {
   // in the vocabulary. Otherwise the node will be unpublished.
   $approved_vocabulary = taxonomy_vocabulary_machine_name_load('os2web_cp_service_tax_approved_rules');
   $approved_rules = taxonomy_get_tree($approved_vocabulary->vid);
-  $approved = TRUE;
+  $approved = FALSE;
   foreach ($data['rules'] as $trigger_rule) {
     foreach ($approved_rules as $approved_rule) {
       if ($approved_rule->name === $trigger_rule['tag']) {
@@ -411,21 +419,27 @@ function os2web_cp_service_create_case(array $data) {
     case 'EJSAG':
       // Old cases comes as: "Birkevej (8410) 11, 8410 Rønde"
       // regex removes " (8410)"
-      $node->title = (string) preg_replace('/\s\(\d{4}\)/', '', $data['fields']['Sagstitel']) . ' - ' . $data['fields']['Sagsindhold'];
+      $node->title = (string) preg_replace('/\s\(\d{4}\)/', '', $data['fields']['Sagstitel']);
       break;
 
     default:
       $node->title = (string) !empty($data['fields']['Sagstitel'])?$data['fields']['Sagstitel'] : $data['fields']['Officiel titel'];
       break;
   }
+  if (strlen($node->title) > 250) {
+    $node->title = substr($node->title, 0, 250);
+  os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Title longer than 250 char. Cutting it to 250: ' . $node->title);
+  }
 
   watchdog('os2web_cp_service', 'Create CP Case: %title', array('%title' => $node->title));
+  os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Create CP Case: ' . $node->title);
 
   // Has all fields of a node type "case".
   $node_fields = field_info_instances('node', 'os2web_cp_service_cp_case');
 
   foreach ($node_fields as $field_name => $field) {
     if (!empty($data['fields'][$field['label']]) && $field_name !== 'title') {
+#  os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Field_info_type: ' . $field_info['type']);
 
       $field_info = field_info_field($field_name);
 
@@ -433,14 +447,17 @@ function os2web_cp_service_create_case(array $data) {
         case 'text':
           if ($field['label'] === 'Sagstitel' && $data['fields']['Sagstype - Sagstype'] === 'EJSAG') {
             $node->{$field_name}[LANGUAGE_NONE][0]['value'] = (string) preg_replace('/\s\(\d{4}\)/', '', $data['fields']['Sagstitel']);
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Field_info_type: ' . $field['label'] . ' = ' . $data['fields']['Sagstitel']);
           }
           else {
             $node->{$field_name}[LANGUAGE_NONE][0]['value'] = (string) $data['fields'][$field['label']];
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Field_info_type: ' . $field['label'] . ' = ' . $data['fields'][$field['label']]);
           }
           break;
 
         case 'taxonomy_term_reference':
           $choosen_term = NULL;
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Tax_Field_info_type: ' . $field['label'] . ' = ' . $data['fields'][$field['label']]);
 
           // Search of the term in KLE vocabulary.
           if (strpos($field['label'], 'KL emnenummer') !== FALSE) {
@@ -459,10 +476,12 @@ function os2web_cp_service_create_case(array $data) {
           // If non found, find in every vocabularies.
           // Retrieve the first occurance of the term.
           if (empty($choosen_term)) {
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Tax_Field_info_type: ' . $field['label'] . ' = ' . $data['fields'][$field['label']]);
             $choosen_term = array_pop(taxonomy_get_term_by_name((string) $data['fields'][$field['label']], NULL));
           }
 
           if (!empty($choosen_term)) {
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Tax_Field_info_type: ' . $field['label'] . ' = ' . $data['fields'][$field['label']]);
             // Note that if its an update of an existing node,
             // it will ńot be resat.
             $node->{$field_name}['und'][0]['tid'] = $term->tid;
@@ -470,6 +489,7 @@ function os2web_cp_service_create_case(array $data) {
           break;
 
         default:
+    os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Field_default: ' . $field['label'] . ' = ' . print_r($data['fields'],true));
           $node->{$field_name}[LANGUAGE_NONE][0]['value'] = $data['fields'][$field['label']];
           break;
       }
@@ -489,6 +509,7 @@ function os2web_cp_service_create_case(array $data) {
     if (is_array($term)) {
       $term = array_pop($term);
     }
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Setting taxonomy trigger: '. $term->name);
     $node->field_os2web_cp_service_rules[LANGUAGE_NONE][]['tid'] = $term->tid;
   }
 
@@ -496,11 +517,19 @@ function os2web_cp_service_create_case(array $data) {
   $query = new EntityFieldQuery();
   $result = $query
     ->entityCondition('entity_type', 'node')
-    ->propertyCondition('type', 'os2web_cp_service_cp_document')
+    ->entityCondition('bundle', 'os2web_cp_service_cp_document')
     ->fieldCondition('field_os2web_cp_service_case_id', 'value', $data['fields']['Sagsnummer'], '=')
     ->execute();
   $doc_nids = (isset($result['node'])) ? array_keys($result['node']) : array();
 
+if(count($doc_nids) > 0) {
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Found multiple documents on this case: '. count($doc_nids));
+  error_log('Multiple documents with same ID found' . count($doc_nids));
+}
+else
+{
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' Found NO documents on this case: '. count($doc_nids));
+}
   $doc_nodes = node_load_multiple($doc_nids);
   foreach ($doc_nodes as $doc_nid => $doc_node) {
     // Set reference on case if not exists.
@@ -508,26 +537,29 @@ function os2web_cp_service_create_case(array $data) {
     foreach ($node->field_os2web_cp_service_doc_ref[LANGUAGE_NONE] as $doc_ref) {
       if ($doc_ref['target_id'] == $doc_nid) {
         $doc_ref_found = TRUE;
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' document references found setting it to: '. $doc_nid);
         break;
       }
     }
     if (!$doc_ref_found) {
       $node->field_os2web_cp_service_doc_ref[LANGUAGE_NONE][]['target_id'] = $doc_nid;
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . ' No document references found setting it to: '. $doc_nid);
     }
 
     // Set sagsid on doc.
     $doc_node->field_os2web_cp_service_case_sid[LANGUAGE_NONE][0]['value'] = $data['fields']['SystemID'];
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . 'Setting case id to systemid: '. $data['fields']['SystemID']);
     node_save($doc_node);
   }
 
   try {
     node_submit($node);
     node_save($node);
-
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . 'Saving node of case: '. $doc_nid);
     return TRUE;
   }
   catch (Exception $e) {
-    watchdog('os2web_cp_service', 'Error on save: %message', array('%message' => print_r($e->getMessage(), 1)));
+os2web_acadre_esdh_log(basename(__FILE__) . ': ' . __LINE__ . ': ' .  __FUNCTION__ . 'Error hvem saving node: '. print_r($e->getMessage(), 1) . ' Titel: ' . $node->title);
     return FALSE;
   }
 }
@@ -646,15 +678,21 @@ function os2web_cp_service_default_case() {
  */
 function os2web_cp_service_create_document(array $data) {
   $data = array_replace_recursive(os2web_cp_service_default_document(), $data);
+
   // Prepare data.
   $query = new EntityFieldQuery();
   $result = $query
       ->entityCondition('entity_type', 'node')
-      ->propertyCondition('type', 'os2web_cp_service_cp_document')
+      ->entityCondition('bundle', 'os2web_cp_service_cp_document')
       ->fieldCondition('field_os2web_cp_service_sysid', 'value', $data['fields']['SystemID'], '=')
       ->execute();
   $node = new stdClass();
   $nids = (isset($result['node']))?array_keys($result['node']) : array();
+
+  if (count($nids) > 1) {
+    error_log('Multiple documents with same systemID found. A total of: ' . count($nids));
+  }
+
   if (count($nids) > 1) {
     if (is_array($nids)) {
       node_delete_multiple($nids);
@@ -668,7 +706,7 @@ function os2web_cp_service_create_document(array $data) {
   // in the vocabulary. Otherwise the node will be unpublished.
   $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_cp_service_tax_approved_rules');
   $approved_rules = taxonomy_get_tree($vocabulary->vid);
-  $approved = FALSE;
+  $approved = TRUE;
   foreach ($data['rules'] as $trigger_rule) {
     foreach ($approved_rules as $approved_rule) {
       if ($approved_rule->name === $trigger_rule['tag']) {
@@ -745,11 +783,14 @@ function os2web_cp_service_create_document(array $data) {
   $query = new EntityFieldQuery();
   $result = $query
       ->entityCondition('entity_type', 'node')
-      ->propertyCondition('type', 'os2web_cp_service_cp_case')
+      ->entityCondition('bundle', 'os2web_cp_service_cp_case')
       ->fieldCondition('field_os2web_cp_service_sysid', 'value', $data['fields']['Sag SystemID'], '=')
       ->execute();
   if (!empty($result['node'])) {
     $nids = array_keys($result['node']);
+
+    error_log('Error: update references on cases.');
+
     foreach ($nids as $nid) {
       $cnode = node_load($nid);
       if (!empty($cnode)) {
