@@ -59,6 +59,7 @@ function bellcom_borgerdk_migrate_field_group_info() {
       0 => 'field_borger_dk_pre_text',
       1 => 'field_borger_dk_post_text',
       2 => 'field_borger_dk_header',
+      3 => 'field_borger_dk_title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
