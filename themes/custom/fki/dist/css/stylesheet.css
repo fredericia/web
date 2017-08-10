@@ -19394,6 +19394,9 @@ fieldset[disabled] .os2-node-includeable .emergencylink a.focus {
   margin: 0;
   list-style: none;
 }
+.os2-links-list .nav li a {
+  padding: 0;
+}
 .os2-links-list li {
   padding: 6px 0;
   border-bottom: 1px solid #d4d9e4;
@@ -19621,6 +19624,10 @@ fieldset[disabled] .os2-node-includeable .emergencylink a.focus {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.selvbetjenings-links .nav li a,
+.related-links .nav li a {
+  padding: 0;
 }
 .selvbetjenings-links li,
 .related-links li {

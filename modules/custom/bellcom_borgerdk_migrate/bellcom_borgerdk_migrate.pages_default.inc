@@ -17,7 +17,7 @@ function bellcom_borgerdk_migrate_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -4;
+  $handler->weight = -5;
   $handler->conf = array(
     'title' => 'Borger.dk Article',
     'no_blocks' => 0,
@@ -212,6 +212,57 @@ function bellcom_borgerdk_migrate_default_page_manager_handlers() {
   $display->content['new-8a8a532c-b46d-4b02-b866-3e7f3656fbc4'] = $pane;
   $display->panels['light_section_1'][0] = 'new-8a8a532c-b46d-4b02-b866-3e7f3656fbc4';
   $pane = new stdClass();
+  $pane->pid = 'new-54b1959e-2df8-4a68-a192-8ad73f00548c';
+  $pane->panel = 'light_section_1';
+  $pane->type = 'views';
+  $pane->subtype = 'os2web_editor_information';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'default',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '54b1959e-2df8-4a68-a192-8ad73f00548c';
+  $display->content['new-54b1959e-2df8-4a68-a192-8ad73f00548c'] = $pane;
+  $display->panels['light_section_1'][1] = 'new-54b1959e-2df8-4a68-a192-8ad73f00548c';
+  $pane = new stdClass();
   $pane->pid = 'new-9d75c774-b0ca-418f-98f8-7dcf5ac40f50';
   $pane->panel = 'sidebar';
   $pane->type = 'menu_tree';
@@ -236,7 +287,11 @@ function bellcom_borgerdk_migrate_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'os2-links-list',
+    'template_suggestion' => 'menu_tree',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
