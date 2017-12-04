@@ -343,6 +343,18 @@ function fki_preprocess_node__os2web_cp_service_cp_document(&$variables) {
 /*
  * Implements hook_preprocess_node().
  */
+function fki_preprocess_node__borger_dk_article(&$variables) {
+  if ($variables['view_mode'] == 'teaser') {
+    $borger_dk_article_ref = field_get_items('node', $variables['node'],'field_borger_dk_article_ref');
+    if (isset($borger_dk_article_ref)  && is_array($borger_dk_article_ref) && isset($borger_dk_article_ref[0]['borgerdk_article_entity_id'])){
+      $wrapper = entity_load('borgerdk_article', array($borger_dk_article_ref[0]['borgerdk_article_entity_id']));
+      $variables['borgerdk_article_info'] = array_pop($wrapper)->header;
+    }
+  }
+}
+/*
+ * Implements hook_preprocess_node().
+ */
 function fki_preprocess_node__os2web_base_contentpage(&$variables) {
 
   // File ID

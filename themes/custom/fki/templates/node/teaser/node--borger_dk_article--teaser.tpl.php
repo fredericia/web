@@ -18,6 +18,10 @@
           <?php print render($content['field_borger_dk_pre_text']); ?>
         </div>
         <!-- End - intro -->
+      <?php elseif (isset($variables['borgerdk_article_info'])) :?>
+        <div class="os2-node-teaser-body-content hjshdjsdhs">
+          <?php print $variables['borgerdk_article_info']; ?>
+        </div>
       <?php endif; ?>
 
     </div>
