@@ -1,6 +1,0 @@
-<?php
-
-function social_media_buttons_uninstall() {
-    variable_del('social_media_button_checkboxes');
-}
-
