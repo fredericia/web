@@ -6,6 +6,11 @@
  */
 
 include_once 'os2web_cp_service.features.inc';
+include_once 'includes/cp_service_methods.inc';
+
+define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE', 'pull');
+define('OS2WEB_CP_SERVICE_FILE_PATH', 'public://cp-document');
+define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_TRIES', 5);
 
 /**
  * Implements hook_init().
@@ -223,6 +228,30 @@ function os2web_cp_service_handler() {
  * Callback for the file provider service.
  */
 function os2web_gf_service_handler($file_id) {
+  $file_uri = NULL;
+  $node = _os2web_cp_service_get_cp_document_node_by_file_id($file_id);
+  if (!empty($node)) {
+    $field_os2web_cp_service_file = field_get_items('node', $node, 'field_os2web_cp_service_file');
+  }
+  if (!empty($field_os2web_cp_service_file)) {
+    $field_os2web_cp_service_file = reset($field_os2web_cp_service_file);
+    $file_uri = $field_os2web_cp_service_file['uri'];
+  }
+
+  $file_tranfser_mode = variable_get('os2web_cp_service_file_transfer_mode', OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE);
+
+  // For push tranfser mode redirect user to file or show the error.
+  if ($file_tranfser_mode == 'push') {
+    if (!empty($file_uri)) {
+      drupal_goto(file_create_url($file_uri));
+    }
+    return _os2web_cp_file_error();
+  }
+
+  // For combined transfer mode redirect to file if it exist.
+  if ($file_tranfser_mode == 'combined' && !empty($file_uri)) {
+    drupal_goto(file_create_url($file_uri));
+  }
 
   // Mime Types which are disallowed to be downloaded.
   // People shouldn't be able to download special files.
@@ -235,36 +264,56 @@ function os2web_gf_service_handler($file_id) {
   $case_exceptions = explode(',', variable_get('os2web_cp_service_disallow_mimes_exceptions', ''));
 
   if ($url = variable_get('os2web_cp_service_cp_document_fileurl')) {
-
     $username = variable_get('os2web_cp_service_endpoint_user');
     $password = variable_get('os2web_cp_service_endpoint_password');
     if (!empty($username) && !empty($password)) {
       // CURL for transfer:
       $ch = curl_init($url . '?FileID=' . $file_id . '&FileFormat=Available');
-      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);     
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_USERPWD, "{$username}:{$password}");
       curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
       $data = curl_exec($ch);
+
+      // Load and save file for combined transfer mode.
+      if ($file_tranfser_mode == 'combined') {
+        $uri = _os2web_cp_document_get_file_uri($file_id);
+        if (file_unmanaged_save_data($data, $uri, FILE_EXISTS_ERROR)) {
+          $node = _os2web_cp_service_get_cp_document_node_by_file_id($file_id);
+          $node_wrapper = entity_metadata_wrapper('node', $node);
+
+          // Bind existing file to CP Document node and update transfer status.
+          _os2web_cp_document_bind_file($node_wrapper, $uri);
+          $status_message = 'combined mode transfer';
+          $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
+
+          // Save node changes.
+          $node_wrapper->save();
+        }
+        else {
+          error_log('CP Service file saving error' . $file_uri);
+        }
+      }
+
       $header = curl_getinfo($ch);
 
-      if(curl_error($ch)) { 
+      if (curl_error($ch)) {
         error_log('curl error' . curl_error($ch));
       }
       # Skifter debug
       #error_log('header log: ' . print_r($header,true));
-      curl_close($ch);     
+      curl_close($ch);
       if ($header['http_code'] === 200) {
         // Load the title to use it as the filename, and for conditions.
         $query = new EntityFieldQuery();
         $result = $query
-            ->entityCondition('entity_type', 'node')
-            ->propertyCondition('type', 'os2web_cp_service_cp_document')
-            ->propertyCondition('status', 1)
-            ->fieldCondition('field_os2web_cp_service_file_id', 'value', $file_id, '=')
-            ->execute();
-        $nids = (isset($result['node']))?array_keys($result['node']) : NULL;
+          ->entityCondition('entity_type', 'node')
+          ->propertyCondition('type', 'os2web_cp_service_cp_document')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_os2web_cp_service_file_id', 'value', $file_id, '=')
+          ->execute();
+        $nids = (isset($result['node'])) ? array_keys($result['node']) : NULL;
 
         $node = node_load(array_pop($nids));
         $case_id = NULL;
@@ -272,10 +321,10 @@ function os2web_gf_service_handler($file_id) {
           $case_id = $node->field_os2web_cp_service_case_id[LANGUAGE_NONE][0]['value'];
         }
 
-	error_log($case_exceptions);
+        error_log($case_exceptions);
 
         if (!in_array($header['content_type'], $disallowed_mimes) || ($case_id && in_array($case_id, $case_exceptions))) {
- 	  error_log('CP document 1');
+          error_log('CP document 1');
           drupal_add_http_header('Content-Type', $header['content_type']);
           drupal_add_http_header('Content-Length', $header['download_content_length']);
           drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
@@ -301,19 +350,11 @@ function os2web_gf_service_handler($file_id) {
           drupal_exit();
         }
         else {
-	  error_log('CP document 2');
+          error_log('CP document 2');
           // Show a polite message if the file isnt allowed for download.
           // If the message isnt set in config, deliver a access denied page.
           if ($error_message = variable_get('os2web_cp_service_access_denied_message')) {
-            $markup = '<div class="messages error"><ul><li>';
-            $markup .= $error_message;
-            $markup .= '</li></ul></div>';
-
-            $page['region'] = array(
-              '#type' => 'markup',
-              '#markup' => $markup,
-            );
-            return $page;
+            return _os2web_cp_file_error($error_message);
           }
         }
       }
@@ -328,8 +369,19 @@ function os2web_gf_service_handler($file_id) {
   }
 
   // If we come to this line, show an error.
+  return _os2web_cp_file_error();
+}
+
+
+/**
+ * Callback for failed case.
+ */
+function _os2web_cp_file_error($message = '') {
+  if (empty($message)) {
+    $message = t('Det ønskede dokument kunne ikke hentes, hvilket kan skyldes opdatering af løsningen. Prøv venligst igen senere.');
+  }
   $markup = '<div class="messages error"><ul><li>';
-  $markup .= t('Det ønskede dokument kunne ikke hentes, hvilket kan skyldes opdatering af løsningen. Prøv venligst igen senere.');
+  $markup .= $message;
   $markup .= '</li></ul></div>';
 
   $page['region'] = array(
@@ -1130,6 +1182,42 @@ function os2web_cp_service_form_os2web_settings_settings_form_alter(&$form, &$fo
     '#description' => 'Tillad brugere at hente ALLE mime typer på angivende sager. Seperer sager med komma.',
     '#default_value' => variable_get('os2web_cp_service_disallow_mimes_exceptions'),
   );
+
+  $form['os2web_cp_config_group']['os2web_cp_service_file_transfer_mode'] = array(
+    '#title' => 'CP Files transfer mode',
+    '#type' => 'radios',
+    '#options' => array(
+      'pull' => 'PULL via HTTP request.',
+      'push' => 'PUSH to Drupal file system. All files stored locally.',
+      'combined' => 'Combined. If file doesn\'t exist, pull it via HTTP request.',
+    ),
+    '#description' => t('CP File transfer mode from Formpipe Output Manager'),
+    '#default_value' => variable_get('os2web_cp_service_file_transfer_mode', OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE),
+  );
+
+  $private_path = drupal_realpath('private://');
+  $form['os2web_cp_config_group']['os2web_cp_service_file_path'] = array(
+    '#title' => 'CP Files path',
+    '#type' => 'textfield',
+    '#description' => t('URI to CP Document files inside with schema. Example: public://cp-document. !public !private', array(
+      '!public' => '</br>public:// = <code>' . drupal_realpath('public://') . '</code>',
+      '!private' => '</br>private:// = <code>' . ($private_path ? $private_path : 'N/A') . '</code>',
+    )),
+    '#default_value' => variable_get('os2web_cp_service_file_path', OS2WEB_CP_SERVICE_FILE_PATH),
+  );
+
+  $form['#submit'][] = 'os2web_cp_service_file_transfer';
+}
+
+/**
+ * Custom submit handler for file_transfer settings.
+ */
+function os2web_cp_service_file_transfer($form, &$form_state) {
+  $values = $form_state['values'];
+
+  if (!empty($values['os2web_cp_service_file_path']) && !file_exists($values['os2web_cp_service_file_path'])) {
+    mkdir(drupal_realpath($values['os2web_cp_service_file_path']));
+  }
 }
 
 /**
