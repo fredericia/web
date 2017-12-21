@@ -109,7 +109,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 16,
     ),
   );
 
@@ -328,7 +328,7 @@ function os2web_cp_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -407,7 +407,7 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
@@ -469,7 +469,7 @@ function os2web_cp_service_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 40,
+      'weight' => 17,
     ),
   );
 
@@ -542,7 +542,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 11,
     ),
   );
 
@@ -560,11 +560,11 @@ function os2web_cp_service_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_decimal',
-        'weight' => 24,
+        'type' => 'number_integer',
+        'weight' => 27,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -607,7 +607,7 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 41,
+      'weight' => 18,
     ),
   );
 
@@ -758,7 +758,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 13,
     ),
   );
 
@@ -825,7 +825,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 38,
+      'weight' => 15,
     ),
   );
 
@@ -887,7 +887,7 @@ function os2web_cp_service_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 42,
+      'weight' => 20,
     ),
   );
 
@@ -952,7 +952,7 @@ function os2web_cp_service_field_default_field_instances() {
         'use_select2' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
@@ -1017,7 +1017,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -1079,7 +1079,7 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 14,
     ),
   );
 
@@ -1144,7 +1144,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 12,
     ),
   );
 
@@ -1218,7 +1218,7 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 43,
+      'weight' => 21,
     ),
   );
 
@@ -1412,7 +1412,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 14,
     ),
   );
 
@@ -1558,7 +1558,7 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1617,10 +1617,10 @@ function os2web_cp_service_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 40,
+      'weight' => 17,
     ),
   );
 
@@ -1851,7 +1851,7 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -1869,11 +1869,11 @@ function os2web_cp_service_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'scale' => 0,
           'thousand_separator' => '',
         ),
-        'type' => 'number_decimal',
-        'weight' => 15,
+        'type' => 'number_integer',
+        'weight' => 20,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1916,7 +1916,90 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 41,
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_file'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_file'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 18,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_file',
+    'label' => 'Indhold - File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'fredericia_content_image' => 0,
+          'os2web_spotbox_image' => 0,
+          'person' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 0,
+          'media_browser_plus--media_browser_thumbnails' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 4,
     ),
   );
 
@@ -2048,7 +2131,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 13,
     ),
   );
 
@@ -2112,7 +2195,7 @@ function os2web_cp_service_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -2199,7 +2282,7 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 15,
     ),
   );
 
@@ -2258,10 +2341,10 @@ function os2web_cp_service_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 42,
+      'weight' => 20,
     ),
   );
 
@@ -2323,7 +2406,7 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 38,
+      'weight' => 16,
     ),
   );
 
@@ -2397,7 +2480,7 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 43,
+      'weight' => 21,
     ),
   );
 
@@ -2462,7 +2545,101 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_tr_stat'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_tr_stat'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Internal field stores additional information about transfer status and errors.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_tr_stat',
+    'label' => 'Transfer status',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blokindhold' => 'blokindhold',
+          'email' => 'email',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blokindhold' => array(
+              'weight' => -7,
+            ),
+            'email' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 22,
     ),
   );
 
@@ -2476,8 +2653,10 @@ function os2web_cp_service_field_default_field_instances() {
   t('Ejendomsnummer');
   t('Filformat');
   t('FullXML');
+  t('Indhold - File');
   t('Indhold - FileID');
   t('Indholdsbeskrivelse');
+  t('Internal field stores additional information about transfer status and errors.');
   t('Journalnummer');
   t('KL emnenummer - KL emnenummer og beskrivelse');
   t('Non transferable');
@@ -2494,6 +2673,7 @@ function os2web_cp_service_field_default_field_instances() {
   t('Sync timestamp');
   t('Synchronization fails');
   t('SystemID');
+  t('Transfer status');
   t('TriggerRules');
 
   return $field_instances;
