@@ -67,7 +67,7 @@ function fki_preprocess_html(&$variables) {
   drupal_add_html_head(array(
     '#tag' => 'link',
     '#attributes' => array(
-      'href' => 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Oswald:400',
+      'href' => 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i',
       'rel' => 'stylesheet',
       'type' => 'text/css',
     ),
