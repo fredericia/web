@@ -4398,7 +4398,6 @@ var bs3Sidebar = (function ($) {
 // | - Enable BS3 tooltips on non-touch devices
 // | - Disable form autocomplete on non-touch devices
 // | - Apply loader icon to .btn.btn-loader on click
-// | - Use appear on non-touch devices
 // |
 
 // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
@@ -4421,7 +4420,6 @@ var bs3Designer = (function ($) {
      */
     function registerBootEventHandlers() {
         optimizeFormElements();
-        appear();
         bs3Tooltip();
     }
 
@@ -4478,48 +4476,6 @@ var bs3Designer = (function ($) {
 
             $('.inner-wrapper').css('padding-bottom', footerHeight);
         }
-    }
-
-    /**
-     * Appear
-     */
-    function appear() {
-        var $appear = $('.appear');
-        var $animation = $('.animation');
-
-        if (Modernizr.touchevents || ! Modernizr.cssanimations) {
-
-            $animation
-              .removeClass('animation')
-              .removeClass('animation-appear-from-top')
-              .removeClass('animation-appear-from-top-short')
-              .removeClass('animation-appear-from-right')
-              .removeClass('animation-appear-from-left')
-              .removeClass('animation-appear-from-bottom')
-              .removeClass('animation-appear-from-bottom-short')
-              .removeClass('animation-appear-from-center');
-
-            return false;
-        }
-
-        // Enable appear
-        $appear.appear();
-
-        // Force processing on animation objects
-        $animation.appear({
-            force_process: true
-        });
-
-        // Animation object has appeared
-        $animation.on('appear', function () {
-
-            var $element = $(this);
-            var delay = $element.data('delay');
-
-            setTimeout(function () {
-                $element.addClass('animation-start');
-            }, delay);
-        });
     }
 
     /**
