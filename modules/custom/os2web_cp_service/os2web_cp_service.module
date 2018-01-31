@@ -229,9 +229,9 @@ function os2web_cp_service_handler() {
  */
 function os2web_gf_service_handler($file_id) {
   $file_uri = NULL;
-  $node = _os2web_cp_service_get_cp_document_node_by_file_id($file_id);
-  if (!empty($node)) {
-    $field_os2web_cp_service_file = field_get_items('node', $node, 'field_os2web_cp_service_file');
+  $nodes = _os2web_cp_service_get_cp_document_nodes_by_file_id($file_id);
+  if (!empty($nodes[0])) {
+    $field_os2web_cp_service_file = field_get_items('node', $nodes[0], 'field_os2web_cp_service_file');
   }
   if (!empty($field_os2web_cp_service_file)) {
     $field_os2web_cp_service_file = reset($field_os2web_cp_service_file);
@@ -280,16 +280,18 @@ function os2web_gf_service_handler($file_id) {
       if ($file_tranfser_mode == 'combined') {
         $uri = _os2web_cp_document_get_file_uri($file_id);
         if (file_unmanaged_save_data($data, $uri, FILE_EXISTS_ERROR)) {
-          $node = _os2web_cp_service_get_cp_document_node_by_file_id($file_id);
-          $node_wrapper = entity_metadata_wrapper('node', $node);
+          $nodes = _os2web_cp_service_get_cp_document_nodes_by_file_id($file_id);
+          foreach ($nodes as $node) {
+            $node_wrapper = entity_metadata_wrapper('node', $node);
 
-          // Bind existing file to CP Document node and update transfer status.
-          _os2web_cp_document_bind_file($node_wrapper, $uri);
-          $status_message = 'combined mode transfer';
-          $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
+            // Bind file to CP Document node and update transfer status.
+            _os2web_cp_document_bind_file($node_wrapper, $uri);
+            $status_message = 'combined mode transfer';
+            $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
 
-          // Save node changes.
-          $node_wrapper->save();
+            // Save node changes.
+            $node_wrapper->save();
+          }
         }
         else {
           error_log('CP Service file saving error' . $file_uri);

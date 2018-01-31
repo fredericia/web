@@ -58,7 +58,7 @@ function os2web_cp_service_transfer_request() {
  */
 function os2web_cp_service_transfer_update($data) {
   $file_id = $data->FileID;
-  $node = _os2web_cp_service_get_cp_document_node_by_file_id($file_id);
+  $node = _os2web_cp_service_get_cp_document_nodes_by_file_id($file_id);
 
   if (empty($node)) {
     watchdog('os2web_cp_service', "FileTransferEnd :: CP Document node with file_id '@file_id' doesn't found.", array(
@@ -119,8 +119,8 @@ function os2web_cp_service_transfer_update($data) {
 /**
  * Helper get function for CP Document node by file_id.
  */
-function _os2web_cp_service_get_cp_document_node_by_file_id($file_id) {
-  $node = FALSE;
+function _os2web_cp_service_get_cp_document_nodes_by_file_id($file_id) {
+  $nodes = array();
   // Fetch CP Document node by file_id.
   $query = db_select('node', 'n')
     ->fields('n', array('nid'))
@@ -131,11 +131,14 @@ function _os2web_cp_service_get_cp_document_node_by_file_id($file_id) {
   $result = $query->execute()->fetchAll();
 
   if (!empty($result)) {
-    $node = reset($result);
-    $node = node_load($node->nid);
+    $nids = array();
+    foreach ($result as $val) {
+      $nids[] = $val->nid;
+    }
+    $nodes = node_load_multiple($nids);
   }
 
-  return $node;
+  return $nodes;
 }
 
 /**
