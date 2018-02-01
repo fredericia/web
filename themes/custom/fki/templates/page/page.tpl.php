@@ -10,10 +10,10 @@
             <!-- Begin - logo -->
             <div class="sidebar-logo">
                 <a href="<?php echo $front_page; ?>" class="sidebar-logo-link">
-                    <img src="<?php echo $path_img . '/logo-sidebar-wide.png'; ?>"
+                    <img src="<?php echo $path_img . '/logo-sidebar-wide-new.png'; ?>"
                          class="sidebar-logo-image sidebar-logo-image-wide"
                          alt="<?php echo $site_name . t(' logo'); ?>"/>
-                    <img src="<?php echo $path_img . '/logo-sidebar-narrow.png'; ?>"
+                    <img src="<?php echo $path_img . '/logo-sidebar-narrow-new.png'; ?>"
                          class="sidebar-logo-image sidebar-logo-image-narrow"
                          alt="<?php echo $site_name . t(' logo'); ?>"/>
                 </a>
@@ -61,7 +61,7 @@
 
             <!-- Begin - logo -->
             <a href="<?php echo $front_page; ?>" class="simple-navigation-logo-link">
-                <img src="<?php echo $path_img . '/logo-simple-navigation.png'; ?>" class="simple-navigation-logo-image"
+                <img src="<?php echo $path_img . '/logo-simple-navigation-new.png'; ?>" class="simple-navigation-logo-image"
                      alt="<?php echo t('fredericia.dk logo'); ?>"/>
             </a>
             <!-- End - logo -->
@@ -81,7 +81,7 @@
                             <!-- Begin - content -->
                             <div class="col-md-4">
                                 <a href="<?php echo $front_page; ?>" class="main-navigation-logo-link">
-                                    <img src="<?php echo $path_img; ?>/logo-main-navigation.png" alt=""
+                                    <img src="<?php echo $path_img; ?>/logo-main-navigation-new.png" alt=""
                                          class="main-navigation-logo-image">
                                 </a>
                             </div>
