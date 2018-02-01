@@ -121,7 +121,8 @@ function fki_preprocess_page(&$variables) {
     'full-width-dark-light-dark-with-right-sidebar-8-4',
     'full-width-dark-light-dark-with-right-sidebar-9-3',
   );
-  if (!in_array($variables['panels']->layout, $exclude_layouts_from_wrapping)) {
+  if (!empty($variables['panels']->layout)
+    && !in_array($variables['panels']->layout, $exclude_layouts_from_wrapping)) {
     $variables['wrap_panels_layout'] = TRUE;
   }
 
@@ -134,8 +135,9 @@ function fki_preprocess_page(&$variables) {
   unset($variables['tabs_primary']['#secondary']);
   unset($variables['tabs_secondary']['#primary']);
 
-  // Search form
-  $variables['page_header_search'] = module_invoke('search_api_page', 'block_view', '2');
+  // Search form.
+  $page_header_search = module_invoke('search_api_page', 'block_view', '2');
+  $variables['page_header_search'] = $page_header_search['content'];
 
   // Tabbed navigation
   $variables['tabbed_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'tabbed', 1);
@@ -204,7 +206,8 @@ function fki_node_view_alter(&$build) {
  */
 function fki_preprocess_node__full(&$variables) {
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes
-  $variables['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+  // Next line doesn't work but generate notices.
+  /* $variables['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode']; */
   $variables['display_case'] = false;
 
   // Should case be displayed?

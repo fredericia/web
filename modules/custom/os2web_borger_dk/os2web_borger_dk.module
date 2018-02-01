@@ -326,7 +326,9 @@ function os2web_borger_dk_update_article($nid) {
  */
 function os2web_borger_dk_panels_pane_content_alter(&$content, $pane, $args,  $contexts) {
   // Microarticle in panel.
-  if ($content->subtype == 'node:body' && $content->content['#bundle'] == 'os2web_borger_dk_article') {
+  if (!empty($content->content['#bundle'])
+    && $content->subtype == 'node:body'
+    && $content->content['#bundle'] == 'os2web_borger_dk_article') {
 
     $node = $content->content['#object'];
 

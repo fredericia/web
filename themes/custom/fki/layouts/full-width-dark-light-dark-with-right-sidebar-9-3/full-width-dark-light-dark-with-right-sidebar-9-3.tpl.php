@@ -53,7 +53,7 @@
     <!-- End - light section no. 1 -->
   <?php endif; ?>
 
-  <?php if ($content['dark_section_2']): ?>
+  <?php if (!empty($content['dark_section_2'])): ?>
     <!-- Begin - dark section no. 2 -->
     <div class="os2-section os2-section-dark">
       <div class="container">
