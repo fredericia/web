@@ -320,7 +320,7 @@ function _os2web_term_block_get_children($tid, $level) {
   return $output;
 }
 
-function os2web_related_links_get_selfservice_links($node = NULL, $term) {
+function os2web_related_links_get_selfservice_links($node = NULL, $term = NULL) {
   $selfservicelinks = array();
   // Borger.dk artiles selfservice links.
   if (isset($node) && $node->type == 'os2web_borger_dk_article') {
@@ -359,7 +359,7 @@ function os2web_related_links_get_selfservice_links($node = NULL, $term) {
 
           $link_field = array_shift($link_fields);
           $selfservicelinks[$link['nid']] = array(
-            'url' => $document_link ? $document_link : $link_field['url'],
+            'url' => !empty($document_link) ? $document_link : $link_field['url'],
             'title' => $link_title ? $link_title[0]['value'] : $link_field['title'],
           );
         }
@@ -396,7 +396,7 @@ function os2web_related_links_make_markup($related_links, $class = NULL) {
         $link['url'],
         array(
           'attributes' => array(
-            'class' => $link['class'],
+            'class' => !empty($link['class']) ? $link['class'] : array(),
             'title' => $link['title'],
           ),
         )
@@ -408,7 +408,7 @@ function os2web_related_links_make_markup($related_links, $class = NULL) {
         drupal_get_path_alias('node/' . $link['nid']),
         array(
           'attributes' => array(
-            'class' => $link['class'],
+            'class' => !empty($link['class']) ? $link['class'] : array(),
             'title' => $link['title'],
           ),
         )

@@ -70,12 +70,12 @@ function social_media_buttons_menu() {
  * under Pre-caching images section.
  */
 function social_media_buttons_preprocess_html(&$vars) {
-      
+    global $base_url;
     $og_url = array(
         '#tag' => 'meta',
         '#attributes' => array(
-        'property' => 'og:url', 
-        'content' => $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"],
+            'property' => 'og:url',
+            'content' => $base_url . request_uri(),
         ),
     );
 
