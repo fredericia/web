@@ -163,142 +163,6 @@ function os2web_paragraph_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_image'.
-  $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_base_field_image'] = array(
-    'bundle' => 'field_os2web_paragraphs',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'svendborg_content_image',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_os2web_base_field_image',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'alt_field_required' => 0,
-      'default_image' => 0,
-      'epsacrop' => array(
-        'styles' => array(
-          'os2web_gallery_thumbnails' => 0,
-          'os2web_spotbox_image' => 0,
-          'svendborg_content_image' => 'svendborg_content_image',
-          'svendborg_spotbox' => 0,
-        ),
-      ),
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg svg',
-      'focus' => 0,
-      'focus_lock_ratio' => 0,
-      'focus_min_size' => '',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'ustream' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'application' => 0,
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
-          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'field_collection_item-field_os2web_paragraphs-field_os2web_base_field_media'.
-  $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_base_field_media'] = array(
-    'bundle' => 'field_os2web_paragraphs',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_table',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_os2web_base_field_media',
-    'label' => 'PDF Filer',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => 'PDF',
-      'file_extensions' => 'pdf swf doc docx xlsx xls ppt pptx',
-      'max_filesize' => '50 MB',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'ustream' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'application' => 'application',
-          'audio' => 'audio',
-          'document' => 'document',
-          'image' => 0,
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_browser_plus--media_browser_my_files' => 0,
-          'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 0,
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
   // 'field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_ref'.
   $field_instances['field_collection_item-field_os2web_paragraphs-field_os2web_paragraph_ref'] = array(
     'bundle' => 'field_os2web_paragraphs',
@@ -310,7 +174,7 @@ function os2web_paragraph_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'node_reference',
         'settings' => array(
-          'node_reference_view_mode' => 'teaser',
+          'node_reference_view_mode' => 'includeable',
         ),
         'type' => 'node_reference_node',
         'weight' => 2,
@@ -494,9 +358,7 @@ function os2web_paragraph_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Billede');
   t('Indlejret side');
-  t('PDF Filer');
   t('Tekst');
   t('Titel');
 

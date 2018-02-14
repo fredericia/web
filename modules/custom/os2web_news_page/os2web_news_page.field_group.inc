@@ -43,6 +43,34 @@ function os2web_news_page_field_group_info() {
   $field_groups['group_dates|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_os2web_base_group_esdh|node|os2web_base_news|form';
+  $field_group->group_name = 'group_os2web_base_group_esdh';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_os2web_base_news_tabs';
+  $field_group->data = array(
+    'label' => 'Sager og dokumenter',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_os2web_base_case_ref',
+      1 => 'field_os2web_base_doc_ref',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-os2web-base-group-esdh field-group-htab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_os2web_base_group_esdh|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
   $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_os2web_base_group_hidden|node|os2web_base_news|form';
@@ -202,12 +230,13 @@ function os2web_news_page_field_group_info() {
     'label' => 'News',
     'weight' => '0',
     'children' => array(
-      0 => 'group_dates',
-      1 => 'group_os2web_base_group_settings',
-      2 => 'group_os2web_base_group_taxono',
-      3 => 'group_os2web_base_group_text',
-      4 => 'group_os2web_news_group_media',
-      5 => 'group_relationer',
+      0 => 'group_os2web_base_group_esdh',
+      1 => 'group_dates',
+      2 => 'group_os2web_base_group_settings',
+      3 => 'group_os2web_base_group_taxono',
+      4 => 'group_os2web_base_group_text',
+      5 => 'group_os2web_news_group_media',
+      6 => 'group_relationer',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -260,7 +289,7 @@ function os2web_news_page_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_news_tabs';
   $field_group->data = array(
     'label' => 'Relationer',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_os2web_base_field_ext_link',
       1 => 'field_os2web_base_field_related',
@@ -278,7 +307,7 @@ function os2web_news_page_field_group_info() {
   $field_groups['group_relationer|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_spotbokse|node|os2web_base_news|form';
   $field_group->group_name = 'group_spotbokse';
@@ -313,6 +342,7 @@ function os2web_news_page_field_group_info() {
   t('Media');
   t('News');
   t('Relationer');
+  t('Sager og dokumenter');
   t('Skjult');
   t('Spotbokse');
   t('Tekst');

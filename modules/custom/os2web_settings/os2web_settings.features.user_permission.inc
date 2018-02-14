@@ -26,8 +26,8 @@ function os2web_settings_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Kommunikation' => 'Kommunikation',
+      'Redaktør' => 'Redaktør',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -38,20 +38,10 @@ function os2web_settings_user_default_permissions() {
     'name' => 'access workbench',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Redaktør' => 'Redaktør',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'workbench',
-  );
-
-  // Exported permission: 'add media from remote sources'.
-  $permissions['add media from remote sources'] = array(
-    'name' => 'add media from remote sources',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'media_internet',
   );
 
   // Exported permission: 'administer nodes'.
@@ -59,7 +49,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -90,21 +79,9 @@ function os2web_settings_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'import media'.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
-      'Webmaster' => 'Webmaster',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'revert revisions'.
@@ -112,7 +89,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',
@@ -123,7 +99,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format selection for file',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -134,7 +109,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format selection for node',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -145,7 +119,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format selection for rules_config',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -156,7 +129,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format selection for taxonomy_term',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -167,7 +139,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format selection for user',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -178,7 +149,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show format tips',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -189,7 +159,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'show more format tips link',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'better_formats',
@@ -200,6 +169,7 @@ function os2web_settings_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Redaktør' => 'Redaktør',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -210,7 +180,6 @@ function os2web_settings_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Editor' => 'Editor',
       'Webmaster' => 'Webmaster',
     ),
     'module' => 'node',

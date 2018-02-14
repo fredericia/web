@@ -168,7 +168,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -202,14 +202,14 @@ function fredericia_views_default_views() {
     'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['id'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['field'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['group'] = 2;
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['id'] = 'field_os2web_news_page_archive_value_1';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['field'] = 'field_os2web_news_page_archive_value';
@@ -247,7 +247,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -315,7 +315,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Billede */
+  /* Field: Indholdselement: Primære billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['field'] = 'field_os2web_base_field_lead_img';
@@ -342,7 +342,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['separator'] = '';
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Indholdselement: Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -365,7 +365,7 @@ function fredericia_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: Content: Nyhedstype */
+  /* Field: Indholdselement: Nyhedstype */
   $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
@@ -392,7 +392,7 @@ function fredericia_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -443,7 +443,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['created_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'month';
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Indholdselement: Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -474,7 +474,7 @@ function fredericia_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -533,7 +533,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Indholdselement: Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -555,7 +555,7 @@ function fredericia_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: Content: Nyhedstype */
+  /* Field: Indholdselement: Nyhedstype */
   $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
@@ -581,7 +581,7 @@ function fredericia_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -649,20 +649,20 @@ function fredericia_views_default_views() {
     'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Billede (field_os2web_base_field_lead_img:fid) */
+  /* Filter criterion: Indholdselement: Primære billede (field_os2web_base_field_lead_img:fid) */
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['id'] = 'field_os2web_base_field_lead_img_fid';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['field'] = 'field_os2web_base_field_lead_img_fid';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['group'] = 1;
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['id'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['field'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['group'] = 2;
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['id'] = 'field_os2web_news_page_archive_value_1';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['field'] = 'field_os2web_news_page_archive_value';
@@ -728,20 +728,20 @@ function fredericia_views_default_views() {
     'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Billede (field_os2web_base_field_lead_img:fid) */
+  /* Filter criterion: Indholdselement: Primære billede (field_os2web_base_field_lead_img:fid) */
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['id'] = 'field_os2web_base_field_lead_img_fid';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['table'] = 'field_data_field_os2web_base_field_lead_img';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['field'] = 'field_os2web_base_field_lead_img_fid';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_os2web_base_field_lead_img_fid']['group'] = 1;
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['id'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['field'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['group'] = 2;
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['id'] = 'field_os2web_news_page_archive_value_1';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value_1']['field'] = 'field_os2web_news_page_archive_value';
@@ -753,7 +753,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
   $handler->display->display_options['filters']['promote']['group'] = 3;
-  /* Filter criterion: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Filter criterion: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['filters']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['filters']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['filters']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -806,7 +806,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Resume (maks 2 linier!) */
+  /* Field: Indholdselement: Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -829,7 +829,7 @@ function fredericia_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: Content: Nyhedstype */
+  /* Field: Indholdselement: Nyhedstype */
   $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
@@ -855,7 +855,7 @@ function fredericia_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nyhedstype (field_os2web_news_page_type) */
+  /* Contextual filter: Indholdselement: Nyhedstype (field_os2web_news_page_type) */
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
   $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
@@ -970,7 +970,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="col-xs-12 text-right">
-  <a class="btn btn-success" title="Se nyheder publiceret under %1" href="/nyheder/%1">Se flere %1 nyheder</a>
+  <a class="btn btn-success" title="Se nyheder publiceret under %1" href="/aktuelt/nyheder/!1">Se flere %1 nyheder</a>
 </div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
@@ -1012,7 +1012,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'os2web_base_news' => 'os2web_base_news',
   );
-  /* Filter criterion: Content: Forfrem til (field_os2web_base_field_promote) */
+  /* Filter criterion: Indholdselement: Forfrem til (field_os2web_base_field_promote) */
   $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['id'] = 'field_os2web_base_field_promote_tid';
   $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['table'] = 'field_data_field_os2web_base_field_promote';
   $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['field'] = 'field_os2web_base_field_promote_tid';
@@ -1074,7 +1074,7 @@ function fredericia_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<div class="col-xs-12 text-right">
-  <a class="btn btn-success" title="Se nyheder publiceret under %1" href="/nyheder/%1">Se flere %1 nyheder</a>
+  <a class="btn btn-success" title="Se nyheder publiceret under %1" href="/aktuelt/nyheder/!1">Se flere %1 nyheder</a>
 </div>'),
     t('Alle'),
     t('Forfrem til (field_os2web_base_field_promote)'),

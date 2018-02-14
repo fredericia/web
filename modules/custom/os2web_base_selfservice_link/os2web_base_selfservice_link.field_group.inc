@@ -11,7 +11,7 @@ function os2web_base_selfservice_link_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_hidden|node|os2web_base_selfservice_link|form';
   $field_group->group_name = 'group_hidden';

@@ -89,12 +89,155 @@ function os2web_news_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2web_base_news-field_os2web_base_case_ref'.
+  $field_instances['node-os2web_base_news-field_os2web_base_case_ref'] = array(
+    'bundle' => 'os2web_base_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'list',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 22,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_case_ref',
+    'label' => 'Sagsreference',
+    'required' => 0,
+    'settings' => array(
+      'select2_integration' => array(
+        'hide_id' => 0,
+        'styling' => array(
+          'dropdownAutoWidth' => 0,
+          'placeholder' => '',
+        ),
+        'use_select2' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 71,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2web_base_news-field_os2web_base_doc_ref'.
+  $field_instances['node-os2web_base_news-field_os2web_base_doc_ref'] = array(
+    'bundle' => 'os2web_base_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'list',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 23,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_doc_ref',
+    'label' => 'Dokument reference',
+    'required' => 0,
+    'settings' => array(
+      'select2_integration' => array(
+        'hide_id' => 0,
+        'styling' => array(
+          'dropdownAutoWidth' => 0,
+          'placeholder' => '',
+        ),
+        'use_select2' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 72,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2web_base_news-field_os2web_base_emergency_link'.
   $field_instances['node-os2web_base_news-field_os2web_base_emergency_link'] = array(
     'bundle' => 'os2web_base_news',
     'default_value' => array(
       0 => array(
-        'title' => 'Læs mere - klik her',
+        'title' => 'Akuthjælp og beredskab',
         'url' => 'node/1102',
       ),
     ),
@@ -170,7 +313,7 @@ function os2web_news_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 63,
+      'weight' => 64,
     ),
   );
 
@@ -1736,6 +1879,7 @@ For et møde er det tidspunktet hvor mødet starter.',
   // Included for use with string extractors like potx.
   t('Beredskabslink');
   t('Bruges kun til beredskabsmeddelelser');
+  t('Dokument reference');
   t('Egenavne / stednavne');
   t('Forfrem til');
   t('Indhold');
@@ -1747,6 +1891,7 @@ For et møde er det tidspunktet hvor mødet starter.',
   t('Portalkategori');
   t('Primære billede');
   t('Resume (maks 2 linier!)');
+  t('Sagsreference');
   t('Skjul automatisk relaterede links');
   t('Skjul højre sidebar');
   t('Skjul kontaktblok');

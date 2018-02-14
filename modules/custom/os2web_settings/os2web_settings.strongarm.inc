@@ -13,6 +13,13 @@ function os2web_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'cache_lifetime';
+  $strongarm->value = '0';
+  $export['cache_lifetime'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'cookiecontrol_fulltext';
   $strongarm->value = '<p>Nogle cookies på hjemmsiden er vigtige for at sitet fungerer som forventet. De bruges for eksempel når du indsender en formular eller på anden måde får en personlig respons fra hjemmesiden.</p><p>Vi bruger også ikke essentielle cookies til, anonymt, at spore brugen af hjemmesiden. Hvis du ikke er interesseret i at vi bruger disse kan vi undlade at gemme nogen former for cookies. Men vi kan så ikke garantere at sitet fungerer fuldt ud.</p>';
   $export['cookiecontrol_fulltext'] = $strongarm;
@@ -210,7 +217,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_action_status_code_301';
-  $strongarm->value = '3';
+  $strongarm->value = '0';
   $export['linkchecker_action_status_code_301'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -224,14 +231,14 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_check_links_interval';
-  $strongarm->value = '86400';
+  $strongarm->value = '2419200';
   $export['linkchecker_check_links_interval'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_check_links_types';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['linkchecker_check_links_types'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -245,7 +252,7 @@ function os2web_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_cleanup_links_last';
-  $strongarm->value = 1447020901;
+  $strongarm->value = 1518582904;
   $export['linkchecker_cleanup_links_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -254,8 +261,7 @@ function os2web_settings_strongarm() {
   $strongarm->name = 'linkchecker_disable_link_check_for_urls';
   $strongarm->value = 'example.com
 example.net
-example.org
-http://www.syddjurs.dk/Portaler/';
+example.org';
   $export['linkchecker_disable_link_check_for_urls'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -269,42 +275,42 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_audio';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_audio'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_embed';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_embed'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_iframe';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_iframe'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_img';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_img'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_object';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_object'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_extract_from_video';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_extract_from_video'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -312,19 +318,12 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_filter_blacklist';
   $strongarm->value = array(
+    'media_filter' => 'media_filter',
     'filter_autop' => 'filter_autop',
-    'tite_removal' => 'tite_removal',
     'filter_html' => 0,
-    'media_filter' => 0,
-    'lightbox_disable_iframe_filter' => 0,
     'filter_url' => 0,
+    'transliteration' => 0,
     'filter_htmlcorrector' => 0,
-    'lightbox2_gd_filter' => 0,
-    'lightbox2_filter' => 0,
-    'lightbox_iframe_filter' => 0,
-    'lightbox_modal_filter' => 0,
-    'lightbox_slideshow_filter' => 0,
-    'lightbox_video_filter' => 0,
     'filter_html_escape' => 0,
   );
   $export['linkchecker_filter_blacklist'] = $strongarm;
@@ -335,7 +334,6 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->name = 'linkchecker_ignore_response_codes';
   $strongarm->value = '200
 206
-301
 302
 304
 401
@@ -346,7 +344,7 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_scan_blocks';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['linkchecker_scan_blocks'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -361,32 +359,20 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_scan_nodetypes';
   $strongarm->value = array(
+    'os2web_borger_dk_article' => 'os2web_borger_dk_article',
+    'os2web_ofir_job' => 'os2web_ofir_job',
     'os2web_base_contentpage' => 'os2web_base_contentpage',
+    'os2web_contact_contact' => 'os2web_contact_contact',
     'os2web_base_news' => 'os2web_base_news',
+    'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
     'os2web_spotbox_box' => 'os2web_spotbox_box',
-    'os2web_frontend_background_img' => 0,
-    'os2web_base_rotating_image' => 0,
-    'os2web_borger_dk_article' => 0,
-    'os2web_citizenservices_service' => 0,
+    'webform' => 'webform',
+    'os2web_base_iframe' => 'os2web_base_iframe',
     'os2web_meetings_bullet' => 0,
     'os2web_meetings_bullet_attach' => 0,
-    'os2web_cp_service_cp_case' => 0,
-    'os2web_cp_service_cp_document' => 0,
-    'os2web_base_gallery' => 0,
-    'os2web_hearings_hearing_case' => 0,
-    'os2web_contact_contact' => 0,
-    'os2web_kulturnaut_knactivity' => 0,
-    'media' => 0,
     'os2web_meetings_meeting' => 0,
-    'os2web_meeting_search_status' => 0,
-    'os2web_ofir_job' => 0,
-    'panel' => 0,
-    'os2web_hearings_hearing' => 0,
-    'os2web_sections_page' => 0,
-    'os2web_base_selfservice_link' => 0,
-    'webform' => 0,
-    'os2web_base_iframe' => 0,
-    'menu_page' => 0,
+    'postliste_import' => 0,
+    'os2web_acadre_postlists' => 0,
   );
   $export['linkchecker_scan_nodetypes'] = $strongarm;
 
@@ -583,7 +569,7 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_1_admin_title';
-  $strongarm->value = 'Indhold';
+  $strongarm->value = 'Indholdsmenu';
   $export['menu_block_1_admin_title'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -618,7 +604,7 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_1_parent';
-  $strongarm->value = 'os2web-menu-contentmenu:0';
+  $strongarm->value = 'main-menu:0';
   $export['menu_block_1_parent'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -667,7 +653,7 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_ignore_words';
-  $strongarm->value = 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with';
+  $strongarm->value = 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with, en, et, og, på';
   $export['pathauto_ignore_words'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -716,14 +702,14 @@ http://www.syddjurs.dk/Portaler/';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_user_pattern';
-  $strongarm->value = 'users/[user:name]';
+  $strongarm->value = 'brugere/[user:name]';
   $export['pathauto_user_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_verbose';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['pathauto_verbose'] = $strongarm;
 
   $strongarm = new stdClass();

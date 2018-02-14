@@ -58,15 +58,14 @@ function fredericia_frontpage_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'os2web_base_news' => 'os2web_base_news',
   );
-  /* Filter criterion: Content: Forfrem til (field_os2web_spotbox_promote_to) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['id'] = 'field_os2web_spotbox_promote_to_tid';
   $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['table'] = 'field_data_field_os2web_spotbox_promote_to';
   $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['field'] = 'field_os2web_spotbox_promote_to_tid';
+  $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['operator'] = 'or';
   $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['value'] = array(
     5219 => '5219',
   );
-  $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_os2web_spotbox_promote_to_tid']['vocabulary'] = 'os2web_base_tax_promoteto';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');

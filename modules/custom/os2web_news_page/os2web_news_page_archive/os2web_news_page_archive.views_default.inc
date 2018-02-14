@@ -72,7 +72,7 @@ function os2web_news_page_archive_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'os2web_base_news' => 'os2web_base_news',
   );
-  /* Filter criterion: Content: Arkiveringsdato (field_os2web_news_page_archive) */
+  /* Filter criterion: Indholdselement: Arkiveringsdato (field_os2web_news_page_archive) */
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['id'] = 'field_os2web_news_page_archive_value';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['table'] = 'field_data_field_os2web_news_page_archive';
   $handler->display->display_options['filters']['field_os2web_news_page_archive_value']['field'] = 'field_os2web_news_page_archive_value';
