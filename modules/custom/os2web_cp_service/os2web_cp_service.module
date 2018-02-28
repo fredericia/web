@@ -7,6 +7,7 @@
 
 include_once 'os2web_cp_service.features.inc';
 include_once 'includes/cp_service_methods.inc';
+module_load_include('inc', 'os2web_cp_service', 'os2web_cp_service.batch');
 
 define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE', 'pull');
 define('OS2WEB_CP_SERVICE_FILE_PATH', 'public://cp-document');
@@ -1333,4 +1334,16 @@ function _os2web_cp_service_count_nodes($type) {
     ->count();
 
   return $query->execute();
+}
+
+/**
+ * Get nodes to delete .
+ */
+function _os2web_cp_service_delete_nodes_get($display_id) {
+  $view = views_get_view('docsnotoncase');
+  $view->set_display($display_id);
+  $view->pre_execute();
+  $view->set_items_per_page('0');
+  $view->execute();
+  return $view->result;
 }

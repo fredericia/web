@@ -20,6 +20,17 @@ function os2web_cp_service_drush_command() {
     'arguments' => array(),
     'aliases' => array('cp-cl'),
   );
+
+  $items['cp-cleanup-batch'] = array(
+    'description' => 'Cleanup CP nodes which is not refered to Content page.',
+    array(
+      'cp_node_type' => 'Allowed values: documents, cases',
+    ),
+  );
+
+  $items['cp-cleanup-batch-info'] = array(
+    'description' => 'Cleanup CP nodes info which is not refered to Content page',
+  );
   return $items;
 }
 
@@ -84,5 +95,35 @@ function drush_os2web_cp_service_cp_cleanup() {
   foreach ($nodes as $node) {
     node_delete($node->nid);
     drush_log(t('Deleted document: !node', array('!node' => $node->nid)), 'success');
+  }
+}
+
+/**
+ * Callback for cp-cleanup-batch drush command.
+ */
+function drush_os2web_cp_service_cp_cleanup_batch($cp_node_type = FALSE) {
+  $cp_types = array(
+    'documents' => 'page',
+    'cases' => 'page_2',
+  );
+  if (!empty($cp_types[$cp_node_type])) {
+    os2web_cp_service_delete_nodes($cp_types[$cp_node_type]);
+  }
+}
+
+/**
+ * Callback for cp-cleanup-info-batch drush command.
+ */
+function drush_os2web_cp_service_cp_cleanup_batch_info() {
+  $cp_types = array(
+    'documents' => 'page',
+    'cases' => 'page_2',
+  );
+  foreach ($cp_types as $type => $display) {
+    $results = _os2web_cp_service_delete_nodes_get($display);
+    drush_print(t('Found @count CP @type nodes to delete.', array(
+      '@count' => count($results),
+      '@type' => $type,
+    )));
   }
 }

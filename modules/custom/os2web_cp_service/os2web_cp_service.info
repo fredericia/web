@@ -119,6 +119,7 @@ features[variable][] = field_bundle_settings_node__os2web_cp_service_cp_document
 features[variable][] = pathauto_node_os2web_cp_service_cp_case_pattern
 features[variable][] = pathauto_node_os2web_cp_service_cp_document_pattern
 features[variable][] = pathauto_punctuation_slash
+features[views_view][] = docsnotoncase
 features[views_view][] = os2web_cp_service_cp_case_search
 features[views_view][] = os2web_cp_service_cp_case_view
 features[views_view][] = os2web_cp_service_cp_document_view
