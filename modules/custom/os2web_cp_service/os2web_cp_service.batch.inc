@@ -7,15 +7,24 @@
 /**
  * Callback function for delete all nodes.
  *
- * @param string $display_id
+ * @param string $type
  *   The id of view display to delete nodes.
  */
-function os2web_cp_service_delete_nodes($display_id) {
-  if (empty($display_id)) {
+function os2web_cp_service_delete_nodes($type) {
+  if (empty($type)) {
     return;
   }
 
-  $results = _os2web_cp_service_delete_nodes_get($display_id);
+  $results = _os2web_cp_service_delete_nodes_get($type);
+  switch ($type) {
+    case 'documents':
+    case 'cases':
+      break;
+
+    default:
+      return;
+  }
+
   $num_of_nodes = count($results);
 
   if ($num_of_nodes < 1) {
@@ -23,10 +32,8 @@ function os2web_cp_service_delete_nodes($display_id) {
     return;
   }
 
-  $nids = array();
-  foreach ($results as $item) {
-    $nids[] = $item->nid;
-  }
+  $nids = $results;
+
   $chunks = array_chunk($nids, 100);
   $operations = array();
   $progress = 0;

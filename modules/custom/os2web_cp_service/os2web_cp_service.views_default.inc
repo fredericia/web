@@ -22,7 +22,7 @@ function os2web_cp_service_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Dokumenter der ikke er paa sag';
+  $handler->display->display_options['title'] = 'Dokumenter og sager er brug';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -84,237 +84,24 @@ function os2web_cp_service_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Forbindelse: Entity Reference: Refereret entity */
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['id'] = 'field_os2web_cp_service_doc_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['table'] = 'field_data_field_os2web_cp_service_doc_ref';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['field'] = 'field_os2web_cp_service_doc_ref_target_id';
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['id'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['field'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  /* Forbindelse: Entity Reference: Refereret entity */
-  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['id'] = 'field_os2web_base_doc_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['table'] = 'field_data_field_os2web_base_doc_ref';
-  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['field'] = 'field_os2web_base_doc_ref_target_id';
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_node']['id'] = 'reverse_field_os2web_base_doc_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_node']['field'] = 'reverse_field_os2web_base_doc_ref_node';
-  /* Felt: Masse-handlinger: Indhold */
-  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
-  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::views_bulk_operations_delete_item' => array(
-      'selected' => 1,
-      'postpone_processing' => 1,
-      'skip_confirmation' => 1,
-      'override_label' => 0,
-      'label' => '',
-    ),
-  );
-  /* Felt: Indhold: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Felt: Indhold: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'Dok Nid';
-  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
-  /* Felt: Indhold: Nid */
-  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
-  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid_1']['relationship'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['fields']['nid_1']['label'] = 'Sag Nid';
-  $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'AND',
-  );
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterie: Indhold: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['filters']['nid']['operator'] = 'empty';
-  $handler->display->display_options['filters']['nid']['group'] = 2;
-  /* Filterkriterie: Indhold: Nid */
-  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_1']['relationship'] = 'reverse_field_os2web_base_doc_ref_node';
-  $handler->display->display_options['filters']['nid_1']['operator'] = 'empty';
-  $handler->display->display_options['filters']['nid_1']['group'] = 2;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
-  $handler->display->display_options['path'] = 'dokumenter-der-ikke-er-paa-sag';
-
-  /* Display: Side */
-  $handler = $view->new_display('page', 'Side', 'page_1');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Entity Reference: Refereret entity */
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['id'] = 'field_os2web_cp_service_doc_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['table'] = 'field_data_field_os2web_cp_service_doc_ref';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['field'] = 'field_os2web_cp_service_doc_ref_target_id';
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['id'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['field'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['path'] = 'denandenside';
-
-  /* Display: Sager der ikke er pa indholdsside */
-  $handler = $view->new_display('page', 'Sager der ikke er pa indholdsside', 'page_2');
+  /* Display: Documenter er på field_os2web_base_doc_ref */
+  $handler = $view->new_display('page', 'Documenter er på field_os2web_base_doc_ref', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Sager der ikke er pa indholdsside';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Entity Reference: Refereret entity */
-  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['id'] = 'field_os2web_base_case_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['table'] = 'field_data_field_os2web_base_case_ref';
-  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['field'] = 'field_os2web_base_case_ref_target_id';
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_case_ref_node']['id'] = 'reverse_field_os2web_base_case_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_case_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_base_case_ref_node']['field'] = 'reverse_field_os2web_base_case_ref_node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Masse-handlinger: Indhold */
-  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
-  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::views_bulk_operations_delete_item' => array(
-      'selected' => 1,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 1,
-      'override_label' => 0,
-      'label' => '',
-    ),
-  );
-  /* Felt: Indhold: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Felt: Indhold: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'Sag Nid';
-  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
-  /* Felt: Indhold: Nid */
-  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
-  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid_1']['relationship'] = 'reverse_field_os2web_base_case_ref_node';
-  $handler->display->display_options['fields']['nid_1']['label'] = 'Indholdside Nid';
-  $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'os2web_cp_service_cp_case' => 'os2web_cp_service_cp_case',
-  );
-  /* Filterkriterie: Indhold: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_os2web_base_case_ref_node';
-  $handler->display->display_options['filters']['nid']['operator'] = 'empty';
-  $handler->display->display_options['path'] = 'sager-der-ikke-er-paa-indholdsside';
-
-  /* Display: Documenter er på Inholdside */
-  $handler = $view->new_display('page', 'Documenter er på Inholdside', 'page_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Documenter er på Inholdside';
+  $handler->display->display_options['title'] = 'Documenter er på field_os2web_base_doc_ref';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['id'] = 'field_os2web_base_doc_ref_target_id';
@@ -393,10 +180,221 @@ function os2web_cp_service_views_default_views() {
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['path'] = 'documenter-er-pa-indholdside';
 
-  /* Display: Sager er pa indholdsside */
-  $handler = $view->new_display('page', 'Sager er pa indholdsside', 'page_4');
+  /* Display: Dokumenter er pa field_os2web_cp_service_doc_ref */
+  $handler = $view->new_display('page', 'Dokumenter er pa field_os2web_cp_service_doc_ref', 'page_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Sager er pa indholdsside';
+  $handler->display->display_options['title'] = 'Dokumenter er pa field_os2web_cp_service_doc_ref';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Refereret entity */
+  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['id'] = 'field_os2web_cp_service_doc_ref_target_id';
+  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['table'] = 'field_data_field_os2web_cp_service_doc_ref';
+  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['field'] = 'field_os2web_cp_service_doc_ref_target_id';
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['id'] = 'reverse_field_os2web_cp_service_doc_ref_node';
+  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['field'] = 'reverse_field_os2web_cp_service_doc_ref_node';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_os2web_cp_service_doc_ref_node';
+  $handler->display->display_options['filters']['nid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['nid']['group'] = 2;
+  $handler->display->display_options['path'] = 'dokumenter-er-paa-sag';
+
+  /* Display: Documenter er på field_os2web_base_doc_ref_single */
+  $handler = $view->new_display('page', 'Documenter er på field_os2web_base_doc_ref_single', 'page_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Documenter er på field_os2web_base_doc_ref_single';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_single_node']['id'] = 'reverse_field_os2web_base_doc_ref_single_node';
+  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_single_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_os2web_base_doc_ref_single_node']['field'] = 'reverse_field_os2web_base_doc_ref_single_node';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Masse-handlinger: Indhold */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Dok Nid';
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_os2web_base_doc_ref_node';
+  $handler->display->display_options['fields']['nid']['label'] = 'Indholdside Nid';
+  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Nid */
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['relationship'] = 'reverse_field_os2web_base_doc_ref_single_node';
+  $handler->display->display_options['filters']['nid_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['nid_1']['group'] = 1;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'reverse_field_os2web_base_doc_ref_node';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['path'] = 'documenter-er-pa-indholdside';
+
+  /* Display: FC: Documenter er på field_os2web_base_doc_ref */
+  $handler = $view->new_display('page', 'FC: Documenter er på field_os2web_base_doc_ref', 'page_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FC: Documenter er på field_os2web_base_doc_ref';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Indhold: Afsnit (field_os2web_paragraphs) */
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['id'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['table'] = 'field_data_field_os2web_paragraphs';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['field'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['delta'] = '-1';
+  /* Forbindelse: Entity Reference: Refereret entity */
+  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['id'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['table'] = 'field_data_field_os2web_base_doc_ref';
+  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['field'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['relationship'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_base_doc_ref_target_id']['label'] = '(field collection) Indhold entity refereret fra field_os2web_base_doc_ref';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Masse-handlinger: Indhold */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = 'dok Nid';
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Indholdside Nid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Nid */
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['relationship'] = 'field_os2web_base_doc_ref_target_id';
+  $handler->display->display_options['filters']['nid_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['nid_1']['group'] = 1;
+  $handler->display->display_options['path'] = 'documenter-er-pa-indholdside-via-afsnit';
+
+  /* Display: Sager er pa field_os2web_base_case_ref */
+  $handler = $view->new_display('page', 'Sager er pa field_os2web_base_case_ref', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Sager er pa field_os2web_base_case_ref';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '500';
@@ -481,64 +479,85 @@ function os2web_cp_service_views_default_views() {
   $handler->display->display_options['filters']['nid']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'sager-er-paa-indholdsside';
 
-  /* Display: Dokumenter er paa sag */
-  $handler = $view->new_display('page', 'Dokumenter er paa sag', 'page_5');
+  /* Display: FC: Sager er på field_os2web_base_case_ref */
+  $handler = $view->new_display('page', 'FC: Sager er på field_os2web_base_case_ref', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Dokumenter er paa sag';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['title'] = 'FC: Sager er på field_os2web_base_case_ref';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Indhold: Afsnit (field_os2web_paragraphs) */
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['id'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['table'] = 'field_data_field_os2web_paragraphs';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['field'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_paragraphs_value']['delta'] = '-1';
   /* Forbindelse: Entity Reference: Refereret entity */
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['id'] = 'field_os2web_cp_service_doc_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['table'] = 'field_data_field_os2web_cp_service_doc_ref';
-  $handler->display->display_options['relationships']['field_os2web_cp_service_doc_ref_target_id']['field'] = 'field_os2web_cp_service_doc_ref_target_id';
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['id'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_os2web_cp_service_doc_ref_node']['field'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'AND',
+  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['id'] = 'field_os2web_base_case_ref_target_id';
+  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['table'] = 'field_data_field_os2web_base_case_ref';
+  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['field'] = 'field_os2web_base_case_ref_target_id';
+  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['relationship'] = 'field_os2web_paragraphs_value';
+  $handler->display->display_options['relationships']['field_os2web_base_case_ref_target_id']['label'] = '(field collection) Indhold entity refereret fra field_os2web_base_case_ref';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Masse-handlinger: Indhold */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
   );
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_os2web_base_case_ref_target_id';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_os2web_base_case_ref_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = 'dok Nid';
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Indholdside Nid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_os2web_base_case_ref_target_id';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'os2web_cp_service_cp_document' => 'os2web_cp_service_cp_document',
+    'os2web_cp_service_cp_case' => 'os2web_cp_service_cp_case',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterie: Indhold: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_os2web_cp_service_doc_ref_node';
-  $handler->display->display_options['filters']['nid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['nid']['group'] = 2;
-  $handler->display->display_options['path'] = 'dokumenter-er-paa-sag';
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['relationship'] = 'field_os2web_base_case_ref_target_id';
+  $handler->display->display_options['filters']['nid_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['nid_1']['group'] = 1;
+  $handler->display->display_options['path'] = 'sager-er-pa-indholdside-via-afsnit';
   $translatables['docsnotoncase'] = array(
     t('Master'),
-    t('Dokumenter der ikke er paa sag'),
+    t('Dokumenter og sager er brug'),
     t('mere'),
     t('Udfør'),
     t('Gendan'),
@@ -552,24 +571,30 @@ function os2web_cp_service_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Indhold entity refereret fra field_os2web_cp_service_doc_ref'),
-    t('Indhold refererer til Indhold fra field_os2web_cp_service_doc_ref'),
+    t('Nid'),
+    t('Titel'),
+    t('Documenter er på field_os2web_base_doc_ref'),
     t('Indhold entity refereret fra field_os2web_base_doc_ref'),
     t('Indhold refererer til Indhold fra field_os2web_base_doc_ref'),
     t('Indhold'),
     t('- Vælg en handling -'),
-    t('Titel'),
     t('Dok Nid'),
-    t('Sag Nid'),
-    t('Page'),
-    t('Side'),
-    t('Sager der ikke er pa indholdsside'),
+    t('Indholdside Nid'),
+    t('Dokumenter er pa field_os2web_cp_service_doc_ref'),
+    t('Indhold entity refereret fra field_os2web_cp_service_doc_ref'),
+    t('Indhold refererer til Indhold fra field_os2web_cp_service_doc_ref'),
+    t('Documenter er på field_os2web_base_doc_ref_single'),
+    t('Indhold refererer til Indhold fra field_os2web_base_doc_ref_single'),
+    t('FC: Documenter er på field_os2web_base_doc_ref'),
+    t('field collection item from field_os2web_paragraphs'),
+    t('(field collection) Indhold entity refereret fra field_os2web_base_doc_ref'),
+    t('dok Nid'),
+    t('Sager er pa field_os2web_base_case_ref'),
     t('Indhold entity refereret fra field_os2web_base_case_ref'),
     t('Indhold refererer til Indhold fra field_os2web_base_case_ref'),
-    t('Indholdside Nid'),
-    t('Documenter er på Inholdside'),
-    t('Sager er pa indholdsside'),
-    t('Dokumenter er paa sag'),
+    t('Sag Nid'),
+    t('FC: Sager er på field_os2web_base_case_ref'),
+    t('(field collection) Indhold entity refereret fra field_os2web_base_case_ref'),
   );
   $export['docsnotoncase'] = $view;
 
