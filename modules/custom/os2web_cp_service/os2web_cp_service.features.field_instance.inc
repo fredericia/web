@@ -11,7 +11,7 @@ function os2web_cp_service_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_address'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_address'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_address'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -25,7 +25,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 22,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -91,12 +109,12 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 16,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_case_id'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_case_id'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_case_id'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -110,7 +128,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -165,7 +201,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_casetype'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_casetype'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_casetype'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -179,7 +215,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 2,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -204,6 +258,7 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
+        'use_select2' => FALSE,
       ),
       'type' => 'options_select',
       'weight' => 3,
@@ -211,7 +266,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_content'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_content'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_content'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -225,7 +280,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -255,12 +328,12 @@ function os2web_cp_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_date'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_date'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_date'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'deleted' => 0,
@@ -275,11 +348,30 @@ function os2web_cp_service_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 10,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -315,12 +407,74 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_doc_ref'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_deliver'.
+  $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_deliver'] = array(
+    'bundle' => 'os2web_cp_service_cp_case',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_deliver',
+    'label' => 'Delivered status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_doc_ref'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_doc_ref'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -336,7 +490,30 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 14,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'list',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -365,12 +542,77 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 11,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_full_xml'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_fails'.
+  $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_fails'] = array(
+    'bundle' => 'os2web_cp_service_cp_case',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 27,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_fails',
+    'label' => 'Synchronization fails',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_full_xml'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_full_xml'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -383,7 +625,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -416,7 +676,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_key'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_key'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_key'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -430,7 +690,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 19,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -480,12 +758,12 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 13,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_kle_ref'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_kle_ref'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_kle_ref'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -499,7 +777,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 21,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -529,12 +825,74 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 38,
+      'weight' => 15,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_org_unit'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_nontrans'.
+  $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_nontrans'] = array(
+    'bundle' => 'os2web_cp_service_cp_case',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_nontrans',
+    'label' => 'Non transferable',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_org_unit'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_org_unit'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -548,7 +906,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 9,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -573,14 +949,15 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
+        'use_select2' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_property'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_property'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_property'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -594,7 +971,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -622,12 +1017,12 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_rules'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_rules'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_rules'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -641,7 +1036,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 20,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -666,12 +1079,12 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 14,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_status'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_status'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_status'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -685,7 +1098,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 17,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -713,12 +1144,86 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 12,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_sysid'
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_synctime'.
+  $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_synctime'] = array(
+    'bundle' => 'os2web_cp_service_cp_case',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 26,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_synctime',
+    'label' => 'Sync timestamp',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd.m.Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_case-field_os2web_cp_service_sysid'.
   $field_instances['node-os2web_cp_service_cp_case-field_os2web_cp_service_sysid'] = array(
     'bundle' => 'os2web_cp_service_cp_case',
     'default_value' => NULL,
@@ -732,7 +1237,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -765,7 +1288,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_case_id'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_case_id'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_case_id'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -779,7 +1302,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -811,7 +1352,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_case_sid'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_case_sid'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_case_sid'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -825,7 +1366,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 11,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -853,12 +1412,12 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 14,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_content'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_content'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_content'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -872,7 +1431,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -907,7 +1484,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_date'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_date'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_date'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'deleted' => 0,
@@ -922,11 +1499,30 @@ function os2web_cp_service_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -962,12 +1558,74 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_id'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_deliver'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_deliver'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_deliver',
+    'label' => 'Delivered status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_id'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_id'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -981,7 +1639,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1036,7 +1712,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_type'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_type'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_doc_type'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1050,7 +1726,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1075,6 +1769,7 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
+        'use_select2' => FALSE,
       ),
       'type' => 'options_select',
       'weight' => 8,
@@ -1082,7 +1777,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_edited'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_edited'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_edited'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'deleted' => 0,
@@ -1097,11 +1792,30 @@ function os2web_cp_service_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 8,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1137,12 +1851,160 @@ function os2web_cp_service_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_file_id'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_fails'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_fails'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_fails',
+    'label' => 'Synchronization fails',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_file'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_file'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 18,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_file',
+    'label' => 'Indhold - File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'fredericia_content_image' => 0,
+          'os2web_spotbox_image' => 0,
+          'person' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 0,
+          'media_browser_plus--media_browser_thumbnails' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_file_id'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_file_id'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1158,7 +2020,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'os2web_cp_service_file_formatter',
         'weight' => 2,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1191,7 +2071,7 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_filetype'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_filetype'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_filetype'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1205,7 +2085,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 10,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1233,12 +2131,12 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 13,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_full_xml'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_full_xml'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_full_xml'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1251,7 +2149,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1279,12 +2195,12 @@ function os2web_cp_service_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_key'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_key'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_key'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1298,7 +2214,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 12,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1348,12 +2282,74 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 15,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_rules'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_nontrans'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_nontrans'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_nontrans',
+    'label' => 'Non transferable',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_rules'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_rules'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1367,7 +2363,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 13,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1392,12 +2406,86 @@ function os2web_cp_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 38,
+      'weight' => 16,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_sysid'
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_synctime'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_synctime'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 16,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_synctime',
+    'label' => 'Sync timestamp',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd.m.Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_sysid'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_sysid'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
     'default_value' => NULL,
@@ -1411,7 +2499,25 @@ function os2web_cp_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 9,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1439,12 +2545,107 @@ function os2web_cp_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_tr_stat'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_tr_stat'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Internal field stores additional information about transfer status and errors.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_tr_stat',
+    'label' => 'Transfer status',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'blokindhold' => 'blokindhold',
+          'email' => 'email',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'blokindhold' => array(
+              'weight' => -7,
+            ),
+            'email' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 22,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Delivered status');
   t('DokumentID');
   t('Dokumentdato');
   t('Dokumenter');
@@ -1452,10 +2653,13 @@ function os2web_cp_service_field_default_field_instances() {
   t('Ejendomsnummer');
   t('Filformat');
   t('FullXML');
+  t('Indhold - File');
   t('Indhold - FileID');
   t('Indholdsbeskrivelse');
+  t('Internal field stores additional information about transfer status and errors.');
   t('Journalnummer');
   t('KL emnenummer - KL emnenummer og beskrivelse');
+  t('Non transferable');
   t('RedigeringsDato');
   t('Sag SystemID');
   t('SagsID');
@@ -1466,7 +2670,10 @@ function os2web_cp_service_field_default_field_instances() {
   t('Sagsstatus - Sagstypebetegnelse');
   t('Sagstitel');
   t('Sagstype - Sagstype');
+  t('Sync timestamp');
+  t('Synchronization fails');
   t('SystemID');
+  t('Transfer status');
   t('TriggerRules');
 
   return $field_instances;
