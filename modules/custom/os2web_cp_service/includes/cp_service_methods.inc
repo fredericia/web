@@ -46,12 +46,15 @@ function os2web_cp_service_transfer_request() {
         'FileID' => $field_os2web_cp_service_file_id[0]['value'],
         'FileFormat' => 'Published',
       );
+      watchdog('acadre OM', 'ReturnFileTransferRequest success fid: ' . $result['FileID'], array(), WATCHDOG_NOTICE);
+      return $result;
     }
-
+    watchdog('acadre OM', 'ReturnFileTransferRequest: File ID is empty', array(), WATCHDOG_WARNING);
   }
 
-  watchdog('acadre OM', 'ReturnFileTransferRequest success fid: ' . $result['FileID'], array(), WATCHDOG_NOTICE);
-  return $result;
+  watchdog('acadre OM', 'ReturnFileTransferRequest: Not found CP documents to transfer', array(), WATCHDOG_WARNING);
+  return NULL;
+
 }
 
 /**
@@ -111,7 +114,7 @@ function os2web_cp_service_transfer_update($data) {
     $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
   }
 
-  watchdog('acadre OM', 'FileTransferEnd success:: fid: ' . $result['FileID'], array(), WATCHDOG_NOTICE);
+  watchdog('acadre OM', 'FileTransferEnd success:: fid: ' . $file_id, array(), WATCHDOG_NOTICE);
 
   // Set synchronization timestamp.
   $node_wrapper->field_os2web_cp_service_synctime->set(time());
