@@ -118,12 +118,16 @@ function drush_os2web_cp_service_cp_cleanup_batch_info() {
   );
   foreach ($cp_types as $type) {
     $results = _os2web_cp_service_delete_nodes_get($type);
+    if (empty($results)) {
+      continue;
+    }
     $unique_items = array_unique($results);
     drush_print(t('Found @count CP @type nodes to delete.', array(
       '@count' => count($unique_items),
       '@type' => $type,
     )));
   }
+
   // To left information.
   $cp_types = array(
     'documents-by-field_os2web_base_doc_ref',

@@ -1354,11 +1354,17 @@ function _os2web_cp_service_delete_nodes_get($type) {
     );
 
     if (empty($cp_types[$type])) {
-      print_r('empty type');
+      print_r('empty type' . "\n");
       return;
     }
 
     $view = views_get_view('docsnotoncase');
+
+    if (empty($view->display[$cp_types[$type]])) {
+      print_r('No dispay ' . $cp_types[$type] . ' to fetch nodes.' . "\n");
+      return;
+    }
+
     $view->set_display($cp_types[$type]);
     $view->pre_execute();
     $view->set_items_per_page('0');
@@ -1369,7 +1375,7 @@ function _os2web_cp_service_delete_nodes_get($type) {
     switch ($type) {
       case 'documents':
         $to_exclude = array();
-        foreach(array(
+        foreach (array(
           'documents-by-field_os2web_base_doc_ref',
           'documents-by-field_os2web_base_doc_ref_single',
           'documents-by-field_os2web_cp_service_doc_ref',
@@ -1381,7 +1387,7 @@ function _os2web_cp_service_delete_nodes_get($type) {
 
       case 'cases':
         $to_exclude = array();
-        foreach(array(
+        foreach (array(
           'cases-by-field_os2web_base_case_ref',
           'cases-by-fc-field_os2web_base_case_ref',
         ) as $type_exclude) {
