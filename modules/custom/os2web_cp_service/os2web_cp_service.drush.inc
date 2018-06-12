@@ -111,6 +111,23 @@ function drush_os2web_cp_service_cp_cleanup_batch($cp_node_type = FALSE) {
  * Callback for cp-cleanup-info-batch drush command.
  */
 function drush_os2web_cp_service_cp_cleanup_batch_info() {
+  // Total.
+  foreach (array(
+     'os2web_cp_service_cp_case', 'os2web_cp_service_cp_document') as $type) {
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', $type)
+      ->propertyCondition('status', 1)
+      ->count();
+
+    drush_print(t('Total amount of @cp-type nodes: @count', array(
+      '@count' => $query->execute(),
+      '@cp-type' => $type,
+    )));
+
+  }
+
   // To delete information.
   $cp_types = array(
     'documents',
