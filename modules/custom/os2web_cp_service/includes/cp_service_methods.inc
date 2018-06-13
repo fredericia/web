@@ -95,6 +95,7 @@ function os2web_cp_service_transfer_update($data) {
       // Bind existing file to CP Document node and update transfer status.
       _os2web_cp_document_bind_file($node_wrapper, $uri);
       $node_wrapper->field_os2web_cp_service_tr_stat->set('');
+      watchdog('acadre OM', 'FileTransferEnd success:: fid: ' . $file_id, array(), WATCHDOG_NOTICE);
     }
   }
   else {
@@ -108,13 +109,11 @@ function os2web_cp_service_transfer_update($data) {
     }
 
     $status_message = 'failed transfer status';
-    watchdog('acadre OM', "FileTransferEnd :: FileID: @file_id." . $status_message, array(
+    watchdog('acadre OM', "FileTransferEnd :: FileID: @file_id. " . $status_message, array(
       '@file_id' => $file_id,
     ), WATCHDOG_ERROR);
     $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
   }
-
-  watchdog('acadre OM', 'FileTransferEnd success:: fid: ' . $file_id, array(), WATCHDOG_NOTICE);
 
   // Set synchronization timestamp.
   $node_wrapper->field_os2web_cp_service_synctime->set(time());
