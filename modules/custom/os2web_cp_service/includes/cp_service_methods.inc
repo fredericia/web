@@ -113,6 +113,7 @@ function os2web_cp_service_transfer_update($data) {
       '@file_id' => $file_id,
     ), WATCHDOG_ERROR);
     $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
+    error_log("FileTransferEnd :: FileID: @file_id. " . $status_message . ' ' . print_r($data, 1));
   }
 
   // Set synchronization timestamp.
