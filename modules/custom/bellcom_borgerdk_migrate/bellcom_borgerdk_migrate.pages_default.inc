@@ -180,7 +180,7 @@ function bellcom_borgerdk_migrate_default_page_manager_handlers() {
   $pane->css = array(
     'css_id' => '',
     'css_class' => '',
-    'template_suggestion' => '',
+    'template_suggestion' => 'borger-dk-article--node_content',
   );
   $pane->extras = array();
   $pane->position = 2;

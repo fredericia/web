@@ -64,3 +64,4 @@ features[variable][] = menu_parent_borger_dk_article
 features[variable][] = node_options_borger_dk_article
 features[variable][] = node_preview_borger_dk_article
 features[variable][] = node_submitted_borger_dk_article
+features[variable][] = pathauto_node_borger_dk_article_pattern
