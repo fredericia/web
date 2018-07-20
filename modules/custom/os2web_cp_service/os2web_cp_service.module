@@ -1347,7 +1347,7 @@ function _os2web_cp_service_count_nodes($type) {
  * Implements hook_views_pre_render().
  */
 function os2web_cp_service_views_pre_render(&$view) {
-  if ($view->name == 'sager_og_dokumenter_importeret_dobbelt2') {
+  if ($view->name == 'sager_og_dokumenter_importeret_dobbelt') {
     foreach ($view->result as $r => &$result) {
       if (!empty($result->field_field_os2web_cp_service_tr_stat)
       && $result->field_field_os2web_cp_service_tr_stat[0]['raw']['value'] == 'failed transfer status') {
