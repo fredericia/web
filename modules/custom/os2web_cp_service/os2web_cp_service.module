@@ -61,6 +61,13 @@ function os2web_cp_service_menu() {
     'access arguments' => array('administer site configuration'),
   );
 
+  $items['admin/content/acadre_om/reset_transfer_status/%'] = array(
+    'title' => 'Reset transfer_status',
+    'page callback' => '_os2web_cp_service_reset_transfer_status',
+    'page arguments' => array(4),
+    'access arguments' => array('administer site configuration'),
+  );
+
   return $items;
 }
 
@@ -1334,6 +1341,56 @@ function _os2web_cp_service_count_nodes($type) {
     ->count();
 
   return $query->execute();
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function os2web_cp_service_views_pre_render(&$view) {
+  if ($view->name == 'sager_og_dokumenter_importeret_dobbelt2') {
+    foreach ($view->result as $r => &$result) {
+      if (!empty($result->field_field_os2web_cp_service_tr_stat)
+      && $result->field_field_os2web_cp_service_tr_stat[0]['raw']['value'] == 'failed transfer status') {
+        $result->field_field_os2web_cp_service_tr_stat[0]['rendered']['#markup'] .= '</br>' . l(t('Reset'),
+          'admin/content/acadre_om/reset_transfer_status/' . $result->nid, array(
+            'query' => array(
+              'destination' => url(current_path(), array(
+                'query' => drupal_get_query_parameters(),
+              )),
+            ),
+          )
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Reset transfer status.
+ */
+function _os2web_cp_service_reset_transfer_status($nid) {
+  $destination = 'admin/content/acadre_om';
+  $params = drupal_get_query_parameters();
+  if (!empty($params['destination'])) {
+    $destination = $params['destination'];
+  }
+
+  $node = node_load($nid);
+  if (empty($node)) {
+    drupal_set_message(t('Node with id @nid not found.',
+      array('@nid' => $nid)));
+    drupal_goto($destination);
+    return;
+  }
+
+  $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
+  node_save($node);
+
+  drupal_set_message(t('Transfer status for node "@title" has been reset',
+    array('@title' => $node->title)));
+  drupal_goto($destination);
 }
 
 /**
