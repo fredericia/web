@@ -33,7 +33,8 @@ class Client
      *
      * @var string
      */
-    protected $soapUrl = 'https://www.borger.dk/_vti_bin/borger/ArticleExport.svc?wsdl';
+    protected $soapUrlDa = 'https://www.borger.dk/_vti_bin/borger/ArticleExport.svc?wsdl';
+    protected $soapUrlEn = 'https://lifeindenmark.borger.dk/_vti_bin/borger/ArticleExport.svc?wsdl';
 
     /**
      * Array with debug options
@@ -45,12 +46,15 @@ class Client
     /**
      * Initiate the SoapClient connection.
      *
+     * @param string $lang
+     *
      * @throws \BorgerDk\ArticleService\Exceptions\SoapException
      */
-    public function __construct()
+    public function __construct($lang = 'da')
     {
         try {
-            $this->client = new SoapClient($this->soapUrl, $this->debug);
+            $soapUrl = (strcasecmp($lang, 'en') == 0) ? $this->soapUrlEn : $this->soapUrlDa;
+            $this->client = new SoapClient($soapUrl, $this->debug);
         } catch (\SoapFault $fault) {
             new SoapException($fault);
         }

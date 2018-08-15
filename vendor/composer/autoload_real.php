@@ -41,19 +41,15 @@ class ComposerAutoloaderInitComposerManager
         $loader->register(true);
 
         $includeFiles = require __DIR__ . '/autoload_files.php';
-        foreach ($includeFiles as $fileIdentifier => $file) {
-            composerRequireComposerManager($fileIdentifier, $file);
+        foreach ($includeFiles as $file) {
+            composerRequireComposerManager($file);
         }
 
         return $loader;
     }
 }
 
-function composerRequireComposerManager($fileIdentifier, $file)
+function composerRequireComposerManager($file)
 {
-    if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
-        require $file;
-
-        $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
-    }
+    require $file;
 }
