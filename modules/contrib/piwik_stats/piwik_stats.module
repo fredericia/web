@@ -571,7 +571,7 @@ function piwik_stats_process_queue_item($item) {
     // Sum up all statistical data of each URL to a piwik field.
     $piwik_stats_field = _piwik_stats_summarize_field($urls, $xml);
     // Add the filled piwik stats field to the entity.
-    $item['entity']->$item['field']['field_name'] = $piwik_stats_field;
+    $item['entity']->{$item['field']['field_name']} = $piwik_stats_field;
 
     // Save the updated piwik field (without touching the node or any other fields).
     _piwik_stats_field_update($item['entity_type'], $item['entity'], $item['field']);
@@ -750,16 +750,28 @@ function _piwik_stats_get_entities($type, $bundle) {
  *  An array of url aliases.
  */
 function _piwik_stats_get_aliases($uri) {
-  // The URLs we get from piwik are absolute, so we transform them as needed.
-  $urls = array(url($uri, array('absolute' => TRUE, 'alias' => TRUE)));
+  $urls = array();
+  $languages = language_list('enabled');
 
-  // Grab all URL aliases of the system URI.
-  $select = db_select('url_alias', 'u');
-  $select->addField('u', 'alias');
-  $select->condition('u.source', $uri);
-  $aliases = $select->execute()->fetchAll();
-  foreach ($aliases as $alias) {
-    $urls[] = url($alias->alias, array('absolute' => TRUE, 'alias' => TRUE));
+  foreach ($languages[1] as $language) {
+    // The URLs we get from piwik are absolute, so we transform them as needed.
+    $urls[] = url($uri, array('https' => FALSE, 'language' => $language, 'absolute' => TRUE, 'alias' => TRUE));
+    if (variable_get('https', FALSE)) {
+      $urls[] = url($uri, array('https' =>  TRUE, 'language' => $language, 'absolute' => TRUE, 'alias' => TRUE));
+    }
+
+    // Grab all URL aliases of the system URI.
+    $select = db_select('url_alias', 'u');
+    $select->addField('u', 'alias');
+    $select->condition('u.source', $uri);
+    $select->condition('u.language', array(LANGUAGE_NONE, $language->language));
+    $aliases = $select->execute()->fetchAll();
+    foreach ($aliases as $alias) {
+      $urls[] = url($alias->alias, array('https' => FALSE, 'language' => $language, 'absolute' => TRUE, 'alias' => TRUE));
+      if (variable_get('https', FALSE)) {
+        $urls[] = url($alias->alias, array('https' =>  TRUE, 'language' => $language, 'absolute' => TRUE, 'alias' => TRUE));
+      }
+    }
   }
 
   return $urls;
