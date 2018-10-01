@@ -106,6 +106,17 @@ function os2web_cp_service_transfer_update($data) {
     // Mark file as non transferable if amount of tries reached to max value.
     if ($sync_fails >= variable_get('os2web_cp_service_file_transfer_max_tries', OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_TRIES)) {
       $node_wrapper->field_os2web_cp_service_nontrans->set(1);
+      $node_wrapper->save();
+
+      // Check duplicated file id.
+      do {
+        $node_duplicated = _os2web_cp_service_get_cp_document_node_by_file_id($file_id, TRUE);
+        if (!empty($node_duplicated)) {
+          $node_duplicated_wrapper = entity_metadata_wrapper('node', $node_duplicated);
+          $node_duplicated_wrapper->field_os2web_cp_service_nontrans->set(1);
+          $node_duplicated_wrapper->save();
+        }
+      } while (!empty($node_duplicated));
     }
 
     $status_message = 'failed transfer status';
@@ -125,7 +136,7 @@ function os2web_cp_service_transfer_update($data) {
 /**
  * Helper get function for CP Document node by file_id.
  */
-function _os2web_cp_service_get_cp_document_node_by_file_id($file_id) {
+function _os2web_cp_service_get_cp_document_node_by_file_id($file_id, $check_transferable = FALSE) {
   $node = FALSE;
   // Fetch CP Document node by file_id.
   $query = db_select('node', 'n')
@@ -134,6 +145,17 @@ function _os2web_cp_service_get_cp_document_node_by_file_id($file_id) {
 
   $query->leftJoin('field_data_field_os2web_cp_service_file_id', 'cpd', 'cpd.entity_id = n.nid');
   $query->condition('cpd.field_os2web_cp_service_file_id_value', $file_id);
+
+  if ($check_transferable) {
+    $query->leftJoin('field_data_field_os2web_cp_service_nontrans', 'cpn', 'cpn.entity_id = n.nid');
+    $field_os2web_cp_service_nontrans_db_or = db_or()
+      ->condition('cpn.field_os2web_cp_service_nontrans_value', '0')
+      ->condition('cpn.field_os2web_cp_service_nontrans_value', NULL);
+    $query->condition($field_os2web_cp_service_nontrans_db_or);
+  }
+
+  $query->orderBy('n.changed', 'DESC');
+
   $result = $query->execute()->fetchAll();
 
   if (!empty($result)) {
