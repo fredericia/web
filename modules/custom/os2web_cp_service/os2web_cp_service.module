@@ -63,7 +63,7 @@ function os2web_cp_service_menu() {
 
   $items['admin/content/acadre_om/reset_transfer_status/%'] = array(
     'title' => 'Reset transfer_status',
-    'page callback' => '_os2web_cp_service_reset_transfer_status',
+    'page callback' => '_os2web_cp_service_reset_transfer_status_callback',
     'page arguments' => array(4),
     'access arguments' => array('administer site configuration'),
   );
@@ -1361,14 +1361,20 @@ function os2web_cp_service_views_pre_render(&$view) {
           )
         );
       }
+      if (!empty($result->field_field_os2web_cp_service_res_c[0]['raw']['value'])) {
+        $result->field_field_os2web_cp_service_tr_stat[0]['rendered']['#markup'] .= '</br>Amount of resets: ' . format_plural(
+          $result->field_field_os2web_cp_service_res_c[0]['raw']['value'],
+          '1 time',
+          '@count times');
+      }
     }
   }
 }
 
 /**
- * Reset transfer status.
+ * Reset transfer status callback.
  */
-function _os2web_cp_service_reset_transfer_status($nid) {
+function _os2web_cp_service_reset_transfer_status_callback($nid) {
   $destination = 'admin/content/acadre_om';
   $params = drupal_get_query_parameters();
   if (!empty($params['destination'])) {
@@ -1383,14 +1389,25 @@ function _os2web_cp_service_reset_transfer_status($nid) {
     return;
   }
 
-  $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
-  $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
-  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
-  node_save($node);
+  _os2web_cp_service_reset_transfer_status($node);
 
   drupal_set_message(t('Transfer status for node "@title" has been reset',
     array('@title' => $node->title)));
   drupal_goto($destination);
+}
+
+/**
+ * Reset transfer status.
+ */
+function _os2web_cp_service_reset_transfer_status(&$node) {
+  $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
+  if (!isset($node->field_os2web_cp_service_c_res[LANGUAGE_NONE][0]['value'])) {
+    $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'] = 0;
+  }
+  $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value']++;
+  node_save($node);
 }
 
 /**
