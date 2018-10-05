@@ -11,27 +11,8 @@
 function os2web_cp_service_transfer_request() {
   $result = NULL;
 
-  // Fetch CP Document node with not delivered and available to
-  // transfer file_id.
-  $query = db_select('node', 'n')
-    ->fields('n', array('nid'))
-    ->condition('type', 'os2web_cp_service_cp_document');
+  $query = _os2web_cp_service_get_transfer_request_query();
 
-  $query->leftJoin('field_data_field_os2web_cp_service_deliver', 'cpd', 'cpd.entity_id = n.nid');
-  $field_os2web_cp_service_deliver_db_or = db_or()
-    ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
-    ->condition('cpd.field_os2web_cp_service_deliver_value', NULL);
-
-  $query->leftJoin('field_data_field_os2web_cp_service_nontrans', 'cpn', 'cpn.entity_id = n.nid');
-  $field_os2web_cp_service_nontrans_db_or = db_or()
-    ->condition('cpn.field_os2web_cp_service_nontrans_value', '0')
-    ->condition('cpn.field_os2web_cp_service_nontrans_value', NULL);
-
-  $db_and = db_and()
-    ->condition($field_os2web_cp_service_deliver_db_or)
-    ->condition($field_os2web_cp_service_nontrans_db_or);
-
-  $query->condition($db_and);
   $result = $query->range(0, 1)
     ->orderBy('n.changed', 'DESC')
     ->execute()
@@ -55,6 +36,34 @@ function os2web_cp_service_transfer_request() {
   watchdog('acadre OM', 'ReturnFileTransferRequest: Not found CP documents to transfer', array(), WATCHDOG_WARNING);
   return NULL;
 
+}
+
+/**
+ * Get transfer request query.
+ */
+function _os2web_cp_service_get_transfer_request_query() {
+  // Fetch CP Document node with not delivered and available to
+  // transfer file_id.
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('type', 'os2web_cp_service_cp_document');
+
+  $query->leftJoin('field_data_field_os2web_cp_service_deliver', 'cpd', 'cpd.entity_id = n.nid');
+  $field_os2web_cp_service_deliver_db_or = db_or()
+    ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
+    ->condition('cpd.field_os2web_cp_service_deliver_value', NULL);
+
+  $query->leftJoin('field_data_field_os2web_cp_service_nontrans', 'cpn', 'cpn.entity_id = n.nid');
+  $field_os2web_cp_service_nontrans_db_or = db_or()
+    ->condition('cpn.field_os2web_cp_service_nontrans_value', '0')
+    ->condition('cpn.field_os2web_cp_service_nontrans_value', NULL);
+
+  $db_and = db_and()
+    ->condition($field_os2web_cp_service_deliver_db_or)
+    ->condition($field_os2web_cp_service_nontrans_db_or);
+
+  $query->condition($db_and);
+  return $query;
 }
 
 /**
