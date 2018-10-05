@@ -58,11 +58,25 @@ function _os2web_cp_service_get_transfer_request_query() {
     ->condition('cpn.field_os2web_cp_service_nontrans_value', '0')
     ->condition('cpn.field_os2web_cp_service_nontrans_value', NULL);
 
+  // Available to transfering documents.
   $db_and = db_and()
     ->condition($field_os2web_cp_service_deliver_db_or)
     ->condition($field_os2web_cp_service_nontrans_db_or);
 
-  $query->condition($db_and);
+  $query->leftJoin('field_data_field_os2web_cp_service_synctime', 'cpst', 'cpst.entity_id = n.nid');
+
+  // Include documents with failed transfers status older that 1 day.
+  $failed_transfers_condition = db_and()
+    ->condition('cpn.field_os2web_cp_service_nontrans_value', '1')
+    ->condition('cpst.field_os2web_cp_service_synctime_value', strtotime('now - 1 day'), '<')
+    ->condition(db_or()
+      ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
+      ->condition('cpd.field_os2web_cp_service_deliver_value', NULL));
+
+  $query->condition(db_or()
+    ->condition($db_and)
+    ->condition($failed_transfers_condition)
+  );
   return $query;
 }
 
