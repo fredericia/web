@@ -1403,10 +1403,10 @@ function _os2web_cp_service_reset_transfer_status(&$node) {
   $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
-  if (!isset($node->field_os2web_cp_service_c_res[LANGUAGE_NONE][0]['value'])) {
+  if (!isset($node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'])) {
     $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'] = 0;
   }
-  $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value']++;
+  (int) $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value']++;
   node_save($node);
 }
 
