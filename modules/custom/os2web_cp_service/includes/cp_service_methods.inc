@@ -11,6 +11,43 @@
 function os2web_cp_service_transfer_request() {
   $result = NULL;
 
+  $query = _os2web_cp_service_get_transfer_request_query();
+
+  $result = $query->range(0, 1)
+    ->orderBy('n.changed', 'DESC')
+    ->execute()
+    ->fetchAll();
+
+  if (!empty($result)) {
+    $node = reset($result);
+    $node = node_load($node->nid);
+    $field_os2web_cp_service_file_id = field_get_items('node', $node, 'field_os2web_cp_service_file_id');
+    if (!empty($field_os2web_cp_service_file_id)) {
+
+      if (!empty($node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'])) {
+        // Reset document before responce and let it be updated.
+        _os2web_cp_service_reset_transfer_status($node);
+      }
+
+      $result = array(
+        'FileID' => $field_os2web_cp_service_file_id[0]['value'],
+        'FileFormat' => 'Published',
+      );
+      watchdog('acadre OM', 'ReturnFileTransferRequest success fid: ' . $result['FileID'], array(), WATCHDOG_NOTICE);
+      return $result;
+    }
+    watchdog('acadre OM', 'ReturnFileTransferRequest: File ID is empty', array(), WATCHDOG_WARNING);
+  }
+
+  watchdog('acadre OM', 'ReturnFileTransferRequest: Not found CP documents to transfer', array(), WATCHDOG_WARNING);
+  return NULL;
+
+}
+
+/**
+ * Get transfer request query.
+ */
+function _os2web_cp_service_get_transfer_request_query() {
   // Fetch CP Document node with not delivered and available to
   // transfer file_id.
   $query = db_select('node', 'n')
@@ -27,34 +64,30 @@ function os2web_cp_service_transfer_request() {
     ->condition('cpn.field_os2web_cp_service_nontrans_value', '0')
     ->condition('cpn.field_os2web_cp_service_nontrans_value', NULL);
 
+  // Available to transfering documents.
   $db_and = db_and()
     ->condition($field_os2web_cp_service_deliver_db_or)
     ->condition($field_os2web_cp_service_nontrans_db_or);
 
-  $query->condition($db_and);
-  $result = $query->range(0, 1)
-    ->orderBy('n.changed', 'DESC')
-    ->execute()
-    ->fetchAll();
+  $query->leftJoin('field_data_field_os2web_cp_service_synctime', 'cpst', 'cpst.entity_id = n.nid');
+  $query->leftJoin('field_data_field_os2web_cp_service_res_c', 'cprc', 'cprc.entity_id = n.nid');
 
-  if (!empty($result)) {
-    $node = reset($result);
-    $node = node_load($node->nid);
-    $field_os2web_cp_service_file_id = field_get_items('node', $node, 'field_os2web_cp_service_file_id');
-    if (!empty($field_os2web_cp_service_file_id)) {
-      $result = array(
-        'FileID' => $field_os2web_cp_service_file_id[0]['value'],
-        'FileFormat' => 'Published',
-      );
-      watchdog('acadre OM', 'ReturnFileTransferRequest success fid: ' . $result['FileID'], array(), WATCHDOG_NOTICE);
-      return $result;
-    }
-    watchdog('acadre OM', 'ReturnFileTransferRequest: File ID is empty', array(), WATCHDOG_WARNING);
-  }
+  // Include documents with failed transfers status older that 1 day.
+  $failed_transfers_condition = db_and()
+    ->condition('cpn.field_os2web_cp_service_nontrans_value', '1')
+    ->condition(db_or()
+      ->condition('cprc.field_os2web_cp_service_res_c_value', variable_get('os2web_cp_service_file_transfer_max_resets', OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS), '<=')
+      ->condition('cprc.field_os2web_cp_service_res_c_value', NULL))
+    ->condition('cpst.field_os2web_cp_service_synctime_value', strtotime('now - 1 day'), '<')
+    ->condition(db_or()
+      ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
+      ->condition('cpd.field_os2web_cp_service_deliver_value', NULL));
 
-  watchdog('acadre OM', 'ReturnFileTransferRequest: Not found CP documents to transfer', array(), WATCHDOG_WARNING);
-  return NULL;
-
+  $query->condition(db_or()
+    ->condition($db_and)
+    ->condition($failed_transfers_condition)
+  );
+  return $query;
 }
 
 /**

@@ -227,7 +227,7 @@ function os2web_cp_service_default_page_manager_handlers() {
  */
 function os2web_cp_service_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'os2web_cp_service_cp_case_search_panel';
   $page->task = 'page';

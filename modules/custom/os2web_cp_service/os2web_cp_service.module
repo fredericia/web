@@ -12,6 +12,7 @@ module_load_include('inc', 'os2web_cp_service', 'os2web_cp_service.batch');
 define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE', 'pull');
 define('OS2WEB_CP_SERVICE_FILE_PATH', 'public://cp-document');
 define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_TRIES', 5);
+define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS', 5);
 
 /**
  * Implements hook_init().
@@ -63,7 +64,7 @@ function os2web_cp_service_menu() {
 
   $items['admin/content/acadre_om/reset_transfer_status/%'] = array(
     'title' => 'Reset transfer_status',
-    'page callback' => '_os2web_cp_service_reset_transfer_status',
+    'page callback' => '_os2web_cp_service_reset_transfer_status_callback',
     'page arguments' => array(4),
     'access arguments' => array('administer site configuration'),
   );
@@ -1214,6 +1215,13 @@ function os2web_cp_service_form_os2web_settings_settings_form_alter(&$form, &$fo
     '#default_value' => variable_get('os2web_cp_service_file_path', OS2WEB_CP_SERVICE_FILE_PATH),
   );
 
+  $form['os2web_cp_config_group']['os2web_cp_service_file_transfer_max_resets'] = array(
+    '#title' => 'Max amount of resets (Resets counter) allowed for CP Document with "failed transfer mode".',
+    '#type' => 'textfield',
+    '#description' => t('If field "Resets counter" on CP Document node less then this value, CP Document is available for ReturnFileTransferRequest method'),
+    '#default_value' => variable_get('os2web_cp_service_file_transfer_max_resets', OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS),
+  );
+
   $form['#submit'][] = 'os2web_cp_service_file_transfer';
 }
 
@@ -1361,14 +1369,20 @@ function os2web_cp_service_views_pre_render(&$view) {
           )
         );
       }
+      if (!empty($result->field_field_os2web_cp_service_res_c[0]['raw']['value'])) {
+        $result->field_field_os2web_cp_service_tr_stat[0]['rendered']['#markup'] .= '</br>Amount of resets: ' . format_plural(
+          $result->field_field_os2web_cp_service_res_c[0]['raw']['value'],
+          '1 time',
+          '@count times');
+      }
     }
   }
 }
 
 /**
- * Reset transfer status.
+ * Reset transfer status callback.
  */
-function _os2web_cp_service_reset_transfer_status($nid) {
+function _os2web_cp_service_reset_transfer_status_callback($nid) {
   $destination = 'admin/content/acadre_om';
   $params = drupal_get_query_parameters();
   if (!empty($params['destination'])) {
@@ -1383,14 +1397,30 @@ function _os2web_cp_service_reset_transfer_status($nid) {
     return;
   }
 
-  $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
-  $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
-  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
-  node_save($node);
+  _os2web_cp_service_reset_transfer_status($node);
 
   drupal_set_message(t('Transfer status for node "@title" has been reset',
     array('@title' => $node->title)));
   drupal_goto($destination);
+}
+
+/**
+ * Reset transfer status.
+ */
+function _os2web_cp_service_reset_transfer_status(&$node) {
+  $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
+  if (!isset($node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'])) {
+    $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'] = 0;
+  }
+  (int) $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value']++;
+  node_save($node);
+  $field_os2web_cp_service_file_id = field_get_items('node', $node, 'field_os2web_cp_service_file_id');
+  watchdog('acadre OM', 'CP Document with fid: @fid has been reseted to transfering.',
+    array('@fid' => $field_os2web_cp_service_file_id[0]['value']),
+    WATCHDOG_NOTICE
+  );
 }
 
 /**

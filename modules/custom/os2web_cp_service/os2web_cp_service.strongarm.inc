@@ -13,6 +13,48 @@ function os2web_cp_service_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_os2web_cp_service_cp_case';
+  $strongarm->value = 0;
+  $export['diff_enable_revisions_page_node_os2web_cp_service_cp_case'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_os2web_cp_service_cp_document';
+  $strongarm->value = 0;
+  $export['diff_enable_revisions_page_node_os2web_cp_service_cp_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_os2web_cp_service_cp_case';
+  $strongarm->value = 0;
+  $export['diff_show_preview_changes_node_os2web_cp_service_cp_case'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_os2web_cp_service_cp_document';
+  $strongarm->value = 0;
+  $export['diff_show_preview_changes_node_os2web_cp_service_cp_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_os2web_cp_service_cp_case';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_os2web_cp_service_cp_case'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_os2web_cp_service_cp_document';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_os2web_cp_service_cp_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__os2web_cp_service_cp_case';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -61,6 +103,12 @@ function os2web_cp_service_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
+          'weight' => '30',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
           'weight' => '30',
         ),
       ),
@@ -179,7 +227,7 @@ function os2web_cp_service_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_punctuation_slash';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['pathauto_punctuation_slash'] = $strongarm;
 
   $strongarm = new stdClass();

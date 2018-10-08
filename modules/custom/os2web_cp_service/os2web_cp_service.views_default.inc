@@ -608,6 +608,7 @@ function os2web_cp_service_views_default_views() {
   $handler->display->display_options['path'] = 'all-cases';
   $translatables['docsnotoncase'] = array(
     t('Master'),
+    t('Dokumenter og sager er brug'),
     t('mere'),
     t('Udfør'),
     t('Gendan'),

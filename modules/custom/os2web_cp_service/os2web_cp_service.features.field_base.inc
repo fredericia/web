@@ -496,6 +496,21 @@ function os2web_cp_service_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_os2web_cp_service_res_c'.
+  $field_bases['field_os2web_cp_service_res_c'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_cp_service_res_c',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_os2web_cp_service_rules'.
   $field_bases['field_os2web_cp_service_rules'] = array(
     'active' => 1,

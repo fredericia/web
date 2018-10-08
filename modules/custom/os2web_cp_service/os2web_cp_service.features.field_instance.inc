@@ -2350,6 +2350,71 @@ function os2web_cp_service_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_res_c'.
+  $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_res_c'] = array(
+    'bundle' => 'os2web_cp_service_cp_document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 21,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_cp_service_res_c',
+    'label' => 'Resets counter',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2web_cp_service_cp_document-field_os2web_cp_service_rules'.
   $field_instances['node-os2web_cp_service_cp_document-field_os2web_cp_service_rules'] = array(
     'bundle' => 'os2web_cp_service_cp_document',
@@ -2662,6 +2727,7 @@ function os2web_cp_service_field_default_field_instances() {
   t('KL emnenummer - KL emnenummer og beskrivelse');
   t('Non transferable');
   t('RedigeringsDato');
+  t('Resets counter');
   t('Sag SystemID');
   t('SagsID');
   t('Sagsansvarlig enhed - Administrativ enhed');
