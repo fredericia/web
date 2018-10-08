@@ -23,8 +23,11 @@ function os2web_cp_service_transfer_request() {
     $node = node_load($node->nid);
     $field_os2web_cp_service_file_id = field_get_items('node', $node, 'field_os2web_cp_service_file_id');
     if (!empty($field_os2web_cp_service_file_id)) {
-      // Reset document before responce and let it be updated.
-      _os2web_cp_service_reset_transfer_status($node);
+
+      if (!empty($node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'])) {
+        // Reset document before responce and let it be updated.
+        _os2web_cp_service_reset_transfer_status($node);
+      }
 
       $result = array(
         'FileID' => $field_os2web_cp_service_file_id[0]['value'],
