@@ -12,6 +12,7 @@ module_load_include('inc', 'os2web_cp_service', 'os2web_cp_service.batch');
 define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MODE', 'pull');
 define('OS2WEB_CP_SERVICE_FILE_PATH', 'public://cp-document');
 define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_TRIES', 5);
+define('OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS', 5);
 
 /**
  * Implements hook_init().
@@ -1212,6 +1213,13 @@ function os2web_cp_service_form_os2web_settings_settings_form_alter(&$form, &$fo
       '!private' => '</br>private:// = <code>' . ($private_path ? $private_path : 'N/A') . '</code>',
     )),
     '#default_value' => variable_get('os2web_cp_service_file_path', OS2WEB_CP_SERVICE_FILE_PATH),
+  );
+
+  $form['os2web_cp_config_group']['os2web_cp_service_file_transfer_max_resets'] = array(
+    '#title' => 'Max amount of resets (Resets counter) allowed for CP Document with "failed transfer mode".',
+    '#type' => 'textfield',
+    '#description' => t('If field "Resets counter" on CP Document node less then this value, CP Document is available for ReturnFileTransferRequest method'),
+    '#default_value' => variable_get('os2web_cp_service_file_transfer_max_resets', OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS),
   );
 
   $form['#submit'][] = 'os2web_cp_service_file_transfer';

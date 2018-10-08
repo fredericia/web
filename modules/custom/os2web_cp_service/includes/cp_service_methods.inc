@@ -67,10 +67,14 @@ function _os2web_cp_service_get_transfer_request_query() {
     ->condition($field_os2web_cp_service_nontrans_db_or);
 
   $query->leftJoin('field_data_field_os2web_cp_service_synctime', 'cpst', 'cpst.entity_id = n.nid');
+  $query->leftJoin('field_data_field_os2web_cp_service_res_c', 'cprc', 'cprc.entity_id = n.nid');
 
   // Include documents with failed transfers status older that 1 day.
   $failed_transfers_condition = db_and()
     ->condition('cpn.field_os2web_cp_service_nontrans_value', '1')
+    ->condition(db_or()
+      ->condition('cprc.field_os2web_cp_service_res_c_value', variable_get('os2web_cp_service_file_transfer_max_resets', OS2WEB_CP_SERVICE_FILE_TRANSFER_MAX_RESETS), '<=')
+      ->condition('cprc.field_os2web_cp_service_res_c_value', NULL))
     ->condition('cpst.field_os2web_cp_service_synctime_value', strtotime('now - 1 day'), '<')
     ->condition(db_or()
       ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
