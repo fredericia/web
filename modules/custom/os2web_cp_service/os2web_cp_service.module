@@ -824,6 +824,13 @@ function os2web_cp_service_create_document(array $data) {
     $node->field_os2web_cp_service_rules[LANGUAGE_NONE][]['tid'] = $term->tid;
   }
 
+  // If file has been delivered, we are going to reset transfering status. To
+  // get it uploaded again.
+  $delivery_status = field_get_items('node', $node, 'field_os2web_cp_service_deliver');
+  if (!empty($delivery_status[0])) {
+    _os2web_cp_service_reset_transfer_status($node, 'Metadata updated. Reseted to transfer.');
+  }
+
   try {
     node_submit($node);
     node_save($node);
@@ -1407,10 +1414,10 @@ function _os2web_cp_service_reset_transfer_status_callback($nid) {
 /**
  * Reset transfer status.
  */
-function _os2web_cp_service_reset_transfer_status(&$node) {
+function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Reseted. To be transfered.') {
   $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
-  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = 'Reseted. To be transfered.';
+  $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = $status;
   if (!isset($node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'])) {
     $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'] = 0;
   }
