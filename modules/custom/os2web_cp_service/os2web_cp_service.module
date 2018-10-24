@@ -1424,7 +1424,7 @@ function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Reseted. To
   (int) $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value']++;
   node_save($node);
   $field_os2web_cp_service_file_id = field_get_items('node', $node, 'field_os2web_cp_service_file_id');
-  watchdog('acadre OM', 'CP Document with fid: @fid has been reseted to transfering.',
+  watchdog('acadre OM', 'CP Document with fid: @fid ' . $status,
     array('@fid' => $field_os2web_cp_service_file_id[0]['value']),
     WATCHDOG_NOTICE
   );
