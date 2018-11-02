@@ -128,6 +128,7 @@ function os2web_cp_service_transfer_update($data) {
       // Bind existing file to CP Document node and update transfer status.
       _os2web_cp_document_bind_file($node_wrapper, $uri);
       $node_wrapper->field_os2web_cp_service_tr_stat->set('');
+      $node_wrapper->field_os2web_cp_service_res_c->set(0);
       watchdog('acadre OM', 'FileTransferEnd success:: fid: ' . $file_id, array(), WATCHDOG_NOTICE);
     }
   }
@@ -232,7 +233,6 @@ function _os2web_cp_document_bind_file(&$node_wrapper, $uri) {
   $node_wrapper->field_os2web_cp_service_deliver->set(1);
   $node_wrapper->field_os2web_cp_service_fails->set(0);
 }
-
 
 /**
  * Build CP Document file uri.

@@ -69,6 +69,13 @@ function os2web_cp_service_menu() {
     'access arguments' => array('administer site configuration'),
   );
 
+  $items['admin/content/acadre_om/transfering_queue'] = array(
+    'type' => MENU_CALLBACK,
+    'title' => 'Documents transfer queue',
+    'page callback' => '_os2web_cp_service_transfering_queue',
+    'access arguments' => array('administer site configuration'),
+  );
+
   return $items;
 }
 
@@ -296,6 +303,7 @@ function os2web_gf_service_handler($file_id) {
           _os2web_cp_document_bind_file($node_wrapper, $uri);
           $status_message = 'combined mode transfer';
           $node_wrapper->field_os2web_cp_service_tr_stat->set($status_message);
+          $node_wrapper->field_os2web_cp_service_res_c->set(0);
 
           // Save node changes.
           $node_wrapper->save();
@@ -1428,6 +1436,62 @@ function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Reseted. To
     array('@fid' => $field_os2web_cp_service_file_id[0]['value']),
     WATCHDOG_NOTICE
   );
+}
+
+/**
+ * Callback function to build transfer queue.
+ */
+function _os2web_cp_service_transfering_queue() {
+  // Fetch CP Document file_id list.
+  $query = _os2web_cp_service_get_transfer_request_query();;
+
+  $query->leftJoin('field_data_field_os2web_cp_service_file_id', 'fid', 'fid.entity_id = n.nid');
+  $query->fields('n', array('changed'));
+  $query->fields('n', array('title'));
+  $query->fields('fid', array('field_os2web_cp_service_file_id_value'));
+  $query->fields('fid', array('field_os2web_cp_service_file_id_value'));
+  $query->fields('cpd', array('field_os2web_cp_service_deliver_value'));
+  $query->fields('cpn', array('field_os2web_cp_service_nontrans_value'));
+  $query->fields('cpst', array('field_os2web_cp_service_synctime_value'));
+  $query->fields('cprc', array('field_os2web_cp_service_res_c_value'));
+
+  $result = $query
+    ->orderBy('n.changed', 'DESC')
+    ->execute()
+    ->fetchAll();
+  $rows = [];
+  foreach ($result as $row) {
+    $row->field_os2web_cp_service_synctime_value = date('Y-m-d H:i:s',
+      $row->field_os2web_cp_service_synctime_value);
+    $row->changed = date('Y-m-d H:i:s', $row->changed);
+    $rows[] = [
+      $row->nid,
+      l($row->title, 'node/' . $row->nid),
+      $row->changed,
+      $row->field_os2web_cp_service_file_id_value,
+      $row->field_os2web_cp_service_synctime_value,
+      $row->field_os2web_cp_service_deliver_value ? 'Yes': 'No',
+      $row->field_os2web_cp_service_nontrans_value ? 'Yes': 'No',
+      $row->field_os2web_cp_service_res_c_value,
+    ];
+  }
+  $output['transfering_queue'] =  array(
+    '#theme' => 'table',
+    '#header' => [
+      'NID',
+      'Document',
+      'Chanded',
+      'File ID',
+      'Sync time',
+      'Delivered',
+      'Not transferable',
+      'Resets counter',
+    ],
+    '#rows' => $rows,
+    '#empty' =>t('Documents transfer queue is empty'),
+  );
+
+  return $output;
 }
 
 /**
