@@ -54,6 +54,10 @@ function _os2web_cp_service_get_transfer_request_query() {
     ->fields('n', array('nid'))
     ->condition('type', 'os2web_cp_service_cp_document');
 
+  $query->leftJoin('field_data_field_os2web_cp_service_file_id', 'cpdfi', 'cpdfi.entity_id = n.nid');
+  $query->condition('cpdfi.field_os2web_cp_service_file_id_value', '', '!=');
+  $query->isNotNull('cpdfi.field_os2web_cp_service_file_id_value');
+
   $query->leftJoin('field_data_field_os2web_cp_service_deliver', 'cpd', 'cpd.entity_id = n.nid');
   $field_os2web_cp_service_deliver_db_or = db_or()
     ->condition('cpd.field_os2web_cp_service_deliver_value', '0')
