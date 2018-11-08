@@ -126,3 +126,11 @@ function os2web_meetings_strip_words($text) {
     return FALSE;
   }
 }
+function os2web_meetings_form_alter (&$form, &$form_state) {
+  if ($form['#id'] ===  'os2web-meetings-meeting-node-form') {
+  $form['field_os2web_meetings_dags_date']['und']['#disabled'] = TRUE;
+  $form_state['field']['field_os2web_meetings_dags_date']['und']['instance']['widget']['type'] = 'date_text';
+  $form['field_os2web_meetings_ref_date']['und']['#disabled'] = TRUE;
+  $form_state['field']['field_os2web_meetings_ref_date']['und']['instance']['widget']['type'] = 'date_text';
+  }
+}
