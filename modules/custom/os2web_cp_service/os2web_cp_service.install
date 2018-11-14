@@ -21,7 +21,7 @@ function os2web_cp_service_install() {
 }
 
 /**
- * Imlpements hook_update_N().
+ * Implements hook_update_N().
  *
  * Cleanup resets counter field for succesfuly transfered documents.
  */
@@ -38,6 +38,29 @@ function os2web_cp_service_update_7001() {
     }
     db_update('field_data_field_os2web_cp_service_res_c')
       ->fields(array('field_os2web_cp_service_res_c_value' => 0))
+      ->condition('entity_id', $nids, 'IN')
+      ->execute();
+    entity_get_controller('node')->resetCache($nids);
+  }
+}
+/**
+ * Implements hook_update_N().
+ *
+ * Add to tranfsfer queue documents with updated metadata.
+ */
+function os2web_cp_service_update_7002() {
+  $nodeQuery = new EntityFieldQuery();
+  $nodes = $nodeQuery->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_os2web_cp_service_deliver', 'value', 1)
+    ->fieldCondition('field_os2web_cp_service_tr_stat', 'value','Metadata update', 'STARTS_WITH')
+    ->execute();
+  if (!empty($nodes['node'])) {
+    $nids = [];
+    foreach ($nodes['node'] as $row) {
+      $nids[] = $row->nid;
+    }
+    db_update('field_data_field_os2web_cp_service_deliver')
+      ->fields(array('field_os2web_cp_service_deliver_value' => 0))
       ->condition('entity_id', $nids, 'IN')
       ->execute();
     entity_get_controller('node')->resetCache($nids);

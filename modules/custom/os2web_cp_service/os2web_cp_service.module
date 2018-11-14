@@ -1425,6 +1425,8 @@ function _os2web_cp_service_reset_transfer_status_callback($nid) {
 function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Reseted. To be transfered.') {
   $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_deliver[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_os2web_cp_service_synctime[LANGUAGE_NONE][0]['value'] = time();
   $node->field_os2web_cp_service_tr_stat[LANGUAGE_NONE][0]['value'] = $status;
   if (!isset($node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'])) {
     $node->field_os2web_cp_service_res_c[LANGUAGE_NONE][0]['value'] = 0;
