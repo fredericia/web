@@ -1422,7 +1422,7 @@ function _os2web_cp_service_reset_transfer_status_callback($nid) {
 /**
  * Reset transfer status.
  */
-function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Reseted. To be transfered.') {
+function _os2web_cp_service_reset_transfer_status(&$node, $status = 'Resetted. To be transferred.') {
   $node->field_os2web_cp_service_fails[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_nontrans[LANGUAGE_NONE][0]['value'] = 0;
   $node->field_os2web_cp_service_deliver[LANGUAGE_NONE][0]['value'] = 0;
