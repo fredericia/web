@@ -237,7 +237,7 @@ function _os2web_cp_document_bind_file(&$node_wrapper, $uri) {
   $node_wrapper->field_os2web_cp_service_deliver->set(1);
   $node_wrapper->field_os2web_cp_service_nontrans->set(0);
   $node_wrapper->field_os2web_cp_service_fails->set(0);
-  $file_ext = pathinfo($file->uri, FILEINFO_EXTENSION);
+  $file_ext = pathinfo($file->uri, PATHINFO_EXTENSION);
   $node_wrapper->field_os2web_cp_service_filetype->set(strtoupper($file_ext));
 }
 
