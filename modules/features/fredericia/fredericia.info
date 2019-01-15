@@ -11,6 +11,7 @@ features[features_api][] = api:2
 features[image][] = fredericia_content_image
 features[views_view][] = a_aa_index
 features[views_view][] = fredericia_news_view
+features[views_view][] = meeting
 features[views_view][] = os2web_term_news
 features[views_view][] = os2web_term_promoted_nodes
 features[views_view][] = os2web_term_subterms
