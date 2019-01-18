@@ -23,6 +23,12 @@
   .popup-content {
     padding: 30px 0;
   }
+  
+  .find-more-button {
+    font-weight: @font-weight-bold;
+    font-size: @font-size-base;
+    color: @text-color !important;
+  }
 
   &.sliding-popup-bottom {
     background-color: #fff;
@@ -52,13 +58,24 @@
         font-size: @font-size-base;
         color: @text-color !important;
       }
+  
+      .find-more-button {
+        margin-top: 20px;
+    
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          .btn;
+          .btn-primary;
+        }
+      }
     }
 
     #popup-buttons {
 
       button,
-      .agree-button,
-      .find-more-button {
+      .agree-button {
 
         &,
         &:hover,
@@ -75,16 +92,6 @@
         &:focus,
         &:active {
           .btn-quaternary;
-        }
-      }
-
-      .find-more-button {
-
-        &,
-        &:hover,
-        &:focus,
-        &:active {
-          .btn-primary;
         }
       }
     }
