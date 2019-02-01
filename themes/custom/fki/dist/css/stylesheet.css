@@ -17821,6 +17821,11 @@ body .os2-page-header .os2-page-header-tabbed-menu .os2-page-header-tabbed-menu-
 .os2-node-full .field-type-text-long table {
   max-width: 100%;
 }
+.field-name-field-os2web-meetings-enclosures a {
+  word-break: break-all;
+  word-wrap: break-word;
+  display: inline-block;
+}
 @media screen {
 }
 @media screen and (max-width: 767px) {
