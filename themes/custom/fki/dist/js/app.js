@@ -4708,6 +4708,32 @@ var popoverButton = (function ($) {
   return pub;
 })(jQuery);
 
+// |--------------------------------------------------------------------------
+// | Iframe resize
+// |--------------------------------------------------------------------------
+// |
+// |
+// |
+var iFrame = (function ($) {
+  'use strict';
+  var pub = {};
+
+  /**
+   * Instantiate
+   */
+  pub.init = function (options) {
+    if (isMobile()) {
+      $('iframe#emply_jobs').attr('height', '8000px');
+    }
+  };
+
+  function isMobile() {
+   try{ document.createEvent("TouchEvent"); return true; }
+   catch(e){ return false; }
+}
+return pub;
+})(jQuery);
+
 // Document ready
 (function ($) {
     'use strict';
@@ -4733,6 +4759,7 @@ var popoverButton = (function ($) {
     // Enable popover button
     popoverButton.init();
 
+    iFrame.init();
 })(jQuery);
 
 //# sourceMappingURL=app.js.map

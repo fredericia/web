@@ -23,4 +23,6 @@
     // Enable popover button
     popoverButton.init();
 
+    iFrame.init();
+
 })(jQuery);
