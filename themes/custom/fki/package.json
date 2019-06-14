@@ -10,16 +10,28 @@
   "license": "MIT",
   "dependencies": {
     "grunt": "^1.0.1",
-    "grunt-autoprefixer": "~3.0.4",
-    "grunt-jscs": "~3.0.1",
+    "grunt-contrib-clean": "~1.1.0",
     "grunt-contrib-concat": "~1.0.1",
     "grunt-contrib-csslint": "~2.0.0",
-    "grunt-contrib-clean": "~1.1.0",
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-less": "^1.4.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jscs": "~3.0.1"
   },
   "devDependencies": {
-    "grunt-modernizr": "^1.0.2"
-  }
+    "autoprefixer": "^9.6.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-postcss": "^0.9.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Android 2.3",
+    "Android >= 4",
+    "Chrome >= 20",
+    "Firefox >= 24",
+    "iOS >= 6",
+    "Opera >= 12",
+    "Safari >= 6",
+    "> 2.5%"
+  ]
 }

@@ -1,28 +1,11 @@
 {
-  "autoprefixer": {
-    "browsers": {
-      "other": [
-        "last 2 versions",
-        "Android 2.3",
-        "Android >= 4",
-        "Chrome >= 20",
-        "Firefox >= 24",
-        "iOS >= 6",
-        "Opera >= 12",
-        "Safari >= 6",
-        "> 2.5%"
-      ],
-      "ie9": [
-        "ie 9"
-      ]
-    }
-  },
   "concat": {
     "jsApp": [
       "src/vendor/bootstrap/dist/js/bootstrap.js",
       "src/vendor/appear/jquery.appear.js",
       "src/vendor/fastclick/lib/fastclick.js",
       "src/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js",
+      "src/js/iframe.js",
       "src/js/jquery.imagesloaded.js",
       "src/js/isotope.pkgd.min.js",
       "src/js/masonry.pkgd.min.js",
