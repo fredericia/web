@@ -62,7 +62,7 @@
             <!-- Begin - logo -->
             <a href="<?php echo $front_page; ?>" class="simple-navigation-logo-link">
                 <img src="<?php echo $path_img . '/logo-simple-navigation-new.png'; ?>" class="simple-navigation-logo-image"
-                     alt="<?php echo t('fredericia.dk logo'); ?>"/>
+                     alt="<?php echo $site_name . t(' logo'); ?>"/>
             </a>
             <!-- End - logo -->
 
@@ -81,7 +81,8 @@
                             <!-- Begin - content -->
                             <div class="col-md-4">
                                 <a href="<?php echo $front_page; ?>" class="main-navigation-logo-link">
-                                    <img src="<?php echo $path_img; ?>/logo-main-navigation-new.png" alt=""
+                                    <img src="<?php echo $path_img; ?>/logo-main-navigation-new.png"
+                                         alt="<?php echo $site_name . t(' logo'); ?>"
                                          class="main-navigation-logo-image">
                                 </a>
                             </div>
