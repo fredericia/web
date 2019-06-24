@@ -28,7 +28,7 @@
   dir="<?php print $language->dir; ?>"
   <?php print $rdf_namespaces; ?>>
 <![endif]-->
-<!--[if (gt IE 9)|!(IE)]>
+<!--[if (gt IE 9)|!(IE)]><!-->
 <html
   class="not-ie no-js"
   lang="<?php print $language->language; ?>"
