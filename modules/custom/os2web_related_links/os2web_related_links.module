@@ -339,11 +339,10 @@ function os2web_related_links_get_selfservice_links($node = NULL, $term = NULL) 
   if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) || ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_selfserv'))) {
     foreach ($links as $link) {
       $selfservicelink = node_load($link['nid']);
-
+      $document_link = '';
       if ($selfservicelink) {
         $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
         $link_title = field_get_items('node', $selfservicelink, 'field_vist_navn');
-
         if ($link_document = field_get_items('node', $selfservicelink, 'field_os2web_base_doc_ref_single')) {
           $document = node_load($link_document[0]['target_id']);
 
