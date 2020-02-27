@@ -317,6 +317,9 @@ function fki_preprocess_node__os2web_base_news(&$variables) {
       $variables['news_background_image'] = file_create_url($file->uri);
     }
   }
+  if ($variables['view_mode'] == 'full') {
+    $variables['turn_on_off_button'] = true;
+  }
 }
 
 /*
@@ -365,6 +368,9 @@ function fki_preprocess_node__os2web_base_contentpage(&$variables) {
 
     // Get a web accessible URL for the image
     $variables['document_url'] = $field_file_id[0]['value'];
+  }
+  if ($variables['view_mode'] == 'full') {
+    $variables['turn_on_off_button'] = true;
   }
 }
 

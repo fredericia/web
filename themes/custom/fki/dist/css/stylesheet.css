@@ -757,6 +757,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .os2-node-full-body a {
   color: #00a5e2;
 }
+.turn-on-off-button {
+  display: block;
+  cursor: pointer;
+  margin-top: -25px;
+}
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
