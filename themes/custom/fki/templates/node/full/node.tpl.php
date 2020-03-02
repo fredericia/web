@@ -27,8 +27,8 @@
   <!-- Begin - full node -->
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>
   <?php if ($turn_on_off_button) : ?>
-      <div class="pull-right right"><a class="turn-on-off-button" onclick="SignLanguageMark(null,'#ff2345');">
-        <img src="<?php print $path_img?>/primaerblaa_icon.png"></a> <script type="text/javascript">   (function() {      var lwfile = 'cdhsign.dk/cdh_player.js';      var lw = document.createElement('script');       lw.type = 'text/javascript';       lw.async = true;      lw.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +lwfile;      var s = document.getElementsByTagName('script')[0];       s.parentNode.insertBefore(lw, s);   })   (); </script></p>
+      <div class="pull-right right"><a class="turn-on-off-button" title="<?php print t("Slå adgang med tegn til/fra")?>"onclick="SignLanguageMark(null,'#ff2345');">
+        <img src="<?php print $path_img?>/primaerblaa_icon.png" alt="<?php print t("Slå adgang med tegn til/fra")?>"></a> <script type="text/javascript">   (function() {      var lwfile = 'cdhsign.dk/cdh_player.js';      var lw = document.createElement('script');       lw.type = 'text/javascript';       lw.async = true;      lw.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +lwfile;      var s = document.getElementsByTagName('script')[0];       s.parentNode.insertBefore(lw, s);   })   (); </script></p>
       </div>
   <?php endif; ?>
     <div class="pull-right right"> </div>
