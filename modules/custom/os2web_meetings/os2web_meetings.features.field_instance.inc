@@ -178,9 +178,12 @@ function os2web_meetings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'track_da_files',
+        'settings' => array(
+          'custom_link_text' => '',
+          'force_download' => '',
+        ),
+        'type' => 'track_da_files_file_default',
         'weight' => 2,
       ),
       'includeable' => array(
@@ -223,10 +226,17 @@ function os2web_meetings_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_meetings_enclosures',
-    'label' => 'Enclosures',
+    'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'fredericia_content_image' => 0,
+          'os2web_spotbox_image' => 0,
+          'person' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'pdf tif doc docx msg',
       'max_filesize' => '',
@@ -236,22 +246,6 @@ function os2web_meetings_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'plupload' => 0,
-            'reference' => 0,
-            'remote' => 0,
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'copy',
-            'path' => 'file_attach',
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -340,9 +334,12 @@ function os2web_meetings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'track_da_files',
+        'settings' => array(
+          'custom_link_text' => '',
+          'force_download' => '',
+        ),
+        'type' => 'track_da_files_file_default',
         'weight' => 3,
       ),
       'includeable' => array(
@@ -923,7 +920,6 @@ function os2web_meetings_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -971,7 +967,6 @@ function os2web_meetings_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -1026,9 +1021,12 @@ function os2web_meetings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'track_da_files',
+        'settings' => array(
+          'custom_link_text' => '',
+          'force_download' => '',
+        ),
+        'type' => 'track_da_files_file_default',
         'weight' => 4,
       ),
       'includeable' => array(
@@ -1051,9 +1049,12 @@ function os2web_meetings_field_default_field_instances() {
       ),
       'search_index' => array(
         'label' => 'inline',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'track_da_files',
+        'settings' => array(
+          'custom_link_text' => '',
+          'force_download' => '',
+        ),
+        'type' => 'track_da_files_file_default',
         'weight' => 4,
       ),
       'spotbox' => array(
@@ -1932,6 +1933,7 @@ function os2web_meetings_field_default_field_instances() {
   t('Abbreviation');
   t('Acadre name');
   t('Addendum to');
+  t('Bilag');
   t('Body');
   t('Check if this bullet should be closed.');
   t('Closed');
@@ -1939,7 +1941,6 @@ function os2web_meetings_field_default_field_instances() {
   t('Dagsorden publishing date');
   t('Date');
   t('Date valid');
-  t('Enclosures');
   t('File');
   t('Full doc');
   t('ID');

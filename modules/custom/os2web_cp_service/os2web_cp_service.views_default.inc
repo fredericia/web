@@ -1493,7 +1493,7 @@ Se alle sager på denne addresse
     t('Attachent to display all documents for a case'),
     t('<h2>Dokumenter</h2>'),
     t('Indhold entity refereret fra field_os2web_cp_service_doc_ref'),
-    t('Sagsindhold'),
+    t('Indholdsbeskrivelse'),
     t('Journalnummer'),
     t('[field_os2web_cp_service_content]'),
     t('[title]'),

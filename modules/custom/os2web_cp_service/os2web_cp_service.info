@@ -24,6 +24,7 @@ dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
+dependencies[] = track_da_files
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = views_php

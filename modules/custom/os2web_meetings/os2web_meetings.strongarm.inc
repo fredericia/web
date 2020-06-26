@@ -264,6 +264,15 @@ function os2web_meetings_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'spotbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -301,6 +310,15 @@ function os2web_meetings_strongarm() {
       ),
       'token' => array(
         'custom_settings' => FALSE,
+      ),
+      'spotbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -499,28 +517,28 @@ function os2web_meetings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_os2web_meetings_bullet_attach_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'noindex/[node:title]';
   $export['pathauto_node_os2web_meetings_bullet_attach_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_os2web_meetings_bullet_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'noindex/[node:title]';
   $export['pathauto_node_os2web_meetings_bullet_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_os2web_meetings_meeting_pattern';
-  $strongarm->value = '';
+  $strongarm->value = '[node:field-os2web-meetings-committee:url:path]/[node:title]';
   $export['pathauto_node_os2web_meetings_meeting_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_os2web_meetings_tax_committee_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'politik/byraad-udvalg/dagsordner-referater/[term:name]';
   $export['pathauto_taxonomy_term_os2web_meetings_tax_committee_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

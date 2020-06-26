@@ -1930,9 +1930,12 @@ function os2web_cp_service_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'track_da_files',
+        'settings' => array(
+          'custom_link_text' => '',
+          'force_download' => '',
+        ),
+        'type' => 'track_da_files_file_default',
         'weight' => 18,
       ),
       'includeable' => array(
