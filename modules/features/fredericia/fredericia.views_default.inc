@@ -341,7 +341,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['separator'] = '';
-  /* Felt: Indhold: Resume (maks 2 linier!) */
+  /* Felt: Indhold: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -442,7 +442,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['created_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'month';
-  /* Felt: Indhold: Resume (maks 2 linier!) */
+  /* Felt: Indhold: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -532,7 +532,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume (maks 2 linier!) */
+  /* Felt: Indhold: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -805,7 +805,7 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Resume (maks 2 linier!) */
+  /* Felt: Indhold: Intro / Resume (maks 2 linier!) */
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['id'] = 'field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['table'] = 'field_data_field_os2web_base_field_summary';
   $handler->display->display_options['fields']['field_os2web_base_field_summary']['field'] = 'field_os2web_base_field_summary';
@@ -1022,8 +1022,10 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['type'] = 'track_da_files_file_default';
   $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['settings'] = array(
-    'text' => '[field_os2web_meetings_type] [field_os2web_meetings_committee] [file:name]',
+    'force_download' => 0,
+    'custom_link_text' => '',
   );
   /* Felt: Indhold: Lokation */
   $handler->display->display_options['fields']['field_os2web_meetings_location']['id'] = 'field_os2web_meetings_location';
@@ -1036,6 +1038,48 @@ function fredericia_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_meetings_location']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_os2web_meetings_location']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_os2web_meetings_location']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Dagsorden publishing date */
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['id'] = 'field_os2web_meetings_dags_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['table'] = 'field_data_field_os2web_meetings_dags_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['field'] = 'field_os2web_meetings_dags_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['label'] = 'Dagsorden publiceret';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_class'] = 'col-sm-8';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_label_class'] = 'col-sm-4';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['settings'] = array(
+    'format_type' => 'long',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Felt: Indhold: Referat publishing date */
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['id'] = 'field_os2web_meetings_ref_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['table'] = 'field_data_field_os2web_meetings_ref_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['field'] = 'field_os2web_meetings_ref_date';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['label'] = 'Referat publiceret';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_class'] = 'col-sm-8';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_label_class'] = 'col-sm-4';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['settings'] = array(
+    'format_type' => 'long',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1068,118 +1112,6 @@ function fredericia_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Type */
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['id'] = 'field_os2web_meetings_type';
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['table'] = 'field_data_field_os2web_meetings_type';
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['field'] = 'field_os2web_meetings_type';
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['label'] = '';
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_meetings_type']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Committee */
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['id'] = 'field_os2web_meetings_committee';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['table'] = 'field_data_field_os2web_meetings_committee';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['field'] = 'field_os2web_meetings_committee';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['label'] = 'Udvalg';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_committee']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Date */
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['id'] = 'field_os2web_meetings_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['table'] = 'field_data_field_os2web_meetings_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['field'] = 'field_os2web_meetings_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['label'] = 'Dato';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_meetings_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
-  /* Felt: Indhold: Full doc */
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['id'] = 'field_os2web_meetings_full_doc';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['table'] = 'field_data_field_os2web_meetings_full_doc';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['field'] = 'field_os2web_meetings_full_doc';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['label'] = 'Hent som fil';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2web_meetings_full_doc']['settings'] = array(
-    'text' => '[field_os2web_meetings_type] [field_os2web_meetings_committee] [file:name]',
-  );
-  /* Felt: Indhold: Lokation */
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['id'] = 'field_os2web_meetings_location';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['table'] = 'field_data_field_os2web_meetings_location';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['field'] = 'field_os2web_meetings_location';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_location']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Dagsorden publishing date */
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['id'] = 'field_os2web_meetings_dags_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['table'] = 'field_data_field_os2web_meetings_dags_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['field'] = 'field_os2web_meetings_dags_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['label'] = 'Dagsorden published';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_os2web_meetings_dags_date']['settings'] = array(
-    'format_type' => 'long',
-    'custom_date_format' => '',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
-  /* Felt: Indhold: Referat publishing date */
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['id'] = 'field_os2web_meetings_ref_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['table'] = 'field_data_field_os2web_meetings_ref_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['field'] = 'field_os2web_meetings_ref_date';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['label'] = 'Referat published';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_class'] = 'col-sm-8';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_label_class'] = 'col-sm-4';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_wrapper_class'] = 'row';
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_os2web_meetings_ref_date']['settings'] = array(
-    'format_type' => 'long',
-    'custom_date_format' => '',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
@@ -1209,10 +1141,10 @@ function fredericia_views_default_views() {
     t('Dato'),
     t('Hent som fil'),
     t('Lokation'),
+    t('Dagsorden publiceret'),
+    t('Referat publiceret'),
     t('Alle'),
     t('Content pane'),
-    t('Dagsorden published'),
-    t('Referat published'),
     t('View panes'),
   );
   $export['meeting'] = $view;
