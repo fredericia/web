@@ -70,7 +70,7 @@
         <!-- End - simple navigation -->
 
         <!-- Begin - content -->
-        <div class="content">
+        <div class="content" id="content">
 
             <!-- Begin - main navigation -->
             <nav class="main-navigation-wrapper">
