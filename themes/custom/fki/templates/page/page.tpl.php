@@ -44,7 +44,7 @@
         <?php endif; ?>
 
         <!-- Begin - simple navigation -->
-        <nav class="simple-navigation">
+        <div class="simple-navigation">
 
             <!-- Begin - button list -->
             <ul class="simple-navigation-list simple-navigation-list-left">
@@ -66,15 +66,15 @@
             </a>
             <!-- End - logo -->
 
-        </nav>
+        </div>
         <!-- End - simple navigation -->
 
         <!-- Begin - content -->
         <div class="content" id="content">
 
             <!-- Begin - main navigation -->
-            <nav class="main-navigation-wrapper">
-                <section class="main-navigation-bar">
+            <div class="main-navigation-wrapper">
+                <div class="main-navigation-bar">
                     <div class="container">
                         <div class="row">
 
@@ -102,8 +102,8 @@
 
                         </div>
                     </div>
-                </section>
-            </nav>
+                </div>
+            </div>
             <!-- End - main navigation -->
 
             <!-- Begin - page header -->
@@ -132,7 +132,7 @@
 
             <?php if (!empty($breadcrumb)): ?>
                 <!-- Begin - breadcrumb -->
-                <section class="os2-breadcrumb-container">
+                <div class="os2-breadcrumb-container">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12">
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
                 <!-- End - breadcrumb -->
             <?php endif; ?>
 
@@ -199,7 +199,7 @@
 
         <!-- Begin - footer -->
         <?php if (!empty($page['footer'])): ?>
-            <footer class="footer">
+            <div class="footer">
                 <div class="container">
                     <div class="footer-content">
                         <div class="row">
@@ -211,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         <?php endif; ?>
         <!-- End - footer -->
 
