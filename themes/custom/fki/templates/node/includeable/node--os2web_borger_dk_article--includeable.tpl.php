@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'includeable'): ?>
   <!-- node--os2web_borger_dk_article--includeable.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> "<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> "<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
       <h1 class="os2-node-full-heading-title"><a href="<?php print $node_url; ?>"><?php print $node->title; ?></a></h1>
@@ -30,7 +30,7 @@
     </div>
     <!-- End - body -->
 
-  </article>
+  </div>
   <!-- End - teaser -->
 
 <?php endif; ?>
