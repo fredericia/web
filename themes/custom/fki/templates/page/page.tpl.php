@@ -1,5 +1,5 @@
 <!-- Begin - outer wrapper -->
-<div class="outer-wrapper">
+<main class="outer-wrapper">
 
     <!-- Begin - sidebar left -->
     <div class="sidebar sidebar-left">
@@ -218,5 +218,5 @@
     </div>
     <!-- End - inner wrapper -->
 
-</div>
+</main>
 <!-- End - outer wrapper -->

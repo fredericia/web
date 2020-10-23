@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--os2web_base_contentpage--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-equal-height-element"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-equal-height-element"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
     <div class="os2-node-teaser-heading">
@@ -23,7 +23,7 @@
     </div>
     <!-- End - body -->
 
-  </article>
+  </div>
   <!-- End - teaser -->
 
 <?php endif; ?>

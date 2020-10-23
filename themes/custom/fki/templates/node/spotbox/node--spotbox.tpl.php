@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'spotbox'): ?>
   <!-- node--spotbox.tpl.php -->
   <!-- Begin - spotbox -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-box os2-box-small-spacing"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-box os2-box-small-spacing"<?php print $attributes; ?>>
     <div class="table">
       <div class="table-row">
 
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-  </article>
+  </div>
   <!-- End - spotbox -->
 
 <?php endif; ?>

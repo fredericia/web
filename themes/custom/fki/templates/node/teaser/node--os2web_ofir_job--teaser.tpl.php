@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--os2web_ofir_job--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-equal-height-element clearfix"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-equal-height-element clearfix"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
     <div class="os2-node-teaser-heading">
@@ -27,7 +27,7 @@
     </div>
     <!-- End - body -->
 
-  </article>
+  </div>
   <hr>
   <!-- End - teaser -->
 

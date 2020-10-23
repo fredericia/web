@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--os2web_base_news--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-box os2-node-teaser os2-news-teaser os2-equal-height-element"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-box os2-node-teaser os2-news-teaser os2-equal-height-element"<?php print $attributes; ?>>
 
     <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
       <!-- Begin - primary image -->
@@ -39,7 +39,7 @@
     </div>
     <!-- End - body -->
 
-  </article>
+  </div>
   <!-- End - teaser -->
 
 <?php endif; ?>

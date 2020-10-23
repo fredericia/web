@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'includeable'): ?>
   <!-- node--borger_dk_article--includeable.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>
 
     <div class="os2-box">
       <div class="os2-box-body pane-content">
@@ -36,7 +36,7 @@
     ?>
     <!-- End - body -->
 
-  </article>
+  </div>
   <!-- End - teaser -->
 
 <?php endif; ?>

@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'spotbox'): ?>
   <!-- node--os2web_spotbox_box--spotbox.tpl.php -->
   <!-- Begin - spotbox -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-node-spotbox-spotbox os2-equal-height-element"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-spotbox os2-node-spotbox-spotbox os2-equal-height-element"<?php print $attributes; ?>>
 
     <?php if ($title): ?>
     <!-- Begin - heading -->
@@ -27,7 +27,7 @@
       </div>
     <?php endif; ?>
 
-  </article>
+  </div>
   <!-- End - spotbox -->
 
 <?php endif; ?>

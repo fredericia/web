@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-box-small-spacing os2-equal-height-element"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-box-small-spacing os2-equal-height-element"<?php print $attributes; ?>>
     <div class="table">
       <div class="table-row">
 
@@ -72,7 +72,7 @@
       </div>
     </div>
 
-  </article>
+  </div>
   <!-- End - teaser -->
 
 <?php endif; ?>
