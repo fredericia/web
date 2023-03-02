@@ -20,7 +20,7 @@
  * @see menu_get_item()
  * @see menu_save_item()
  */
-function hook_menu_node_insert($link, $node) {
+function hook_menu_node_invoke_insert($link, $node) {
   // Store data in my custom table, which tracks the owners of nodes
   // placed in the site menu.
   $record = array(
@@ -45,7 +45,7 @@ function hook_menu_node_insert($link, $node) {
  * @param $node
  *   The node object being acted upon.
  */
-function hook_menu_node_update($link, $node) {
+function hook_menu_node_invoke_update($link, $node) {
   // Update data in my custom table, which tracks the owners of nodes
   // placed in the site menu.
   $record = array(
@@ -70,7 +70,7 @@ function hook_menu_node_update($link, $node) {
  * @param $node
  *   The node object being acted upon.
  */
-function hook_menu_node_delete($link, $node) {
+function hook_menu_node_invoke_delete($link, $node) {
   // Delete data in my custom table, which tracks the owners of nodes
   // placed in the site menu.
   db_delete('mytable')

@@ -11,7 +11,7 @@
  */
 class MenuNodeAPITestCase extends DrupalWebTestCase {
 
-  public function setUp($modules = array()) {
+  protected function setUp($modules = array()) {
     $modules = array_merge(array('menu_node'), $modules);
     parent::setUp($modules);
   }
@@ -133,8 +133,8 @@ class MenuNodeAPITestCase extends DrupalWebTestCase {
  */
 class MenuNodeAPIBasicTestCase extends MenuNodeAPITestCase {
 
-  public function setUp() {
-    parent::setUp();
+  protected function setUp($modules = array()) {
+    parent::setUp($modules);
   }
 
   public static function getInfo() {
@@ -201,8 +201,8 @@ class MenuNodeAPIBasicTestCase extends MenuNodeAPITestCase {
  */
 class MenuNodeAPIHookTestCase extends MenuNodeAPITestCase {
 
-  public function setUp() {
-    parent::setUp(array('menu_node_test'));
+  protected function setUp($modules = array()) {
+    parent::setUp(array('menu_node_test') + $modules);
   }
 
   public static function getInfo() {

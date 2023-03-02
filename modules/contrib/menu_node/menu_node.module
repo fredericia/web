@@ -92,12 +92,14 @@ function menu_node_node_delete($node) {
  *
  * This lookup function should be run for update and delete operations.
  *
- * @param $mlid
+ * @param int $mlid
  *   The menu link id.
- * @param $load
- *   Boolean value that indicates whether to return the node id or a full $node.
- * @param $reset
- *   Boolean value that indicates whether to reset the static node_load() cache.
+ * @param bool $load
+ *   TRUE (default) to return the full node object; FALSE to return only the
+ *   node id.
+ * @param bool $reset
+ *   TRUE to flush this node from the entity load cache before loading the
+ *   node object; FALSE (default) to load from the cache.
  * @return
  *   A node id, a complete node object or FALSE on failure.
  */
@@ -107,8 +109,12 @@ function menu_node_get_node($mlid, $load = TRUE, $reset = FALSE) {
     return FALSE;
   }
   if ($load) {
-    // We must be sure to refresh the static cache in node_load().
-    return node_load($nid, NULL, $reset);
+    if ($reset) {
+      return entity_load_unchanged('node', $nid);
+    }
+    else {
+      return node_load($nid);
+    }
   }
   return $nid;
 }
@@ -326,7 +332,7 @@ function _menu_node_invoke($node, $link, $hook) {
     return;
   }
   $ids[$hook][$node->nid][$link->mlid] = TRUE;
-  module_invoke_all('menu_node_' . $hook, $link, $node);
+  module_invoke_all('menu_node_invoke_' . $hook, $link, $node);
 }
 
 /**
